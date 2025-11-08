@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on 创客教育者与嵌入式开发者</title>
+    <link>https://example.org/tags/python/</link>
+    <description>Recent content in Python on 创客教育者与嵌入式开发者</description>
+    <image>
+      <title>创客教育者与嵌入式开发者</title>
+      <url>https://example.org/images/og-image.jpg</url>
+      <link>https://example.org/images/og-image.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 27 Oct 2025 12:00:00 +0800</lastBuildDate>
+    <atom:link href="https://example.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据分析</title>
+      <link>https://example.org/skills/data-analysis/</link>
+      <pubDate>Mon, 27 Oct 2025 12:00:00 +0800</pubDate>
+      <guid>https://example.org/skills/data-analysis/</guid>
+      <description>数据分析技能详情，包括数据处理、统计分析、机器学习和数据可视化</description>
+    </item>
+    <item>
+      <title>后端开发</title>
+      <link>https://example.org/skills/backend-development/</link>
+      <pubDate>Mon, 27 Oct 2025 11:00:00 +0800</pubDate>
+      <guid>https://example.org/skills/backend-development/</guid>
+      <description>后端开发技能详情，包括服务器端编程、数据库设计、API开发和系统架构</description>
+    </item>
+    <item>
+      <title>销售数据分析仪表板</title>
+      <link>https://example.org/projects/sales-analytics-dashboard/</link>
+      <pubDate>Sat, 25 Oct 2025 09:15:00 +0800</pubDate>
+      <guid>https://example.org/projects/sales-analytics-dashboard/</guid>
+      <description>一个基于Python的销售数据分析仪表板，提供实时数据可视化和预测分析</description>
+    </item>
+    <item>
+      <title>Python数据分析实用技巧</title>
+      <link>https://example.org/posts/python-data-analysis-tips/</link>
+      <pubDate>Fri, 24 Oct 2025 16:45:00 +0800</pubDate>
+      <guid>https://example.org/posts/python-data-analysis-tips/</guid>
+      <description>分享Python数据分析中的实用技巧和最佳实践，提高数据处理效率</description>
+    </item>
+    <item>
+      <title>API测试自动化工具</title>
+      <link>https://example.org/projects/api-testing-tool/</link>
+      <pubDate>Fri, 24 Oct 2025 14:20:00 +0800</pubDate>
+      <guid>https://example.org/projects/api-testing-tool/</guid>
+      <description>一个开源的API测试自动化工具，支持RESTful API和GraphQL API的测试</description>
+    </item>
+  </channel>
+</rss>

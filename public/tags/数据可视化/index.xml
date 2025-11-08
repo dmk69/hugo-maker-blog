@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>数据可视化 on 创客教育者与嵌入式开发者</title>
+    <link>https://example.org/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+    <description>Recent content in 数据可视化 on 创客教育者与嵌入式开发者</description>
+    <image>
+      <title>创客教育者与嵌入式开发者</title>
+      <url>https://example.org/images/og-image.jpg</url>
+      <link>https://example.org/images/og-image.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Oct 2025 16:45:00 +0800</lastBuildDate>
+    <atom:link href="https://example.org/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python数据分析实用技巧</title>
+      <link>https://example.org/posts/python-data-analysis-tips/</link>
+      <pubDate>Fri, 24 Oct 2025 16:45:00 +0800</pubDate>
+      <guid>https://example.org/posts/python-data-analysis-tips/</guid>
+      <description>分享Python数据分析中的实用技巧和最佳实践，提高数据处理效率</description>
+    </item>
+  </channel>
+</rss>

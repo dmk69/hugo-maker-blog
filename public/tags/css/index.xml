@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CSS on 创客教育者与嵌入式开发者</title>
+    <link>https://example.org/tags/css/</link>
+    <description>Recent content in CSS on 创客教育者与嵌入式开发者</description>
+    <image>
+      <title>创客教育者与嵌入式开发者</title>
+      <url>https://example.org/images/og-image.jpg</url>
+      <link>https://example.org/images/og-image.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 27 Oct 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://example.org/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端开发</title>
+      <link>https://example.org/skills/frontend-development/</link>
+      <pubDate>Mon, 27 Oct 2025 10:00:00 +0800</pubDate>
+      <guid>https://example.org/skills/frontend-development/</guid>
+      <description>前端开发技能详情，包括HTML、CSS、JavaScript及现代前端框架的掌握情况</description>
+    </item>
+  </channel>
+</rss>

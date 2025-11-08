@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>API测试 on 创客教育者与嵌入式开发者</title>
+    <link>https://example.org/tags/api%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in API测试 on 创客教育者与嵌入式开发者</description>
+    <image>
+      <title>创客教育者与嵌入式开发者</title>
+      <url>https://example.org/images/og-image.jpg</url>
+      <link>https://example.org/images/og-image.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Oct 2025 14:20:00 +0800</lastBuildDate>
+    <atom:link href="https://example.org/tags/api%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API测试自动化工具</title>
+      <link>https://example.org/projects/api-testing-tool/</link>
+      <pubDate>Fri, 24 Oct 2025 14:20:00 +0800</pubDate>
+      <guid>https://example.org/projects/api-testing-tool/</guid>
+      <description>一个开源的API测试自动化工具，支持RESTful API和GraphQL API的测试</description>
+    </item>
+  </channel>
+</rss>

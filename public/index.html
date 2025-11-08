@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.152.2"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>创客教育者与嵌入式开发者</title>
+<meta name="keywords" content="创客教育, 嵌入式开发, STM32, Arduino, C语言, 电子制作, 3D打印, 技术教育, 职业转型, 编程教学, 硬件开发, 创客文化, SolidWorks, Python, AI应用">
+<meta name="description" content="从金融到创客教育的转型之路，分享嵌入式开发、创客教育、Arduino、STM32、C语言教学经验和技术心得">
+<meta name="author" content="创客教育者">
+<link rel="canonical" href="https://example.org/">
+<meta name="google-site-verification" content="XYZabc">
+<meta name="yandex-verification" content="XYZabc">
+<meta name="msvalidate.01" content="XYZabc">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://example.org/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://example.org/index.xml" title="rss">
+<link rel="alternate" type="application/json" href="https://example.org/index.json" title="json">
+<link rel="alternate" hreflang="zh-cn" href="https://example.org/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://example.org/">
+  <meta property="og:site_name" content="创客教育者与嵌入式开发者">
+  <meta property="og:title" content="创客教育者与嵌入式开发者">
+  <meta property="og:description" content="从金融到创客教育的技术之路 创客教育课堂：学生们在进行电子制作和编程实践
+🎯 我的职业历程 我是一名从金融行业转型到技术教育的创客教育者和嵌入式开发者。这个转变让我找到了真正的职业热情所在。
+📈 早期经历（2008-2015） 2008年：毕业于山东青年政治学院，国际经济与贸易专业 2008-2010年：担任美股交易员，积累了两年的金融市场经验 2010-2015年：尝试各种金融相关工作，发现并非理想职业道路 🔧 技术启蒙期（2015-2019） 在与同学深入交流后，我决定追随内心的兴趣，开始自学：
+编程开发：从基础语法到项目实践 电子技术：电路设计、元器件应用 Arduino平台：开源硬件和物联网入门 3D打印：数字制造技术基础 早期的Arduino学习和项目实践
+🏫 教育实践期（2016-2023） 2016年：进入小学教学，开始探索创客教育模式 2019年：专注于创客教育工作，包括设备研发和课程设计 2023年至今：在职业学校教授电子技术、C语言等专业课程 💡 核心技能与专长 🔌 嵌入式开发 技术领域 掌握程度 应用场景 STM32开发 持续学习中 工业控制、物联网设备 Arduino/ESP32 熟练 教育项目、快速原型 C语言编程 教学经验丰富 嵌入式系统、微控制器 电路设计 实践经验 电子制作、设备维修 🎨 创客教育技能 课程设计：针对不同年龄段的创客教育课程 设备研发：教育用电子设备和实验器材 3D打印应用：教具制作、结构件设计 项目指导：学生创新项目辅导 🖥️ 软件与设计工具 SolidWorks：机械设计、3D建模 Python：自动化脚本、数据分析 AI应用：LangChain等AI工具应用 🚀 项目展示 📚 创客教育设备研发 智能教育套件 - 面向中小学的编程和电子学习套装
+🔧 嵌入式项目 工业控制系统 - 基于STM32的自动化控制解决方案
+🎓 教学资源开发 ">
+  <meta property="og:locale" content="zh-cn">
+  <meta property="og:type" content="website">
+      <meta property="og:image" content="https://example.org/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://example.org/images/og-image.jpg">
+<meta name="twitter:title" content="创客教育者与嵌入式开发者">
+<meta name="twitter:description" content="从金融到创客教育的转型之路，分享嵌入式开发、创客教育、Arduino、STM32、C语言教学经验和技术心得">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "创客教育者与嵌入式开发者",
+  "url": "https://example.org/",
+  "description": "从金融到创客教育的转型之路，分享嵌入式开发、创客教育、Arduino、STM32、C语言教学经验和技术心得",
+  "logo": "https://example.org/favicon.svg",
+  "sameAs": [
+      "https://github.com/yourusername", "https://twitter.com/yourusername", "https://linkedin.com/in/yourusername", "mailto:your.email@example.com", "https://stackoverflow.com/users/youruserid"
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://example.org/" accesskey="h" title="技术探索者 (Alt + H)">
+                <img src="https://example.org/apple-touch-icon.png" alt="" aria-label="logo"
+                    height="35">技术探索者</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://example.org/" title="首页">
+                    <span class="active">首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/projects/" title="项目">
+                    <span>项目</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/skills/" title="技能">
+                    <span>技能</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/posts/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<div class="post-content"><h1 id="从金融到创客教育的技术之路">从金融到创客教育的技术之路<a hidden class="anchor" aria-hidden="true" href="#从金融到创客教育的技术之路">#</a></h1>
+<p><img alt="创客教育工作场景" loading="lazy" src="https://picsum.photos/seed/maker-education-123/800/400.jpg"></p>
+<p><em>创客教育课堂：学生们在进行电子制作和编程实践</em></p>
+<h2 id="-我的职业历程">🎯 我的职业历程<a hidden class="anchor" aria-hidden="true" href="#-我的职业历程">#</a></h2>
+<p>我是一名从金融行业转型到技术教育的创客教育者和嵌入式开发者。这个转变让我找到了真正的职业热情所在。</p>
+<h3 id="-早期经历2008-2015">📈 早期经历（2008-2015）<a hidden class="anchor" aria-hidden="true" href="#-早期经历2008-2015">#</a></h3>
+<ul>
+<li><strong>2008年</strong>：毕业于山东青年政治学院，国际经济与贸易专业</li>
+<li><strong>2008-2010年</strong>：担任美股交易员，积累了两年的金融市场经验</li>
+<li><strong>2010-2015年</strong>：尝试各种金融相关工作，发现并非理想职业道路</li>
+</ul>
+<h3 id="-技术启蒙期2015-2019">🔧 技术启蒙期（2015-2019）<a hidden class="anchor" aria-hidden="true" href="#-技术启蒙期2015-2019">#</a></h3>
+<p>在与同学深入交流后，我决定追随内心的兴趣，开始自学：</p>
+<ul>
+<li><strong>编程开发</strong>：从基础语法到项目实践</li>
+<li><strong>电子技术</strong>：电路设计、元器件应用</li>
+<li><strong>Arduino平台</strong>：开源硬件和物联网入门</li>
+<li><strong>3D打印</strong>：数字制造技术基础</li>
+</ul>
+<p><img alt="Arduino项目示例" loading="lazy" src="https://picsum.photos/seed/arduino-project-456/600/350.jpg"></p>
+<p><em>早期的Arduino学习和项目实践</em></p>
+<h3 id="-教育实践期2016-2023">🏫 教育实践期（2016-2023）<a hidden class="anchor" aria-hidden="true" href="#-教育实践期2016-2023">#</a></h3>
+<ul>
+<li><strong>2016年</strong>：进入小学教学，开始探索创客教育模式</li>
+<li><strong>2019年</strong>：专注于创客教育工作，包括设备研发和课程设计</li>
+<li><strong>2023年至今</strong>：在职业学校教授电子技术、C语言等专业课程</li>
+</ul>
+<h2 id="-核心技能与专长">💡 核心技能与专长<a hidden class="anchor" aria-hidden="true" href="#-核心技能与专长">#</a></h2>
+<h3 id="-嵌入式开发">🔌 嵌入式开发<a hidden class="anchor" aria-hidden="true" href="#-嵌入式开发">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>技术领域</th>
+          <th>掌握程度</th>
+          <th>应用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>STM32开发</strong></td>
+          <td>持续学习中</td>
+          <td>工业控制、物联网设备</td>
+      </tr>
+      <tr>
+          <td><strong>Arduino/ESP32</strong></td>
+          <td>熟练</td>
+          <td>教育项目、快速原型</td>
+      </tr>
+      <tr>
+          <td><strong>C语言编程</strong></td>
+          <td>教学经验丰富</td>
+          <td>嵌入式系统、微控制器</td>
+      </tr>
+      <tr>
+          <td><strong>电路设计</strong></td>
+          <td>实践经验</td>
+          <td>电子制作、设备维修</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="-创客教育技能">🎨 创客教育技能<a hidden class="anchor" aria-hidden="true" href="#-创客教育技能">#</a></h3>
+<ul>
+<li><strong>课程设计</strong>：针对不同年龄段的创客教育课程</li>
+<li><strong>设备研发</strong>：教育用电子设备和实验器材</li>
+<li><strong>3D打印应用</strong>：教具制作、结构件设计</li>
+<li><strong>项目指导</strong>：学生创新项目辅导</li>
+</ul>
+<h3 id="-软件与设计工具">🖥️ 软件与设计工具<a hidden class="anchor" aria-hidden="true" href="#-软件与设计工具">#</a></h3>
+<ul>
+<li><strong>SolidWorks</strong>：机械设计、3D建模</li>
+<li><strong>Python</strong>：自动化脚本、数据分析</li>
+<li><strong>AI应用</strong>：LangChain等AI工具应用</li>
+</ul>
+<h2 id="-项目展示">🚀 项目展示<a hidden class="anchor" aria-hidden="true" href="#-项目展示">#</a></h2>
+<h3 id="-创客教育设备研发">📚 创客教育设备研发<a hidden class="anchor" aria-hidden="true" href="#-创客教育设备研发">#</a></h3>
+<p><a href="/projects/education-devices/"><img alt="教育设备展示" loading="lazy" src="https://picsum.photos/seed/education-device-789/400/250.jpg"></a></p>
+<p><strong>智能教育套件</strong> - 面向中小学的编程和电子学习套装</p>
+<h3 id="-嵌入式项目">🔧 嵌入式项目<a hidden class="anchor" aria-hidden="true" href="#-嵌入式项目">#</a></h3>
+<p><a href="/projects/embedded-systems/"><img alt="STM32项目" loading="lazy" src="https://picsum.photos/seed/stm32-project-321/400/250.jpg"></a></p>
+<p><strong>工业控制系统</strong> - 基于STM32的自动化控制解决方案</p>
+<h3 id="-教学资源开发">🎓 教学资源开发<a hidden class="anchor" aria-hidden="true" href="#-教学资源开发">#</a></h3>
+<p><a href="/projects/teaching-resources/"><img alt="教学材料" loading="lazy" src="https://picsum.photos/seed/teaching-materials-654/400/250.jpg"></a></p>
+<p><strong>C语言教程</strong> - 职业教育专用的编程教学材料</p>
+<hr>
+<p>🔗 <strong>了解更多</strong>：<a href="/projects/">查看完整项目列表</a> | <a href="/skills/">教学资源</a></p>
+<h2 id="-技术分享">📹 技术分享<a hidden class="anchor" aria-hidden="true" href="#-技术分享">#</a></h2>
+<h3 id="-创客教育实践分享">🎬 创客教育实践分享<a hidden class="anchor" aria-hidden="true" href="#-创客教育实践分享">#</a></h3>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
+    <iframe
+        src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0"
+        title="YouTube video"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+<p><em>如何将创客教育理念融入日常教学（示例视频）</em></p>
+<h3 id="-推荐学习资源">📚 推荐学习资源<a hidden class="anchor" aria-hidden="true" href="#-推荐学习资源">#</a></h3>
+<p><strong>嵌入式开发学习路径</strong>：</p>
+<ul>
+<li><a href="https://www.st.com/stm32">STM32官方教程</a> - 官方文档和开发指南</li>
+<li><a href="https://create.arduino.cc/projecthub">Arduino项目库</a> - 丰富的项目案例</li>
+<li><a href="https://makezine.com/">创客教育社区</a> - 创客文化和教育资源</li>
+</ul>
+<p><strong>AI与Python学习</strong>：</p>
+<ul>
+<li><a href="https://python.langchain.com/">LangChain文档</a> - AI应用开发框架</li>
+<li><a href="https://docs.python.org/3/tutorial/">Python官方教程</a> - 系统学习Python</li>
+</ul>
+<h2 id="-未来发展目标">🎯 未来发展目标<a hidden class="anchor" aria-hidden="true" href="#-未来发展目标">#</a></h2>
+<h3 id="-持续学习计划">📖 持续学习计划<a hidden class="anchor" aria-hidden="true" href="#-持续学习计划">#</a></h3>
+<ul>
+<li><strong>英语能力提升</strong>：阅读英文技术文档，参与国际交流</li>
+<li><strong>STM32深度开发</strong>：掌握更复杂的嵌入式系统设计</li>
+<li><strong>机械设计能力</strong>：使用SolidWorks设计3D打印机等设备</li>
+<li><strong>AI技术应用</strong>：深入学习LangChain等AI工具</li>
+</ul>
+<h3 id="-项目规划">🏗️ 项目规划<a hidden class="anchor" aria-hidden="true" href="#-项目规划">#</a></h3>
+<ul>
+<li><strong>开源教育平台</strong>：建立创客教育资源分享平台</li>
+<li><strong>智能教具开发</strong>：结合AI技术的交互式教学设备</li>
+<li><strong>在线课程制作</strong>：嵌入式开发和创客教育视频教程</li>
+</ul>
+<p><img alt="未来规划图示" loading="lazy" src="https://picsum.photos/seed/future-planning-987/600/300.jpg"></p>
+<p><em>融合AI、嵌入式和创客教育的未来发展方向</em></p>
+<h2 id="-合作与交流">🤝 合作与交流<a hidden class="anchor" aria-hidden="true" href="#-合作与交流">#</a></h2>
+<h3 id="-联系方式">📧 联系方式<a hidden class="anchor" aria-hidden="true" href="#-联系方式">#</a></h3>
+<ul>
+<li><strong>邮箱</strong>：<a href="mailto:your.email@example.com">your.email@example.com</a></li>
+<li><strong>GitHub</strong>：<a href="https://github.com/yourusername">@yourusername</a> - 开源项目分享</li>
+<li><strong>微信</strong>：YourWeChatID - 技术交流与合作</li>
+</ul>
+<h3 id="-教育合作">🎓 教育合作<a hidden class="anchor" aria-hidden="true" href="#-教育合作">#</a></h3>
+<p>我欢迎以下形式的合作：</p>
+<ul>
+<li><strong>创客教育项目</strong>：课程开发、设备研发</li>
+<li><strong>技术培训</strong>：嵌入式开发、C语言教学</li>
+<li><strong>开源项目</strong>：教育软件、硬件开源</li>
+<li><strong>技术交流</strong>：经验分享、项目指导</li>
+</ul>
+<hr>
+<h2 id="-个人感悟">💭 个人感悟<a hidden class="anchor" aria-hidden="true" href="#-个人感悟">#</a></h2>
+<p>从金融交易员到创客教育者，这个职业转变让我深刻体会到：<strong>追随内心的兴趣，坚持终身学习</strong>，是实现人生价值的关键。技术教育的道路虽然充满挑战，但看到学生们在创新实践中成长，这份成就感是无可替代的。</p>
+<p>希望通过我的经历，能够鼓励更多人跨行业追求自己的技术梦想，也期待与志同道合的朋友一起推动创客教育的发展。</p>
+<hr>
+<p><em>最后更新：2025年11月 | 持续学习，持续分享</em></p>
+
+
+</div>
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>从金融到创客教育的技术之路</h1>
+    </header>
+    <div class="entry-content">
+        记录着从金融交易员到创客教育者的转型历程，分享嵌入式开发、电子制作、编程教学的实践经验。让我们一起探索技术教育的无限可能，培养更多创新人才。
+    </div>
+    <footer class="entry-footer">
+        <div class="social-icons" >
+    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer me"
+        title="Github">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+    </a>
+    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer me"
+        title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+    </a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer me"
+        title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+    </a>
+    <a href="mailto:your.email@example.com" target="_blank" rel="noopener noreferrer me"
+        title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+    </a>
+    <a href="https://stackoverflow.com/users/youruserid" target="_blank" rel="noopener noreferrer me"
+        title="Stackoverflow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M2.913 16.041v6.848h17.599v-6.848M7.16 18.696h8.925M7.65 13.937l8.675 1.8M9.214 9.124l8.058 3.758M12.086 4.65l6.849 5.66M15.774 1.111l5.313 7.162" />
+</svg>
+    </a>
+</div>
+
+    </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://example.org/">创客教育者与嵌入式开发者</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

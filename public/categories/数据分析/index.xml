@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>数据分析 on 创客教育者与嵌入式开发者</title>
+    <link>https://example.org/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in 数据分析 on 创客教育者与嵌入式开发者</description>
+    <image>
+      <title>创客教育者与嵌入式开发者</title>
+      <url>https://example.org/images/og-image.jpg</url>
+      <link>https://example.org/images/og-image.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 25 Oct 2025 09:15:00 +0800</lastBuildDate>
+    <atom:link href="https://example.org/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>销售数据分析仪表板</title>
+      <link>https://example.org/projects/sales-analytics-dashboard/</link>
+      <pubDate>Sat, 25 Oct 2025 09:15:00 +0800</pubDate>
+      <guid>https://example.org/projects/sales-analytics-dashboard/</guid>
+      <description>一个基于Python的销售数据分析仪表板，提供实时数据可视化和预测分析</description>
+    </item>
+  </channel>
+</rss>
