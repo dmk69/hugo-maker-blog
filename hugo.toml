@@ -1,0 +1,123 @@
+baseURL = 'https://hugo-maker-blog.vercel.app'
+languageCode = 'zh-cn'
+title = '创客教育博客'
+theme = 'hugo-PaperMod'
+
+[params]
+env = "production"
+title = "创客教育博客"
+description = "从金融交易员到创客教育者的转型之路"
+keywords = [
+    "创客教育",
+    "嵌入式开发",
+    "Arduino",
+    "树莓派",
+    "STEM教育",
+    "编程教育"
+]
+author = "dmk69"
+images = ["<link or path of image for opengraph, twitter-cards>"]
+DateFormat = "2006-01-02"
+defaultTheme = "auto"
+disableThemeToggle = false
+
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = false
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = false
+tocopen = false
+
+[params.assets]
+# disableHLJS = true # to disable highlight.js
+# disableFingerprinting = true
+favicon = "<link / abs url>"
+favicon16x16 = "<link / abs url>"
+favicon32x32 = "<link / abs url>"
+apple_touch_icon = "<link / abs url>"
+safari_pinned_tab = "<link / abs url>"
+
+[params.label]
+text = "Home"
+icon = "/apple-touch-icon.png"
+iconHeight = 35
+
+# profile-mode
+[params.profileMode]
+enabled = false # needs to be explicitly set
+title = "ExampleSite"
+subtitle = "This is subtitle"
+imageUrl = "<title image url>"
+imageWidth = 120
+imageHeight = 120
+imageTitle = "my image"
+
+[[params.profileMode.buttons]]
+name = "Posts"
+url = "posts"
+
+[[params.profileMode.buttons]]
+name = "Tags"
+url = "tags"
+
+# home-info mode
+[params.homeInfoParams]
+Title = "你好，我是创客教育者 🚀"
+Content = """
+欢迎来到我的博客！这里分享我从金融交易员转型为创客教育者的心路历程，
+以及在嵌入式开发、Arduino、树莓派等创客教育领域的探索和实践。
+
+让我们一起探索科技的乐趣，培养下一代的创新者！
+"""
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/"
+
+[[params.socialIcons]]
+name = "stackoverflow"
+url = "https://stackoverflow.com"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/dmk69/hugo-maker-blog"
+
+[params.analytics.google]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.bing]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.yandex]
+SiteVerificationTag = "XYZabc"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[menu]
+[[menu.main]]
+identifier = "posts"
+name = "文章"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "标签"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+identifier = "about"
+name = "关于"
+url = "/about/"
+weight = 30
