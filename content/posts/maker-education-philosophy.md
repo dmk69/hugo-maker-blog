@@ -11,7 +11,6 @@ author: "dmk69"
 keywords: ["创客教育", "创新培养", "STEAM教育", "项目式学习"]
 ---
 
-![创客教育](https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=400&fit=crop)
 
 # 🎨 创客教育理念：如何培养下一代创新者
 

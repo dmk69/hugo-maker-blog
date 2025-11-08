@@ -13,8 +13,6 @@ cover:
     caption: "Python AI Learning Path"
 ---
 
-![Python AI开发](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop)
-
 # 🤖 Python AI完全学习路径：从零基础到机器学习工程师
 
 Python是人工智能和机器学习领域最受欢迎的编程语言。本学习路径将带你从Python基础开始，逐步成长为一名合格的AI工程师。

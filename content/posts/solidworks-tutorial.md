@@ -13,8 +13,6 @@ cover:
     caption: "SolidWorks 3D Modeling Tutorial"
 ---
 
-![SolidWorks界面](https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop)
-
 # 🎨 SolidWorks建模完全教程：从零基础到产品设计
 
 SolidWorks是目前应用最广泛的3D机械设计软件之一，广泛应用于产品开发、机械设计、模具制造等领域。本教程将带你从零开始，逐步掌握SolidWorks的核心功能。

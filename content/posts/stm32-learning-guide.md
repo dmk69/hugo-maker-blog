@@ -7,9 +7,11 @@ tags: ["STM32", "嵌入式", "ARM Cortex-M", "HAL库", "FreeRTOS"]
 categories: ["教程"]
 series: ["嵌入式开发进阶"]
 weight: 1
+cover:
+    image: "https://images.unsplash.com/photo-1537497711-4ba6054142f0?w=800&h=400&fit=crop"
+    alt: "STM32开发板"
+    caption: "STM32 Microcontroller Development Board"
 ---
-
-![STM32开发板](https://images.unsplash.com/photo-1537497711-4ba6054142f0?w=800&h=400&fit=crop)
 
 # 🔧 STM32完整学习指南：从入门到精通
 

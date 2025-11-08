@@ -13,8 +13,6 @@ cover:
     caption: "Industrial Automation with Factory I/O"
 ---
 
-![Factory I/O PLC仿真](https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop)
-
 # 🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践
 
 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。

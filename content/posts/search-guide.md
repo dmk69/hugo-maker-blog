@@ -13,7 +13,6 @@ cover:
     caption: "Efficient Content Searching"
 ---
 
-![搜索指南](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop)
 
 # 🔍 网站搜索指南：如何高效找到所需内容
 
