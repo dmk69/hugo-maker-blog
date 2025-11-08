@@ -2,6 +2,7 @@
 title: "SolidWorks建模完全教程：从零基础到产品设计"
 date: 2025-11-08T11:00:00+08:00
 draft: false
+slug: "solidworks-tutorial"
 tags: ["SolidWorks", "3D建模", "机械设计", "CAD", "产品设计"]
 categories: ["教程"]
 series: ["工程设计基础"]

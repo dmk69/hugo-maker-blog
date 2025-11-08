@@ -1,0 +1,738 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>SolidWorks建模完全教程：从零基础到产品设计 | 创客教育博客</title><meta name=keywords content="SolidWorks,3D建模,机械设计,CAD,产品设计"><meta name=description content='
+🎨 SolidWorks建模完全教程：从零基础到产品设计
+SolidWorks是目前应用最广泛的3D机械设计软件之一，广泛应用于产品开发、机械设计、模具制造等领域。本教程将带你从零开始，逐步掌握SolidWorks的核心功能。
+📋 学习大纲
+第一部分：界面和基本操作 (第1-2周)
+第二部分：草图绘制 (第3-4周)
+第三部分：实体建模 (第5-6周)
+第四部分：装配体设计 (第7-8周)
+第五部分：工程图制作 (第9-10周)
+第六部分：高级功能 (第11-12周)
+🖥️ SolidWorks界面介绍
+主界面布局
+┌─────────────────────────────────────────────────────────┐
+│ 菜单栏 │ 工具栏                                        │
+├─────────────────────────────────────────────────────────┤
+│        │                                               │
+│ 设计树 │              图形区域                         │
+│        │                                               │
+│        │                                               │
+├─────────────────────────────────────────────────────────┤
+│ 状态栏                                                  │
+└─────────────────────────────────────────────────────────┘
+常用工具栏配置
+标准工具栏：新建、打开、保存、打印
+视图工具栏：旋转、平移、缩放、线框、着色
+草图工具栏：直线、圆、矩形、约束
+特征工具栏：拉伸、旋转、倒角、圆角
+装配工具栏：配合、插入零部件
+工程图工具栏：视图、尺寸、注释
+✏️ 第二部分：草图绘制
+2.1 草图基础知识
+草图创建步骤
+
+选择基准面: 前视基准面、上视基准面、右视基准面
+进入草图模式: 点击"草图绘制"或快捷键S
+绘制基本图形: 使用草图工具绘制几何形状
+添加几何约束: 水平、垂直、同心、相切等
+添加尺寸约束: 驱动图形大小
+退出草图: 完成草图绘制
+
+2.2 基本草图工具
+直线和矩形
+// 绘制技术要求
+直线工具 (L):
+- 水平线：按住Shift键
+- 垂直线：按住Shift键
+- 等长线：使用相等约束
+
+矩形工具:
+- 边角矩形：对角拖拽
+- 中心矩形：从中心开始
+- 3点矩形：定义三个点
+圆和圆弧
+圆工具 (C):
+- 圆心半径：单击圆心，拖拽半径
+- 3点圆：通过三点定义圆
+
+圆弧工具:
+- 圆心圆弧：定义圆心、起点、终点
+- 切线圆弧：与现有几何相切
+- 3点圆弧：定义起点、中点、终点
+2.3 几何约束详解
+水平和垂直约束
+// 约束类型
+水平约束 (H): 线段水平
+垂直约束 (V): 线段垂直
+平行约束 (//): 两线平行
+垂直约束 (⊥): 两线垂直
+位置约束
+// 位置关系
+重合约束: 点与线/面重合
+同心约束: 圆弧/圆同心
+中点约束: 点在直线中点
+固定约束: 固定几何位置
+2.4 尺寸标注
+驱动尺寸与从动尺寸
+驱动尺寸: 改变尺寸数值，几何形状随之改变
+从动尺寸: 仅显示测量值，不能编辑
+
+标注原则:
+1. 先标注定位尺寸
+2. 再标注定形尺寸
+3. 避免尺寸链过约束
+4. 优先标注重要尺寸
+尺寸类型
+线性尺寸: 长度、宽度、高度
+角度尺寸: 角度大小
+半径尺寸: 圆弧半径
+直径尺寸: 圆的直径
+弧长尺寸: 圆弧长度
+🏗️ 第三部分：实体建模
+3.1 拉伸特征
+基础拉伸
+拉伸凸台/基体:
+- 给定深度: 指定拉伸距离
+- 成形到一面: 拉伸到指定面
+- 到离指定面指定距离
+- 两侧对称: 向两侧等距拉伸
+- 完全贯穿: 贯穿所有实体
+拉伸示例：机座底板
+步骤:
+1. 绘制 100×80 矩形草图
+2. 添加圆角 R10
+3. 拉伸深度 15mm
+4. 添加 4 个 M6 螺丝孔
+5. 倒角 C2
+3.2 旋转特征
+旋转建模原理
+旋转轴类型:
+- 草图直线作为轴
+- 临时轴
+- 基准轴
+
+旋转角度:
+- 给定角度
+- 两侧对称
+- 完整360°
+旋转示例：轴类零件
+轴类零件建模步骤:
+1. 绘制轴的截面草图
+2. 添加旋转轴
+3. 旋转360°生成实体
+4. 添加键槽、螺纹等特征
+5. 倒角和圆角处理
+3.3 扫描特征
+扫描条件
+扫描要素:
+- 路径: 扫描轨迹线
+- 轮廓: 扫描截面形状
+- 引导线: 控制扫描变化
+
+扫描要求:
+- 路径必须连续
+- 轮廓与路径相交
+- 截面不能自相交
+扫描示例：弹簧建模
+弹簧建模步骤:
+1. 创建螺旋线路径
+2. 绘制圆形截面
+3. 扫描生成弹簧
+4. 添加两端处理
+3.4 放样特征
+放样基础
+放样要素:
+- 轮廓: 放样截面
+- 中心线: 控制放样路径
+- 起始/结束约束: 控制放样切线
+
+放样规则:
+- 轮廓数量≥2
+- 所有轮廓必须封闭
+- 轮廓平面可以不平行
+🔩 第四部分：装配体设计
+4.1 装配体基础
+插入零部件
+插入方法:
+1. 拖拽文件到装配体窗口
+2. 插入→零部件→现有零件/装配体
+3. 从资源库拖拽
+
+配合类型:
+- 标准配合: 重合、平行、垂直、相切等
+- 高级配合: 凸轮、齿轮、齿条小齿轮等
+- 机械配合: 螺旋、万向节、铰链等
+4.2 配合关系
+标准配合详解
+重合配合 (⊥):
+- 点与点重合
+- 点与线重合
+- 点与面重合
+- 线与线重合
+- 面与面重合
+
+距离配合: 指定距离值
+角度配合: 指定角度值
+平行配合 (//): 两要素平行
+垂直配合 (⊥): 两要素垂直
+相切配合: 两要素相切
+同轴心 (○): 两轴线同轴
+配合策略
+装配原则:
+1. 先定位主要部件
+2. 逐步添加其他零件
+3. 避免过约束
+4. 考虑运动关系
+
+配合技巧:
+- 使用基准面辅助定位
+- 宽度配合快速对齐
+- 对称配合简化操作
+- 使用配合参考
+4.3 装配体分析
+干涉检查
+干涉类型:
+- 干涉: 零件重叠
+- 碰撞: 运动时碰撞
+- 间隙: 零件间距
+
+检查方法:
+1. 干涉检查工具
+2. 碰撞检查
+3. 间隙验证
+4. 动态干涉检查
+爆炸视图
+爆炸步骤:
+1. 选择爆炸零部件
+2. 设定爆炸方向
+3. 设定爆炸距离
+4. 调整爆炸位置
+5. 创建爆炸线
+📐 第五部分：工程图制作
+5.1 视图创建
+标准三视图
+视图类型:
+- 标准三视图: 前视图、顶视图、左视图
+- 投影视图: 从已有视图投影
+- 剖视图: 全剖、半剖、阶梯剖
+- 局部视图: 放大局部细节
+- 断裂视图: 断开长零件
+剖视图创建
+剖视图步骤:
+1. 选择父视图
+2. 绘制剖切线
+3. 设定投影方向
+4. 调整视图位置
+5. 添加剖面线
+5.2 尺寸标注
+尺寸类型
+``
+尺寸种类:'><meta name=author content="dmk69"><link rel=canonical href=https://hugo-maker-blog.vercel.app/posts/solidworks-tutorial/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css integrity="sha256-NDzEgLn/yPBMy+XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as=style><link rel=icon href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://hugo-maker-blog.vercel.app/posts/solidworks-tutorial/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://hugo-maker-blog.vercel.app/posts/solidworks-tutorial/"><meta property="og:site_name" content="创客教育博客"><meta property="og:title" content="SolidWorks建模完全教程：从零基础到产品设计"><meta property="og:description" content='
+🎨 SolidWorks建模完全教程：从零基础到产品设计 SolidWorks是目前应用最广泛的3D机械设计软件之一，广泛应用于产品开发、机械设计、模具制造等领域。本教程将带你从零开始，逐步掌握SolidWorks的核心功能。
+📋 学习大纲 第一部分：界面和基本操作 (第1-2周) 第二部分：草图绘制 (第3-4周) 第三部分：实体建模 (第5-6周) 第四部分：装配体设计 (第7-8周) 第五部分：工程图制作 (第9-10周) 第六部分：高级功能 (第11-12周) 🖥️ SolidWorks界面介绍 主界面布局 ┌─────────────────────────────────────────────────────────┐ │ 菜单栏 │ 工具栏 │ ├─────────────────────────────────────────────────────────┤ │ │ │ │ 设计树 │ 图形区域 │ │ │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏 │ └─────────────────────────────────────────────────────────┘ 常用工具栏配置 标准工具栏：新建、打开、保存、打印 视图工具栏：旋转、平移、缩放、线框、着色 草图工具栏：直线、圆、矩形、约束 特征工具栏：拉伸、旋转、倒角、圆角 装配工具栏：配合、插入零部件 工程图工具栏：视图、尺寸、注释 ✏️ 第二部分：草图绘制 2.1 草图基础知识 草图创建步骤 选择基准面: 前视基准面、上视基准面、右视基准面 进入草图模式: 点击"草图绘制"或快捷键S 绘制基本图形: 使用草图工具绘制几何形状 添加几何约束: 水平、垂直、同心、相切等 添加尺寸约束: 驱动图形大小 退出草图: 完成草图绘制 2.2 基本草图工具 直线和矩形 // 绘制技术要求 直线工具 (L): - 水平线：按住Shift键 - 垂直线：按住Shift键 - 等长线：使用相等约束 矩形工具: - 边角矩形：对角拖拽 - 中心矩形：从中心开始 - 3点矩形：定义三个点 圆和圆弧 圆工具 (C): - 圆心半径：单击圆心，拖拽半径 - 3点圆：通过三点定义圆 圆弧工具: - 圆心圆弧：定义圆心、起点、终点 - 切线圆弧：与现有几何相切 - 3点圆弧：定义起点、中点、终点 2.3 几何约束详解 水平和垂直约束 // 约束类型 水平约束 (H): 线段水平 垂直约束 (V): 线段垂直 平行约束 (//): 两线平行 垂直约束 (⊥): 两线垂直 位置约束 // 位置关系 重合约束: 点与线/面重合 同心约束: 圆弧/圆同心 中点约束: 点在直线中点 固定约束: 固定几何位置 2.4 尺寸标注 驱动尺寸与从动尺寸 驱动尺寸: 改变尺寸数值，几何形状随之改变 从动尺寸: 仅显示测量值，不能编辑 标注原则: 1. 先标注定位尺寸 2. 再标注定形尺寸 3. 避免尺寸链过约束 4. 优先标注重要尺寸 尺寸类型 线性尺寸: 长度、宽度、高度 角度尺寸: 角度大小 半径尺寸: 圆弧半径 直径尺寸: 圆的直径 弧长尺寸: 圆弧长度 🏗️ 第三部分：实体建模 3.1 拉伸特征 基础拉伸 拉伸凸台/基体: - 给定深度: 指定拉伸距离 - 成形到一面: 拉伸到指定面 - 到离指定面指定距离 - 两侧对称: 向两侧等距拉伸 - 完全贯穿: 贯穿所有实体 拉伸示例：机座底板 步骤: 1. 绘制 100×80 矩形草图 2. 添加圆角 R10 3. 拉伸深度 15mm 4. 添加 4 个 M6 螺丝孔 5. 倒角 C2 3.2 旋转特征 旋转建模原理 旋转轴类型: - 草图直线作为轴 - 临时轴 - 基准轴 旋转角度: - 给定角度 - 两侧对称 - 完整360° 旋转示例：轴类零件 轴类零件建模步骤: 1. 绘制轴的截面草图 2. 添加旋转轴 3. 旋转360°生成实体 4. 添加键槽、螺纹等特征 5. 倒角和圆角处理 3.3 扫描特征 扫描条件 扫描要素: - 路径: 扫描轨迹线 - 轮廓: 扫描截面形状 - 引导线: 控制扫描变化 扫描要求: - 路径必须连续 - 轮廓与路径相交 - 截面不能自相交 扫描示例：弹簧建模 弹簧建模步骤: 1. 创建螺旋线路径 2. 绘制圆形截面 3. 扫描生成弹簧 4. 添加两端处理 3.4 放样特征 放样基础 放样要素: - 轮廓: 放样截面 - 中心线: 控制放样路径 - 起始/结束约束: 控制放样切线 放样规则: - 轮廓数量≥2 - 所有轮廓必须封闭 - 轮廓平面可以不平行 🔩 第四部分：装配体设计 4.1 装配体基础 插入零部件 插入方法: 1. 拖拽文件到装配体窗口 2. 插入→零部件→现有零件/装配体 3. 从资源库拖拽 配合类型: - 标准配合: 重合、平行、垂直、相切等 - 高级配合: 凸轮、齿轮、齿条小齿轮等 - 机械配合: 螺旋、万向节、铰链等 4.2 配合关系 标准配合详解 重合配合 (⊥): - 点与点重合 - 点与线重合 - 点与面重合 - 线与线重合 - 面与面重合 距离配合: 指定距离值 角度配合: 指定角度值 平行配合 (//): 两要素平行 垂直配合 (⊥): 两要素垂直 相切配合: 两要素相切 同轴心 (○): 两轴线同轴 配合策略 装配原则: 1. 先定位主要部件 2. 逐步添加其他零件 3. 避免过约束 4. 考虑运动关系 配合技巧: - 使用基准面辅助定位 - 宽度配合快速对齐 - 对称配合简化操作 - 使用配合参考 4.3 装配体分析 干涉检查 干涉类型: - 干涉: 零件重叠 - 碰撞: 运动时碰撞 - 间隙: 零件间距 检查方法: 1. 干涉检查工具 2. 碰撞检查 3. 间隙验证 4. 动态干涉检查 爆炸视图 爆炸步骤: 1. 选择爆炸零部件 2. 设定爆炸方向 3. 设定爆炸距离 4. 调整爆炸位置 5. 创建爆炸线 📐 第五部分：工程图制作 5.1 视图创建 标准三视图 视图类型: - 标准三视图: 前视图、顶视图、左视图 - 投影视图: 从已有视图投影 - 剖视图: 全剖、半剖、阶梯剖 - 局部视图: 放大局部细节 - 断裂视图: 断开长零件 剖视图创建 剖视图步骤: 1. 选择父视图 2. 绘制剖切线 3. 设定投影方向 4. 调整视图位置 5. 添加剖面线 5.2 尺寸标注 尺寸类型 `` 尺寸种类:'><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-11-08T11:00:00+08:00"><meta property="article:modified_time" content="2025-11-08T11:00:00+08:00"><meta property="article:tag" content="SolidWorks"><meta property="article:tag" content="3D建模"><meta property="article:tag" content="机械设计"><meta property="article:tag" content="CAD"><meta property="article:tag" content="产品设计"><meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=400&amp;fit=crop"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=400&amp;fit=crop"><meta name=twitter:title content="SolidWorks建模完全教程：从零基础到产品设计"><meta name=twitter:description content='
+🎨 SolidWorks建模完全教程：从零基础到产品设计
+SolidWorks是目前应用最广泛的3D机械设计软件之一，广泛应用于产品开发、机械设计、模具制造等领域。本教程将带你从零开始，逐步掌握SolidWorks的核心功能。
+📋 学习大纲
+第一部分：界面和基本操作 (第1-2周)
+第二部分：草图绘制 (第3-4周)
+第三部分：实体建模 (第5-6周)
+第四部分：装配体设计 (第7-8周)
+第五部分：工程图制作 (第9-10周)
+第六部分：高级功能 (第11-12周)
+🖥️ SolidWorks界面介绍
+主界面布局
+┌─────────────────────────────────────────────────────────┐
+│ 菜单栏 │ 工具栏                                        │
+├─────────────────────────────────────────────────────────┤
+│        │                                               │
+│ 设计树 │              图形区域                         │
+│        │                                               │
+│        │                                               │
+├─────────────────────────────────────────────────────────┤
+│ 状态栏                                                  │
+└─────────────────────────────────────────────────────────┘
+常用工具栏配置
+标准工具栏：新建、打开、保存、打印
+视图工具栏：旋转、平移、缩放、线框、着色
+草图工具栏：直线、圆、矩形、约束
+特征工具栏：拉伸、旋转、倒角、圆角
+装配工具栏：配合、插入零部件
+工程图工具栏：视图、尺寸、注释
+✏️ 第二部分：草图绘制
+2.1 草图基础知识
+草图创建步骤
+
+选择基准面: 前视基准面、上视基准面、右视基准面
+进入草图模式: 点击"草图绘制"或快捷键S
+绘制基本图形: 使用草图工具绘制几何形状
+添加几何约束: 水平、垂直、同心、相切等
+添加尺寸约束: 驱动图形大小
+退出草图: 完成草图绘制
+
+2.2 基本草图工具
+直线和矩形
+// 绘制技术要求
+直线工具 (L):
+- 水平线：按住Shift键
+- 垂直线：按住Shift键
+- 等长线：使用相等约束
+
+矩形工具:
+- 边角矩形：对角拖拽
+- 中心矩形：从中心开始
+- 3点矩形：定义三个点
+圆和圆弧
+圆工具 (C):
+- 圆心半径：单击圆心，拖拽半径
+- 3点圆：通过三点定义圆
+
+圆弧工具:
+- 圆心圆弧：定义圆心、起点、终点
+- 切线圆弧：与现有几何相切
+- 3点圆弧：定义起点、中点、终点
+2.3 几何约束详解
+水平和垂直约束
+// 约束类型
+水平约束 (H): 线段水平
+垂直约束 (V): 线段垂直
+平行约束 (//): 两线平行
+垂直约束 (⊥): 两线垂直
+位置约束
+// 位置关系
+重合约束: 点与线/面重合
+同心约束: 圆弧/圆同心
+中点约束: 点在直线中点
+固定约束: 固定几何位置
+2.4 尺寸标注
+驱动尺寸与从动尺寸
+驱动尺寸: 改变尺寸数值，几何形状随之改变
+从动尺寸: 仅显示测量值，不能编辑
+
+标注原则:
+1. 先标注定位尺寸
+2. 再标注定形尺寸
+3. 避免尺寸链过约束
+4. 优先标注重要尺寸
+尺寸类型
+线性尺寸: 长度、宽度、高度
+角度尺寸: 角度大小
+半径尺寸: 圆弧半径
+直径尺寸: 圆的直径
+弧长尺寸: 圆弧长度
+🏗️ 第三部分：实体建模
+3.1 拉伸特征
+基础拉伸
+拉伸凸台/基体:
+- 给定深度: 指定拉伸距离
+- 成形到一面: 拉伸到指定面
+- 到离指定面指定距离
+- 两侧对称: 向两侧等距拉伸
+- 完全贯穿: 贯穿所有实体
+拉伸示例：机座底板
+步骤:
+1. 绘制 100×80 矩形草图
+2. 添加圆角 R10
+3. 拉伸深度 15mm
+4. 添加 4 个 M6 螺丝孔
+5. 倒角 C2
+3.2 旋转特征
+旋转建模原理
+旋转轴类型:
+- 草图直线作为轴
+- 临时轴
+- 基准轴
+
+旋转角度:
+- 给定角度
+- 两侧对称
+- 完整360°
+旋转示例：轴类零件
+轴类零件建模步骤:
+1. 绘制轴的截面草图
+2. 添加旋转轴
+3. 旋转360°生成实体
+4. 添加键槽、螺纹等特征
+5. 倒角和圆角处理
+3.3 扫描特征
+扫描条件
+扫描要素:
+- 路径: 扫描轨迹线
+- 轮廓: 扫描截面形状
+- 引导线: 控制扫描变化
+
+扫描要求:
+- 路径必须连续
+- 轮廓与路径相交
+- 截面不能自相交
+扫描示例：弹簧建模
+弹簧建模步骤:
+1. 创建螺旋线路径
+2. 绘制圆形截面
+3. 扫描生成弹簧
+4. 添加两端处理
+3.4 放样特征
+放样基础
+放样要素:
+- 轮廓: 放样截面
+- 中心线: 控制放样路径
+- 起始/结束约束: 控制放样切线
+
+放样规则:
+- 轮廓数量≥2
+- 所有轮廓必须封闭
+- 轮廓平面可以不平行
+🔩 第四部分：装配体设计
+4.1 装配体基础
+插入零部件
+插入方法:
+1. 拖拽文件到装配体窗口
+2. 插入→零部件→现有零件/装配体
+3. 从资源库拖拽
+
+配合类型:
+- 标准配合: 重合、平行、垂直、相切等
+- 高级配合: 凸轮、齿轮、齿条小齿轮等
+- 机械配合: 螺旋、万向节、铰链等
+4.2 配合关系
+标准配合详解
+重合配合 (⊥):
+- 点与点重合
+- 点与线重合
+- 点与面重合
+- 线与线重合
+- 面与面重合
+
+距离配合: 指定距离值
+角度配合: 指定角度值
+平行配合 (//): 两要素平行
+垂直配合 (⊥): 两要素垂直
+相切配合: 两要素相切
+同轴心 (○): 两轴线同轴
+配合策略
+装配原则:
+1. 先定位主要部件
+2. 逐步添加其他零件
+3. 避免过约束
+4. 考虑运动关系
+
+配合技巧:
+- 使用基准面辅助定位
+- 宽度配合快速对齐
+- 对称配合简化操作
+- 使用配合参考
+4.3 装配体分析
+干涉检查
+干涉类型:
+- 干涉: 零件重叠
+- 碰撞: 运动时碰撞
+- 间隙: 零件间距
+
+检查方法:
+1. 干涉检查工具
+2. 碰撞检查
+3. 间隙验证
+4. 动态干涉检查
+爆炸视图
+爆炸步骤:
+1. 选择爆炸零部件
+2. 设定爆炸方向
+3. 设定爆炸距离
+4. 调整爆炸位置
+5. 创建爆炸线
+📐 第五部分：工程图制作
+5.1 视图创建
+标准三视图
+视图类型:
+- 标准三视图: 前视图、顶视图、左视图
+- 投影视图: 从已有视图投影
+- 剖视图: 全剖、半剖、阶梯剖
+- 局部视图: 放大局部细节
+- 断裂视图: 断开长零件
+剖视图创建
+剖视图步骤:
+1. 选择父视图
+2. 绘制剖切线
+3. 设定投影方向
+4. 调整视图位置
+5. 添加剖面线
+5.2 尺寸标注
+尺寸类型
+``
+尺寸种类:'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://hugo-maker-blog.vercel.app/posts/"},{"@type":"ListItem","position":2,"name":"SolidWorks建模完全教程：从零基础到产品设计","item":"https://hugo-maker-blog.vercel.app/posts/solidworks-tutorial/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"SolidWorks建模完全教程：从零基础到产品设计","name":"SolidWorks建模完全教程：从零基础到产品设计","description":"\n🎨 SolidWorks建模完全教程：从零基础到产品设计 SolidWorks是目前应用最广泛的3D机械设计软件之一，广泛应用于产品开发、机械设计、模具制造等领域。本教程将带你从零开始，逐步掌握SolidWorks的核心功能。\n📋 学习大纲 第一部分：界面和基本操作 (第1-2周) 第二部分：草图绘制 (第3-4周) 第三部分：实体建模 (第5-6周) 第四部分：装配体设计 (第7-8周) 第五部分：工程图制作 (第9-10周) 第六部分：高级功能 (第11-12周) 🖥️ SolidWorks界面介绍 主界面布局 ┌─────────────────────────────────────────────────────────┐ │ 菜单栏 │ 工具栏 │ ├─────────────────────────────────────────────────────────┤ │ │ │ │ 设计树 │ 图形区域 │ │ │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏 │ └─────────────────────────────────────────────────────────┘ 常用工具栏配置 标准工具栏：新建、打开、保存、打印 视图工具栏：旋转、平移、缩放、线框、着色 草图工具栏：直线、圆、矩形、约束 特征工具栏：拉伸、旋转、倒角、圆角 装配工具栏：配合、插入零部件 工程图工具栏：视图、尺寸、注释 ✏️ 第二部分：草图绘制 2.1 草图基础知识 草图创建步骤 选择基准面: 前视基准面、上视基准面、右视基准面 进入草图模式: 点击\u0026quot;草图绘制\u0026quot;或快捷键S 绘制基本图形: 使用草图工具绘制几何形状 添加几何约束: 水平、垂直、同心、相切等 添加尺寸约束: 驱动图形大小 退出草图: 完成草图绘制 2.2 基本草图工具 直线和矩形 // 绘制技术要求 直线工具 (L): - 水平线：按住Shift键 - 垂直线：按住Shift键 - 等长线：使用相等约束 矩形工具: - 边角矩形：对角拖拽 - 中心矩形：从中心开始 - 3点矩形：定义三个点 圆和圆弧 圆工具 (C): - 圆心半径：单击圆心，拖拽半径 - 3点圆：通过三点定义圆 圆弧工具: - 圆心圆弧：定义圆心、起点、终点 - 切线圆弧：与现有几何相切 - 3点圆弧：定义起点、中点、终点 2.3 几何约束详解 水平和垂直约束 // 约束类型 水平约束 (H): 线段水平 垂直约束 (V): 线段垂直 平行约束 (//): 两线平行 垂直约束 (⊥): 两线垂直 位置约束 // 位置关系 重合约束: 点与线/面重合 同心约束: 圆弧/圆同心 中点约束: 点在直线中点 固定约束: 固定几何位置 2.4 尺寸标注 驱动尺寸与从动尺寸 驱动尺寸: 改变尺寸数值，几何形状随之改变 从动尺寸: 仅显示测量值，不能编辑 标注原则: 1. 先标注定位尺寸 2. 再标注定形尺寸 3. 避免尺寸链过约束 4. 优先标注重要尺寸 尺寸类型 线性尺寸: 长度、宽度、高度 角度尺寸: 角度大小 半径尺寸: 圆弧半径 直径尺寸: 圆的直径 弧长尺寸: 圆弧长度 🏗️ 第三部分：实体建模 3.1 拉伸特征 基础拉伸 拉伸凸台/基体: - 给定深度: 指定拉伸距离 - 成形到一面: 拉伸到指定面 - 到离指定面指定距离 - 两侧对称: 向两侧等距拉伸 - 完全贯穿: 贯穿所有实体 拉伸示例：机座底板 步骤: 1. 绘制 100×80 矩形草图 2. 添加圆角 R10 3. 拉伸深度 15mm 4. 添加 4 个 M6 螺丝孔 5. 倒角 C2 3.2 旋转特征 旋转建模原理 旋转轴类型: - 草图直线作为轴 - 临时轴 - 基准轴 旋转角度: - 给定角度 - 两侧对称 - 完整360° 旋转示例：轴类零件 轴类零件建模步骤: 1. 绘制轴的截面草图 2. 添加旋转轴 3. 旋转360°生成实体 4. 添加键槽、螺纹等特征 5. 倒角和圆角处理 3.3 扫描特征 扫描条件 扫描要素: - 路径: 扫描轨迹线 - 轮廓: 扫描截面形状 - 引导线: 控制扫描变化 扫描要求: - 路径必须连续 - 轮廓与路径相交 - 截面不能自相交 扫描示例：弹簧建模 弹簧建模步骤: 1. 创建螺旋线路径 2. 绘制圆形截面 3. 扫描生成弹簧 4. 添加两端处理 3.4 放样特征 放样基础 放样要素: - 轮廓: 放样截面 - 中心线: 控制放样路径 - 起始/结束约束: 控制放样切线 放样规则: - 轮廓数量≥2 - 所有轮廓必须封闭 - 轮廓平面可以不平行 🔩 第四部分：装配体设计 4.1 装配体基础 插入零部件 插入方法: 1. 拖拽文件到装配体窗口 2. 插入→零部件→现有零件/装配体 3. 从资源库拖拽 配合类型: - 标准配合: 重合、平行、垂直、相切等 - 高级配合: 凸轮、齿轮、齿条小齿轮等 - 机械配合: 螺旋、万向节、铰链等 4.2 配合关系 标准配合详解 重合配合 (⊥): - 点与点重合 - 点与线重合 - 点与面重合 - 线与线重合 - 面与面重合 距离配合: 指定距离值 角度配合: 指定角度值 平行配合 (//): 两要素平行 垂直配合 (⊥): 两要素垂直 相切配合: 两要素相切 同轴心 (○): 两轴线同轴 配合策略 装配原则: 1. 先定位主要部件 2. 逐步添加其他零件 3. 避免过约束 4. 考虑运动关系 配合技巧: - 使用基准面辅助定位 - 宽度配合快速对齐 - 对称配合简化操作 - 使用配合参考 4.3 装配体分析 干涉检查 干涉类型: - 干涉: 零件重叠 - 碰撞: 运动时碰撞 - 间隙: 零件间距 检查方法: 1. 干涉检查工具 2. 碰撞检查 3. 间隙验证 4. 动态干涉检查 爆炸视图 爆炸步骤: 1. 选择爆炸零部件 2. 设定爆炸方向 3. 设定爆炸距离 4. 调整爆炸位置 5. 创建爆炸线 📐 第五部分：工程图制作 5.1 视图创建 标准三视图 视图类型: - 标准三视图: 前视图、顶视图、左视图 - 投影视图: 从已有视图投影 - 剖视图: 全剖、半剖、阶梯剖 - 局部视图: 放大局部细节 - 断裂视图: 断开长零件 剖视图创建 剖视图步骤: 1. 选择父视图 2. 绘制剖切线 3. 设定投影方向 4. 调整视图位置 5. 添加剖面线 5.2 尺寸标注 尺寸类型 `` 尺寸种类:\n","keywords":["SolidWorks","3D建模","机械设计","CAD","产品设计"],"articleBody":"\n🎨 SolidWorks建模完全教程：从零基础到产品设计 SolidWorks是目前应用最广泛的3D机械设计软件之一，广泛应用于产品开发、机械设计、模具制造等领域。本教程将带你从零开始，逐步掌握SolidWorks的核心功能。\n📋 学习大纲 第一部分：界面和基本操作 (第1-2周) 第二部分：草图绘制 (第3-4周) 第三部分：实体建模 (第5-6周) 第四部分：装配体设计 (第7-8周) 第五部分：工程图制作 (第9-10周) 第六部分：高级功能 (第11-12周) 🖥️ SolidWorks界面介绍 主界面布局 ┌─────────────────────────────────────────────────────────┐ │ 菜单栏 │ 工具栏 │ ├─────────────────────────────────────────────────────────┤ │ │ │ │ 设计树 │ 图形区域 │ │ │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏 │ └─────────────────────────────────────────────────────────┘ 常用工具栏配置 标准工具栏：新建、打开、保存、打印 视图工具栏：旋转、平移、缩放、线框、着色 草图工具栏：直线、圆、矩形、约束 特征工具栏：拉伸、旋转、倒角、圆角 装配工具栏：配合、插入零部件 工程图工具栏：视图、尺寸、注释 ✏️ 第二部分：草图绘制 2.1 草图基础知识 草图创建步骤 选择基准面: 前视基准面、上视基准面、右视基准面 进入草图模式: 点击\"草图绘制\"或快捷键S 绘制基本图形: 使用草图工具绘制几何形状 添加几何约束: 水平、垂直、同心、相切等 添加尺寸约束: 驱动图形大小 退出草图: 完成草图绘制 2.2 基本草图工具 直线和矩形 // 绘制技术要求 直线工具 (L): - 水平线：按住Shift键 - 垂直线：按住Shift键 - 等长线：使用相等约束 矩形工具: - 边角矩形：对角拖拽 - 中心矩形：从中心开始 - 3点矩形：定义三个点 圆和圆弧 圆工具 (C): - 圆心半径：单击圆心，拖拽半径 - 3点圆：通过三点定义圆 圆弧工具: - 圆心圆弧：定义圆心、起点、终点 - 切线圆弧：与现有几何相切 - 3点圆弧：定义起点、中点、终点 2.3 几何约束详解 水平和垂直约束 // 约束类型 水平约束 (H): 线段水平 垂直约束 (V): 线段垂直 平行约束 (//): 两线平行 垂直约束 (⊥): 两线垂直 位置约束 // 位置关系 重合约束: 点与线/面重合 同心约束: 圆弧/圆同心 中点约束: 点在直线中点 固定约束: 固定几何位置 2.4 尺寸标注 驱动尺寸与从动尺寸 驱动尺寸: 改变尺寸数值，几何形状随之改变 从动尺寸: 仅显示测量值，不能编辑 标注原则: 1. 先标注定位尺寸 2. 再标注定形尺寸 3. 避免尺寸链过约束 4. 优先标注重要尺寸 尺寸类型 线性尺寸: 长度、宽度、高度 角度尺寸: 角度大小 半径尺寸: 圆弧半径 直径尺寸: 圆的直径 弧长尺寸: 圆弧长度 🏗️ 第三部分：实体建模 3.1 拉伸特征 基础拉伸 拉伸凸台/基体: - 给定深度: 指定拉伸距离 - 成形到一面: 拉伸到指定面 - 到离指定面指定距离 - 两侧对称: 向两侧等距拉伸 - 完全贯穿: 贯穿所有实体 拉伸示例：机座底板 步骤: 1. 绘制 100×80 矩形草图 2. 添加圆角 R10 3. 拉伸深度 15mm 4. 添加 4 个 M6 螺丝孔 5. 倒角 C2 3.2 旋转特征 旋转建模原理 旋转轴类型: - 草图直线作为轴 - 临时轴 - 基准轴 旋转角度: - 给定角度 - 两侧对称 - 完整360° 旋转示例：轴类零件 轴类零件建模步骤: 1. 绘制轴的截面草图 2. 添加旋转轴 3. 旋转360°生成实体 4. 添加键槽、螺纹等特征 5. 倒角和圆角处理 3.3 扫描特征 扫描条件 扫描要素: - 路径: 扫描轨迹线 - 轮廓: 扫描截面形状 - 引导线: 控制扫描变化 扫描要求: - 路径必须连续 - 轮廓与路径相交 - 截面不能自相交 扫描示例：弹簧建模 弹簧建模步骤: 1. 创建螺旋线路径 2. 绘制圆形截面 3. 扫描生成弹簧 4. 添加两端处理 3.4 放样特征 放样基础 放样要素: - 轮廓: 放样截面 - 中心线: 控制放样路径 - 起始/结束约束: 控制放样切线 放样规则: - 轮廓数量≥2 - 所有轮廓必须封闭 - 轮廓平面可以不平行 🔩 第四部分：装配体设计 4.1 装配体基础 插入零部件 插入方法: 1. 拖拽文件到装配体窗口 2. 插入→零部件→现有零件/装配体 3. 从资源库拖拽 配合类型: - 标准配合: 重合、平行、垂直、相切等 - 高级配合: 凸轮、齿轮、齿条小齿轮等 - 机械配合: 螺旋、万向节、铰链等 4.2 配合关系 标准配合详解 重合配合 (⊥): - 点与点重合 - 点与线重合 - 点与面重合 - 线与线重合 - 面与面重合 距离配合: 指定距离值 角度配合: 指定角度值 平行配合 (//): 两要素平行 垂直配合 (⊥): 两要素垂直 相切配合: 两要素相切 同轴心 (○): 两轴线同轴 配合策略 装配原则: 1. 先定位主要部件 2. 逐步添加其他零件 3. 避免过约束 4. 考虑运动关系 配合技巧: - 使用基准面辅助定位 - 宽度配合快速对齐 - 对称配合简化操作 - 使用配合参考 4.3 装配体分析 干涉检查 干涉类型: - 干涉: 零件重叠 - 碰撞: 运动时碰撞 - 间隙: 零件间距 检查方法: 1. 干涉检查工具 2. 碰撞检查 3. 间隙验证 4. 动态干涉检查 爆炸视图 爆炸步骤: 1. 选择爆炸零部件 2. 设定爆炸方向 3. 设定爆炸距离 4. 调整爆炸位置 5. 创建爆炸线 📐 第五部分：工程图制作 5.1 视图创建 标准三视图 视图类型: - 标准三视图: 前视图、顶视图、左视图 - 投影视图: 从已有视图投影 - 剖视图: 全剖、半剖、阶梯剖 - 局部视图: 放大局部细节 - 断裂视图: 断开长零件 剖视图创建 剖视图步骤: 1. 选择父视图 2. 绘制剖切线 3. 设定投影方向 4. 调整视图位置 5. 添加剖面线 5.2 尺寸标注 尺寸类型 `` 尺寸种类:\n智能尺寸: 自动识别几何 水平/垂直尺寸: 单一方向 角度尺寸: 角度测量 圆弧尺寸: 半径、直径 基线尺寸: 从基点标注 链式尺寸: 连续标注 #### 公差标注 公差类型:\n双向公差: ±值 限制公差: 最大/最小值 对称公差: 对称分布 基本尺寸: 理论尺寸 基准尺寸: 参考尺寸 ### 5.3 注释和符号 #### 表面粗糙度 粗糙度符号: ▽ - 基本符号 ▽▽ - 去除材料 ▽▽▽ - 不去除材料\n标注内容:\n粗糙度值 加工方法 取样长度 纹理方向 #### 形位公差 形位公差类型:\n直线度 平面度 圆度 圆柱度 位置度 同轴度 对称度 平行度 垂直度 倾斜度 ## 🚀 第六部分：高级功能 ### 6.1 曲面建模 #### 曲面创建方法 ```solidworks 曲面工具: - 拉伸曲面: 草图拉伸 - 旋转曲面: 草图旋转 - 扫描曲面: 路径扫描 - 放样曲面: 轮廓放样 - 平面区域: 边界平面 - 等距曲面: 偏移复制 曲面编辑 编辑操作: - 剪裁曲面: 边界剪裁 - 延伸曲面: 边界延伸 - 缝合曲面: 多面缝合 - 删除面: 移除曲面 - 替换面: 面替换 6.2 钣金设计 钣金特征 基础特征: - 基体法兰: 钣金基体 - 边线法兰: 边缘折弯 - 斜接法兰: 多边折弯 - 褶边: 边缘卷边 附加特征: - 转折: 局部折弯 - 闭合角: 角落闭合 - 断开边角: 角落切除 - 边角剪裁: 角落剪裁 钣金展开 展开方法: 1. 展开工具: 选择固定面展开 2. 平板型式: 自动展开配置 3. 折弯系数: K因子、折弯扣除 4. 折弯系数表: 经验数据表 6.3 模具设计 模具流程 模具设计步骤: 1. 分析零件: 拔模分析、壁厚检查 2. 缩放比例: 设置收缩率 3. 分型线: 创建分型边界 4. 分型面: 生成分型面 5. 切削分割: 生成模仁 6. 装配模架: 标准模架 模具分析 分析工具: - 拔模分析: 检查拔模角度 - 倒扣分析: 检查倒扣区域 - 底切分析: 检查底切特征 - 壁厚分析: 检查壁厚均匀性 📊 项目实战案例 项目1：减速器设计 总体设计要求 设计参数: - 减速比: 1:10 - 输入功率: 2.2kW - 输入转速: 1450rpm - 输出扭矩: 144N·m - 工作寿命: 20000小时 零件设计清单 标准件: - 轴承: 6205, 6307 - 螺栓: M8×20, M10×30 - 键: 8×7×40, 10×8×50 - 密封: 骨架油封 自制件: - 齿轮轴 - 大齿轮 - 箱体 - 箱盖 - 轴承盖 项目2：夹具设计 设计流程 夹具设计步骤: 1. 分析零件: 定位基准、夹紧点 2. 定位设计: 六点定位原则 3. 夹紧设计: 夹紧力计算 4. 结构设计: 刚度、强度校核 5. 验证分析: 干涉检查、运动仿真 💡 学习建议 练习计划 每日练习 (1小时): - 草图练习: 15分钟 - 特征建模: 30分钟 - 装配练习: 15分钟 每周项目 (4小时): - 零件建模: 2小时 - 装配体: 1小时 - 工程图: 1小时 学习资源 官方资源: - SolidWorks官方网站 - 在线帮助文档 - YouTube官方频道 中文资源: - 网易云课堂 - B站教程视频 - QQ技术交流群 SolidWorks学习需要大量练习，建议配合实际项目进行学习。祝你成为优秀的机械设计师！\n如有问题，欢迎在评论区留言讨论。\n","wordCount":"712","inLanguage":"en","image":"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800\u0026h=400\u0026fit=crop","datePublished":"2025-11-08T11:00:00+08:00","dateModified":"2025-11-08T11:00:00+08:00","author":{"@type":"Person","name":"dmk69"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://hugo-maker-blog.vercel.app/posts/solidworks-tutorial/"},"publisher":{"@type":"Organization","name":"创客教育博客","logo":{"@type":"ImageObject","url":"https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://hugo-maker-blog.vercel.app/ accesskey=h title="Home (Alt + H)"><img src=https://hugo-maker-blog.vercel.app/apple-touch-icon.png alt aria-label=logo height=35>Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://hugo-maker-blog.vercel.app/posts/ title=文章><span>文章</span></a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/ title=标签><span>标签</span></a></li><li><a href=https://hugo-maker-blog.vercel.app/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://hugo-maker-blog.vercel.app/>Home</a>&nbsp;»&nbsp;<a href=https://hugo-maker-blog.vercel.app/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">SolidWorks建模完全教程：从零基础到产品设计</h1><div class=post-meta><span title='2025-11-08 11:00:00 +0800 CST'>2025-11-08</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>712 words</span>&nbsp;·&nbsp;<span>dmk69</span></div></header><figure class=entry-cover><img loading=eager src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=400&amp;fit=crop" alt="3D CAD Modeling"><figcaption>SolidWorks 3D Modeling Tutorial</figcaption></figure><div class=post-content><p><img alt=SolidWorks界面 loading=lazy src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"></p><h1 id=-solidworks建模完全教程从零基础到产品设计>🎨 SolidWorks建模完全教程：从零基础到产品设计<a hidden class=anchor aria-hidden=true href=#-solidworks建模完全教程从零基础到产品设计>#</a></h1><p>SolidWorks是目前应用最广泛的3D机械设计软件之一，广泛应用于产品开发、机械设计、模具制造等领域。本教程将带你从零开始，逐步掌握SolidWorks的核心功能。</p><h2 id=-学习大纲>📋 学习大纲<a hidden class=anchor aria-hidden=true href=#-学习大纲>#</a></h2><h3 id=第一部分界面和基本操作-第1-2周>第一部分：界面和基本操作 (第1-2周)<a hidden class=anchor aria-hidden=true href=#第一部分界面和基本操作-第1-2周>#</a></h3><h3 id=第二部分草图绘制-第3-4周>第二部分：草图绘制 (第3-4周)<a hidden class=anchor aria-hidden=true href=#第二部分草图绘制-第3-4周>#</a></h3><h3 id=第三部分实体建模-第5-6周>第三部分：实体建模 (第5-6周)<a hidden class=anchor aria-hidden=true href=#第三部分实体建模-第5-6周>#</a></h3><h3 id=第四部分装配体设计-第7-8周>第四部分：装配体设计 (第7-8周)<a hidden class=anchor aria-hidden=true href=#第四部分装配体设计-第7-8周>#</a></h3><h3 id=第五部分工程图制作-第9-10周>第五部分：工程图制作 (第9-10周)<a hidden class=anchor aria-hidden=true href=#第五部分工程图制作-第9-10周>#</a></h3><h3 id=第六部分高级功能-第11-12周>第六部分：高级功能 (第11-12周)<a hidden class=anchor aria-hidden=true href=#第六部分高级功能-第11-12周>#</a></h3><h2 id=-solidworks界面介绍>🖥️ SolidWorks界面介绍<a hidden class=anchor aria-hidden=true href=#-solidworks界面介绍>#</a></h2><h3 id=主界面布局>主界面布局<a hidden class=anchor aria-hidden=true href=#主界面布局>#</a></h3><pre tabindex=0><code>┌─────────────────────────────────────────────────────────┐
+│ 菜单栏 │ 工具栏                                        │
+├─────────────────────────────────────────────────────────┤
+│        │                                               │
+│ 设计树 │              图形区域                         │
+│        │                                               │
+│        │                                               │
+├─────────────────────────────────────────────────────────┤
+│ 状态栏                                                  │
+└─────────────────────────────────────────────────────────┘
+</code></pre><h3 id=常用工具栏配置>常用工具栏配置<a hidden class=anchor aria-hidden=true href=#常用工具栏配置>#</a></h3><pre tabindex=0><code class=language-solidworks data-lang=solidworks>标准工具栏：新建、打开、保存、打印
+视图工具栏：旋转、平移、缩放、线框、着色
+草图工具栏：直线、圆、矩形、约束
+特征工具栏：拉伸、旋转、倒角、圆角
+装配工具栏：配合、插入零部件
+工程图工具栏：视图、尺寸、注释
+</code></pre><h2 id=-第二部分草图绘制>✏️ 第二部分：草图绘制<a hidden class=anchor aria-hidden=true href=#-第二部分草图绘制>#</a></h2><h3 id=21-草图基础知识>2.1 草图基础知识<a hidden class=anchor aria-hidden=true href=#21-草图基础知识>#</a></h3><h4 id=草图创建步骤>草图创建步骤<a hidden class=anchor aria-hidden=true href=#草图创建步骤>#</a></h4><ol><li><strong>选择基准面</strong>: 前视基准面、上视基准面、右视基准面</li><li><strong>进入草图模式</strong>: 点击"草图绘制"或快捷键S</li><li><strong>绘制基本图形</strong>: 使用草图工具绘制几何形状</li><li><strong>添加几何约束</strong>: 水平、垂直、同心、相切等</li><li><strong>添加尺寸约束</strong>: 驱动图形大小</li><li><strong>退出草图</strong>: 完成草图绘制</li></ol><h3 id=22-基本草图工具>2.2 基本草图工具<a hidden class=anchor aria-hidden=true href=#22-基本草图工具>#</a></h3><h4 id=直线和矩形>直线和矩形<a hidden class=anchor aria-hidden=true href=#直线和矩形>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>// 绘制技术要求
+直线工具 (L):
+- 水平线：按住Shift键
+- 垂直线：按住Shift键
+- 等长线：使用相等约束
+
+矩形工具:
+- 边角矩形：对角拖拽
+- 中心矩形：从中心开始
+- 3点矩形：定义三个点
+</code></pre><h4 id=圆和圆弧>圆和圆弧<a hidden class=anchor aria-hidden=true href=#圆和圆弧>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>圆工具 (C):
+- 圆心半径：单击圆心，拖拽半径
+- 3点圆：通过三点定义圆
+
+圆弧工具:
+- 圆心圆弧：定义圆心、起点、终点
+- 切线圆弧：与现有几何相切
+- 3点圆弧：定义起点、中点、终点
+</code></pre><h3 id=23-几何约束详解>2.3 几何约束详解<a hidden class=anchor aria-hidden=true href=#23-几何约束详解>#</a></h3><h4 id=水平和垂直约束>水平和垂直约束<a hidden class=anchor aria-hidden=true href=#水平和垂直约束>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>// 约束类型
+水平约束 (H): 线段水平
+垂直约束 (V): 线段垂直
+平行约束 (//): 两线平行
+垂直约束 (⊥): 两线垂直
+</code></pre><h4 id=位置约束>位置约束<a hidden class=anchor aria-hidden=true href=#位置约束>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>// 位置关系
+重合约束: 点与线/面重合
+同心约束: 圆弧/圆同心
+中点约束: 点在直线中点
+固定约束: 固定几何位置
+</code></pre><h3 id=24-尺寸标注>2.4 尺寸标注<a hidden class=anchor aria-hidden=true href=#24-尺寸标注>#</a></h3><h4 id=驱动尺寸与从动尺寸>驱动尺寸与从动尺寸<a hidden class=anchor aria-hidden=true href=#驱动尺寸与从动尺寸>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>驱动尺寸: 改变尺寸数值，几何形状随之改变
+从动尺寸: 仅显示测量值，不能编辑
+
+标注原则:
+1. 先标注定位尺寸
+2. 再标注定形尺寸
+3. 避免尺寸链过约束
+4. 优先标注重要尺寸
+</code></pre><h4 id=尺寸类型>尺寸类型<a hidden class=anchor aria-hidden=true href=#尺寸类型>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>线性尺寸: 长度、宽度、高度
+角度尺寸: 角度大小
+半径尺寸: 圆弧半径
+直径尺寸: 圆的直径
+弧长尺寸: 圆弧长度
+</code></pre><h2 id=-第三部分实体建模>🏗️ 第三部分：实体建模<a hidden class=anchor aria-hidden=true href=#-第三部分实体建模>#</a></h2><h3 id=31-拉伸特征>3.1 拉伸特征<a hidden class=anchor aria-hidden=true href=#31-拉伸特征>#</a></h3><h4 id=基础拉伸>基础拉伸<a hidden class=anchor aria-hidden=true href=#基础拉伸>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>拉伸凸台/基体:
+- 给定深度: 指定拉伸距离
+- 成形到一面: 拉伸到指定面
+- 到离指定面指定距离
+- 两侧对称: 向两侧等距拉伸
+- 完全贯穿: 贯穿所有实体
+</code></pre><h4 id=拉伸示例机座底板>拉伸示例：机座底板<a hidden class=anchor aria-hidden=true href=#拉伸示例机座底板>#</a></h4><pre tabindex=0><code>步骤:
+1. 绘制 100×80 矩形草图
+2. 添加圆角 R10
+3. 拉伸深度 15mm
+4. 添加 4 个 M6 螺丝孔
+5. 倒角 C2
+</code></pre><h3 id=32-旋转特征>3.2 旋转特征<a hidden class=anchor aria-hidden=true href=#32-旋转特征>#</a></h3><h4 id=旋转建模原理>旋转建模原理<a hidden class=anchor aria-hidden=true href=#旋转建模原理>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>旋转轴类型:
+- 草图直线作为轴
+- 临时轴
+- 基准轴
+
+旋转角度:
+- 给定角度
+- 两侧对称
+- 完整360°
+</code></pre><h4 id=旋转示例轴类零件>旋转示例：轴类零件<a hidden class=anchor aria-hidden=true href=#旋转示例轴类零件>#</a></h4><pre tabindex=0><code>轴类零件建模步骤:
+1. 绘制轴的截面草图
+2. 添加旋转轴
+3. 旋转360°生成实体
+4. 添加键槽、螺纹等特征
+5. 倒角和圆角处理
+</code></pre><h3 id=33-扫描特征>3.3 扫描特征<a hidden class=anchor aria-hidden=true href=#33-扫描特征>#</a></h3><h4 id=扫描条件>扫描条件<a hidden class=anchor aria-hidden=true href=#扫描条件>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>扫描要素:
+- 路径: 扫描轨迹线
+- 轮廓: 扫描截面形状
+- 引导线: 控制扫描变化
+
+扫描要求:
+- 路径必须连续
+- 轮廓与路径相交
+- 截面不能自相交
+</code></pre><h4 id=扫描示例弹簧建模>扫描示例：弹簧建模<a hidden class=anchor aria-hidden=true href=#扫描示例弹簧建模>#</a></h4><pre tabindex=0><code>弹簧建模步骤:
+1. 创建螺旋线路径
+2. 绘制圆形截面
+3. 扫描生成弹簧
+4. 添加两端处理
+</code></pre><h3 id=34-放样特征>3.4 放样特征<a hidden class=anchor aria-hidden=true href=#34-放样特征>#</a></h3><h4 id=放样基础>放样基础<a hidden class=anchor aria-hidden=true href=#放样基础>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>放样要素:
+- 轮廓: 放样截面
+- 中心线: 控制放样路径
+- 起始/结束约束: 控制放样切线
+
+放样规则:
+- 轮廓数量≥2
+- 所有轮廓必须封闭
+- 轮廓平面可以不平行
+</code></pre><h2 id=-第四部分装配体设计>🔩 第四部分：装配体设计<a hidden class=anchor aria-hidden=true href=#-第四部分装配体设计>#</a></h2><h3 id=41-装配体基础>4.1 装配体基础<a hidden class=anchor aria-hidden=true href=#41-装配体基础>#</a></h3><h4 id=插入零部件>插入零部件<a hidden class=anchor aria-hidden=true href=#插入零部件>#</a></h4><pre tabindex=0><code>插入方法:
+1. 拖拽文件到装配体窗口
+2. 插入→零部件→现有零件/装配体
+3. 从资源库拖拽
+
+配合类型:
+- 标准配合: 重合、平行、垂直、相切等
+- 高级配合: 凸轮、齿轮、齿条小齿轮等
+- 机械配合: 螺旋、万向节、铰链等
+</code></pre><h3 id=42-配合关系>4.2 配合关系<a hidden class=anchor aria-hidden=true href=#42-配合关系>#</a></h3><h4 id=标准配合详解>标准配合详解<a hidden class=anchor aria-hidden=true href=#标准配合详解>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>重合配合 (⊥):
+- 点与点重合
+- 点与线重合
+- 点与面重合
+- 线与线重合
+- 面与面重合
+
+距离配合: 指定距离值
+角度配合: 指定角度值
+平行配合 (//): 两要素平行
+垂直配合 (⊥): 两要素垂直
+相切配合: 两要素相切
+同轴心 (○): 两轴线同轴
+</code></pre><h4 id=配合策略>配合策略<a hidden class=anchor aria-hidden=true href=#配合策略>#</a></h4><pre tabindex=0><code>装配原则:
+1. 先定位主要部件
+2. 逐步添加其他零件
+3. 避免过约束
+4. 考虑运动关系
+
+配合技巧:
+- 使用基准面辅助定位
+- 宽度配合快速对齐
+- 对称配合简化操作
+- 使用配合参考
+</code></pre><h3 id=43-装配体分析>4.3 装配体分析<a hidden class=anchor aria-hidden=true href=#43-装配体分析>#</a></h3><h4 id=干涉检查>干涉检查<a hidden class=anchor aria-hidden=true href=#干涉检查>#</a></h4><pre tabindex=0><code>干涉类型:
+- 干涉: 零件重叠
+- 碰撞: 运动时碰撞
+- 间隙: 零件间距
+
+检查方法:
+1. 干涉检查工具
+2. 碰撞检查
+3. 间隙验证
+4. 动态干涉检查
+</code></pre><h4 id=爆炸视图>爆炸视图<a hidden class=anchor aria-hidden=true href=#爆炸视图>#</a></h4><pre tabindex=0><code>爆炸步骤:
+1. 选择爆炸零部件
+2. 设定爆炸方向
+3. 设定爆炸距离
+4. 调整爆炸位置
+5. 创建爆炸线
+</code></pre><h2 id=-第五部分工程图制作>📐 第五部分：工程图制作<a hidden class=anchor aria-hidden=true href=#-第五部分工程图制作>#</a></h2><h3 id=51-视图创建>5.1 视图创建<a hidden class=anchor aria-hidden=true href=#51-视图创建>#</a></h3><h4 id=标准三视图>标准三视图<a hidden class=anchor aria-hidden=true href=#标准三视图>#</a></h4><pre tabindex=0><code>视图类型:
+- 标准三视图: 前视图、顶视图、左视图
+- 投影视图: 从已有视图投影
+- 剖视图: 全剖、半剖、阶梯剖
+- 局部视图: 放大局部细节
+- 断裂视图: 断开长零件
+</code></pre><h4 id=剖视图创建>剖视图创建<a hidden class=anchor aria-hidden=true href=#剖视图创建>#</a></h4><pre tabindex=0><code>剖视图步骤:
+1. 选择父视图
+2. 绘制剖切线
+3. 设定投影方向
+4. 调整视图位置
+5. 添加剖面线
+</code></pre><h3 id=52-尺寸标注>5.2 尺寸标注<a hidden class=anchor aria-hidden=true href=#52-尺寸标注>#</a></h3><h4 id=尺寸类型-1>尺寸类型<a hidden class=anchor aria-hidden=true href=#尺寸类型-1>#</a></h4><p>``
+尺寸种类:</p><ul><li>智能尺寸: 自动识别几何</li><li>水平/垂直尺寸: 单一方向</li><li>角度尺寸: 角度测量</li><li>圆弧尺寸: 半径、直径</li><li>基线尺寸: 从基点标注</li><li>链式尺寸: 连续标注</li></ul><pre tabindex=0><code>
+#### 公差标注
+</code></pre><p>公差类型:</p><ul><li>双向公差: ±值</li><li>限制公差: 最大/最小值</li><li>对称公差: 对称分布</li><li>基本尺寸: 理论尺寸</li><li>基准尺寸: 参考尺寸</li></ul><pre tabindex=0><code>
+### 5.3 注释和符号
+
+#### 表面粗糙度
+</code></pre><p>粗糙度符号:
+▽ - 基本符号
+▽▽ - 去除材料
+▽▽▽ - 不去除材料</p><p>标注内容:</p><ul><li>粗糙度值</li><li>加工方法</li><li>取样长度</li><li>纹理方向</li></ul><pre tabindex=0><code>
+#### 形位公差
+</code></pre><p>形位公差类型:</p><ul><li>直线度</li><li>平面度</li><li>圆度</li><li>圆柱度</li><li>位置度</li><li>同轴度</li><li>对称度</li><li>平行度</li><li>垂直度</li><li>倾斜度</li></ul><pre tabindex=0><code>
+## 🚀 第六部分：高级功能
+
+### 6.1 曲面建模
+
+#### 曲面创建方法
+```solidworks
+曲面工具:
+- 拉伸曲面: 草图拉伸
+- 旋转曲面: 草图旋转
+- 扫描曲面: 路径扫描
+- 放样曲面: 轮廓放样
+- 平面区域: 边界平面
+- 等距曲面: 偏移复制
+</code></pre><h4 id=曲面编辑>曲面编辑<a hidden class=anchor aria-hidden=true href=#曲面编辑>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>编辑操作:
+- 剪裁曲面: 边界剪裁
+- 延伸曲面: 边界延伸
+- 缝合曲面: 多面缝合
+- 删除面: 移除曲面
+- 替换面: 面替换
+</code></pre><h3 id=62-钣金设计>6.2 钣金设计<a hidden class=anchor aria-hidden=true href=#62-钣金设计>#</a></h3><h4 id=钣金特征>钣金特征<a hidden class=anchor aria-hidden=true href=#钣金特征>#</a></h4><pre tabindex=0><code class=language-solidworks data-lang=solidworks>基础特征:
+- 基体法兰: 钣金基体
+- 边线法兰: 边缘折弯
+- 斜接法兰: 多边折弯
+- 褶边: 边缘卷边
+
+附加特征:
+- 转折: 局部折弯
+- 闭合角: 角落闭合
+- 断开边角: 角落切除
+- 边角剪裁: 角落剪裁
+</code></pre><h4 id=钣金展开>钣金展开<a hidden class=anchor aria-hidden=true href=#钣金展开>#</a></h4><pre tabindex=0><code>展开方法:
+1. 展开工具: 选择固定面展开
+2. 平板型式: 自动展开配置
+3. 折弯系数: K因子、折弯扣除
+4. 折弯系数表: 经验数据表
+</code></pre><h3 id=63-模具设计>6.3 模具设计<a hidden class=anchor aria-hidden=true href=#63-模具设计>#</a></h3><h4 id=模具流程>模具流程<a hidden class=anchor aria-hidden=true href=#模具流程>#</a></h4><pre tabindex=0><code>模具设计步骤:
+1. 分析零件: 拔模分析、壁厚检查
+2. 缩放比例: 设置收缩率
+3. 分型线: 创建分型边界
+4. 分型面: 生成分型面
+5. 切削分割: 生成模仁
+6. 装配模架: 标准模架
+</code></pre><h4 id=模具分析>模具分析<a hidden class=anchor aria-hidden=true href=#模具分析>#</a></h4><pre tabindex=0><code>分析工具:
+- 拔模分析: 检查拔模角度
+- 倒扣分析: 检查倒扣区域
+- 底切分析: 检查底切特征
+- 壁厚分析: 检查壁厚均匀性
+</code></pre><h2 id=-项目实战案例>📊 项目实战案例<a hidden class=anchor aria-hidden=true href=#-项目实战案例>#</a></h2><h3 id=项目1减速器设计>项目1：减速器设计<a hidden class=anchor aria-hidden=true href=#项目1减速器设计>#</a></h3><h4 id=总体设计要求>总体设计要求<a hidden class=anchor aria-hidden=true href=#总体设计要求>#</a></h4><pre tabindex=0><code>设计参数:
+- 减速比: 1:10
+- 输入功率: 2.2kW
+- 输入转速: 1450rpm
+- 输出扭矩: 144N·m
+- 工作寿命: 20000小时
+</code></pre><h4 id=零件设计清单>零件设计清单<a hidden class=anchor aria-hidden=true href=#零件设计清单>#</a></h4><pre tabindex=0><code>标准件:
+- 轴承: 6205, 6307
+- 螺栓: M8×20, M10×30
+- 键: 8×7×40, 10×8×50
+- 密封: 骨架油封
+
+自制件:
+- 齿轮轴
+- 大齿轮
+- 箱体
+- 箱盖
+- 轴承盖
+</code></pre><h3 id=项目2夹具设计>项目2：夹具设计<a hidden class=anchor aria-hidden=true href=#项目2夹具设计>#</a></h3><h4 id=设计流程>设计流程<a hidden class=anchor aria-hidden=true href=#设计流程>#</a></h4><pre tabindex=0><code>夹具设计步骤:
+1. 分析零件: 定位基准、夹紧点
+2. 定位设计: 六点定位原则
+3. 夹紧设计: 夹紧力计算
+4. 结构设计: 刚度、强度校核
+5. 验证分析: 干涉检查、运动仿真
+</code></pre><h2 id=-学习建议>💡 学习建议<a hidden class=anchor aria-hidden=true href=#-学习建议>#</a></h2><h3 id=练习计划>练习计划<a hidden class=anchor aria-hidden=true href=#练习计划>#</a></h3><pre tabindex=0><code>每日练习 (1小时):
+- 草图练习: 15分钟
+- 特征建模: 30分钟
+- 装配练习: 15分钟
+
+每周项目 (4小时):
+- 零件建模: 2小时
+- 装配体: 1小时
+- 工程图: 1小时
+</code></pre><h3 id=学习资源>学习资源<a hidden class=anchor aria-hidden=true href=#学习资源>#</a></h3><pre tabindex=0><code>官方资源:
+- SolidWorks官方网站
+- 在线帮助文档
+- YouTube官方频道
+
+中文资源:
+- 网易云课堂
+- B站教程视频
+- QQ技术交流群
+</code></pre><hr><p><strong>SolidWorks学习需要大量练习，建议配合实际项目进行学习。祝你成为优秀的机械设计师！</strong></p><p><em>如有问题，欢迎在评论区留言讨论。</em></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://hugo-maker-blog.vercel.app/tags/solidworks/>SolidWorks</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/3d%E5%BB%BA%E6%A8%A1/>3D建模</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1/>机械设计</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/cad/>CAD</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/>产品设计</a></li></ul><nav class=paginav><a class=prev href=https://hugo-maker-blog.vercel.app/posts/python-ai-learning-path/><span class=title>« Prev</span><br><span>Python AI完全学习路径：从零基础到机器学习工程师</span>
+</a><a class=next href=https://hugo-maker-blog.vercel.app/posts/stm32-learning-guide/><span class=title>Next »</span><br><span>STM32完整学习指南：从入门到精通</span></a></nav><ul class=share-buttons><li><a target=_blank rel="noopener noreferrer" aria-label="share SolidWorks建模完全教程：从零基础到产品设计 on x" href="https://x.com/intent/tweet/?text=SolidWorks%e5%bb%ba%e6%a8%a1%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e4%bb%8e%e9%9b%b6%e5%9f%ba%e7%a1%80%e5%88%b0%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1&amp;url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f&amp;hashtags=SolidWorks%2c3D%e5%bb%ba%e6%a8%a1%2c%e6%9c%ba%e6%a2%b0%e8%ae%be%e8%ae%a1%2cCAD%2c%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SolidWorks建模完全教程：从零基础到产品设计 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f&amp;title=SolidWorks%e5%bb%ba%e6%a8%a1%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e4%bb%8e%e9%9b%b6%e5%9f%ba%e7%a1%80%e5%88%b0%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1&amp;summary=SolidWorks%e5%bb%ba%e6%a8%a1%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e4%bb%8e%e9%9b%b6%e5%9f%ba%e7%a1%80%e5%88%b0%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1&amp;source=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SolidWorks建模完全教程：从零基础到产品设计 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f&title=SolidWorks%e5%bb%ba%e6%a8%a1%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e4%bb%8e%e9%9b%b6%e5%9f%ba%e7%a1%80%e5%88%b0%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SolidWorks建模完全教程：从零基础到产品设计 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SolidWorks建模完全教程：从零基础到产品设计 on whatsapp" href="https://api.whatsapp.com/send?text=SolidWorks%e5%bb%ba%e6%a8%a1%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e4%bb%8e%e9%9b%b6%e5%9f%ba%e7%a1%80%e5%88%b0%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1%20-%20https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SolidWorks建模完全教程：从零基础到产品设计 on telegram" href="https://telegram.me/share/url?text=SolidWorks%e5%bb%ba%e6%a8%a1%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e4%bb%8e%e9%9b%b6%e5%9f%ba%e7%a1%80%e5%88%b0%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1&amp;url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f"><svg viewBox="2 2 28 28" height="30" width="30" fill="currentColor"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SolidWorks建模完全教程：从零基础到产品设计 on ycombinator" href="https://news.ycombinator.com/submitlink?t=SolidWorks%e5%bb%ba%e6%a8%a1%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e4%bb%8e%e9%9b%b6%e5%9f%ba%e7%a1%80%e5%88%b0%e4%ba%a7%e5%93%81%e8%ae%be%e8%ae%a1&u=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2fsolidworks-tutorial%2f"><svg width="30" height="30" viewBox="0 0 512 512" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"/></svg></a></li></ul></footer></article></main><footer class=footer><span>&copy; 2025 <a href=https://hugo-maker-blog.vercel.app/>创客教育博客</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>

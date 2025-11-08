@@ -2,6 +2,7 @@
 title: "STM32完整学习指南：从入门到精通"
 date: 2025-11-08T10:30:00+08:00
 draft: false
+slug: "stm32-learning-guide"
 tags: ["STM32", "嵌入式", "ARM Cortex-M", "HAL库", "FreeRTOS"]
 categories: ["教程"]
 series: ["嵌入式开发进阶"]

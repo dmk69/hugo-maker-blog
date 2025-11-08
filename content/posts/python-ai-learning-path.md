@@ -2,6 +2,7 @@
 title: "Python AI完全学习路径：从零基础到机器学习工程师"
 date: 2025-11-08T11:30:00+08:00
 draft: false
+slug: "python-ai-learning-path"
 tags: ["Python", "人工智能", "机器学习", "深度学习", "数据科学"]
 categories: ["教程"]
 series: ["AI学习路径"]

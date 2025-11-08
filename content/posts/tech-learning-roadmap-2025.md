@@ -2,6 +2,7 @@
 title: "2025年技术学习完整路线图：从零到专家的15个月计划"
 date: 2025-11-08T12:30:00+08:00
 draft: false
+slug: "tech-learning-roadmap-2025"
 tags: ["学习计划", "技术路线图", "职业规划", "技能提升"]
 categories: ["学习方法"]
 series: ["技术成长之路"]

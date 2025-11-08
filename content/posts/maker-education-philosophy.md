@@ -2,6 +2,7 @@
 title: "创客教育理念：如何培养下一代创新者"
 date: 2025-11-08T13:00:00+08:00
 draft: false
+slug: "maker-education-philosophy"
 tags: ["创客教育", "教育理念", "创新思维", "教学方法"]
 categories: ["教育理念"]
 series: ["创客教育核心理论"]

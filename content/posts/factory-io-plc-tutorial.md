@@ -2,6 +2,7 @@
 title: "Factory I/O + PLC完全教程：工业自动化仿真与实践"
 date: 2025-11-08T12:00:00+08:00
 draft: false
+slug: "factory-io-plc-tutorial"
 tags: ["PLC", "Factory I/O", "工业自动化", "梯形图", "仿真"]
 categories: ["教程"]
 series: ["工业自动化"]

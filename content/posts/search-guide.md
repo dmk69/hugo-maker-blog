@@ -2,6 +2,7 @@
 title: "网站搜索指南：如何高效找到所需内容"
 date: 2025-11-08T13:30:00+08:00
 draft: false
+slug: "search-guide"
 tags: ["网站使用", "搜索技巧", "内容导航"]
 categories: ["网站指南"]
 series: ["网站使用教程"]
