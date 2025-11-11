@@ -1,61 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Skills on 创客教育博客</title><link>https://hugo-maker-blog.vercel.app/skills/</link><description>Recent content in Skills on 创客教育博客</description><image><title>创客教育博客</title><url>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Sat, 08 Nov 2025 09:00:00 +0800</lastBuildDate><atom:link href="https://hugo-maker-blog.vercel.app/skills/index.xml" rel="self" type="application/rss+xml"/><item><title>嵌入式开发技能</title><link>https://hugo-maker-blog.vercel.app/skills/embedded-development/</link><pubDate>Sat, 08 Nov 2025 09:00:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/skills/embedded-development/</guid><description>&lt;h2 id="-嵌入式开发能力概述"&gt;🎯 嵌入式开发能力概述&lt;/h2&gt;
-&lt;p&gt;我在嵌入式开发领域有着丰富的实践经验，专注于创客教育和物联网项目开发。&lt;/p&gt;
-&lt;h3 id="-核心技能"&gt;🔧 核心技能&lt;/h3&gt;
-&lt;h4 id="微控制器平台"&gt;微控制器平台&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Skills on 创客教育博客</title>
+    <link>http://localhost:1313/skills/</link>
+    <description>Recent content in Skills on 创客教育博客</description>
+    <image>
+      <title>创客教育博客</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Nov 2025 09:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/skills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自动化与控制技术技能</title>
+      <link>http://localhost:1313/skills/embedded-development/</link>
+      <pubDate>Sat, 08 Nov 2025 09:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/skills/embedded-development/</guid>
+      <description>&lt;h2 id=&#34;-专业能力概述&#34;&gt;🎯 专业能力概述&lt;/h2&gt;
+&lt;p&gt;我是一名专业的自动化与工业控制技术员，具备丰富的工业自动化系统设计、PLC编程和嵌入式控制项目经验。专注于为客户提供可靠的控制解决方案和技术服务。&lt;/p&gt;
+&lt;h3 id=&#34;-核心技能&#34;&gt;🔧 核心技能&lt;/h3&gt;
+&lt;h4 id=&#34;plc编程与开发&#34;&gt;PLC编程与开发&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Arduino系列&lt;/strong&gt;: Uno, Nano, Mega, ESP32, ESP8266&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;树莓派&lt;/strong&gt;: Zero, 3B+, 4B&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;STM32&lt;/strong&gt;: 基础开发和外设配置&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;51单片机&lt;/strong&gt;: 经典架构掌握&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Siemens PLC&lt;/strong&gt;: S7-1200/1500, TIA Portal, WinCC&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Allen-Bradley&lt;/strong&gt;: ControlLogix, CompactLogix, Studio 5000&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三菱电机&lt;/strong&gt;: FX系列, GX Works, GT Works&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;欧姆龙&lt;/strong&gt;: CJ/CP系列, Sysmac Studio&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;编程语言&lt;/strong&gt;: Ladder Logic, Function Block, Structured Text&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工业网络&lt;/strong&gt;: PROFINET, Ethernet/IP, Modbus TCP/RTU&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id="编程语言"&gt;编程语言&lt;/h4&gt;
+&lt;h4 id=&#34;嵌入式控制系统&#34;&gt;嵌入式控制系统&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;C/C++&lt;/strong&gt;: 嵌入式系统主流语言&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt;: 树莓派和人工智能应用&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;MicroPython&lt;/strong&gt;: 快速原型开发&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Arduino IDE&lt;/strong&gt;: 图形化和文本编程&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STM32系列&lt;/strong&gt;: HAL库编程、FreeRTOS应用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Arduino平台&lt;/strong&gt;: Uno, Mega, ESP32/8266&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;C语言编程&lt;/strong&gt;: 寄存器操作、外设驱动开发&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时操作系统&lt;/strong&gt;: FreeRTOS, RT-Thread&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通信协议&lt;/strong&gt;: Modbus, CANopen, DeviceNet&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;信号处理&lt;/strong&gt;: PID控制、数字滤波、FFT&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id="硬件接口"&gt;硬件接口&lt;/h4&gt;
+&lt;h4 id=&#34;solidworks机械设计&#34;&gt;SolidWorks机械设计&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;数字信号&lt;/strong&gt;: GPIO控制、PWM输出&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;模拟信号&lt;/strong&gt;: ADC采样、DAC输出&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;通信协议&lt;/strong&gt;: I2C, SPI, UART, CAN&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;无线通信&lt;/strong&gt;: WiFi, 蓝牙, LoRa&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3D建模&lt;/strong&gt;: 零件设计、装配体设计、工程图绘制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动化设备&lt;/strong&gt;: 工装夹具、传送机构、定位装置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;钣金设计&lt;/strong&gt;: 机箱机柜、控制面板、安装支架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;仿真分析&lt;/strong&gt;: 运动仿真、应力分析、干涉检查&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图纸标准&lt;/strong&gt;: GB/ANSI标准、BOM表生成、技术文档&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id="传感器应用"&gt;传感器应用&lt;/h4&gt;
+&lt;h4 id=&#34;工业传感器应用&#34;&gt;工业传感器应用&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;环境监测&lt;/strong&gt;: 温湿度、气压、光照&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;运动检测&lt;/strong&gt;: 加速度计、陀螺仪&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;距离测量&lt;/strong&gt;: 超声波、红外&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;生物识别&lt;/strong&gt;: 心率、指纹&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;过程控制&lt;/strong&gt;: 压力、温度、流量、液位传感器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;位置检测&lt;/strong&gt;: 接近开关、光电传感器、编码器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;运动控制&lt;/strong&gt;: 伺服电机、步进电机、变频器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全设备&lt;/strong&gt;: 安全光幕、急停按钮、安全继电器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;环境监测&lt;/strong&gt;: 气体检测、振动监测、噪声测量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="-教学经验"&gt;📚 教学经验&lt;/h3&gt;
-&lt;h4 id="授课对象"&gt;授课对象&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;中小学生（8-18岁）&lt;/li&gt;
-&lt;li&gt;大学生和专业培训&lt;/li&gt;
-&lt;li&gt;企业技术培训&lt;/li&gt;
-&lt;li&gt;创客空间指导&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="课程体系"&gt;课程体系&lt;/h4&gt;
+&lt;h3 id=&#34;-项目经验&#34;&gt;🏆 项目经验&lt;/h3&gt;
+&lt;h4 id=&#34;工业自动化项目&#34;&gt;工业自动化项目&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;入门阶段&lt;/strong&gt;（20课时）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;电子基础概念&lt;/li&gt;
-&lt;li&gt;Arduino平台介绍&lt;/li&gt;
-&lt;li&gt;基础电路连接&lt;/li&gt;
-&lt;li&gt;简单传感器使用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;进阶阶段&lt;/strong&gt;（30课时）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;复杂传感器集成&lt;/li&gt;
-&lt;li&gt;通信协议应用&lt;/li&gt;
-&lt;li&gt;项目设计思维&lt;/li&gt;
-&lt;li&gt;调试技巧&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;项目实战&lt;/strong&gt;（40课时）&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;智能生产线控制系统&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

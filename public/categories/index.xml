@@ -1,1 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Categories on 创客教育博客</title><link>https://hugo-maker-blog.vercel.app/categories/</link><description>Recent content in Categories on 创客教育博客</description><image><title>创客教育博客</title><url>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Sat, 08 Nov 2025 13:30:00 +0800</lastBuildDate><atom:link href="https://hugo-maker-blog.vercel.app/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>网站指南</title><link>https://hugo-maker-blog.vercel.app/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/</link><pubDate>Sat, 08 Nov 2025 13:30:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/</guid><description/></item><item><title>教育理念</title><link>https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E8%82%B2%E7%90%86%E5%BF%B5/</link><pubDate>Sat, 08 Nov 2025 13:00:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E8%82%B2%E7%90%86%E5%BF%B5/</guid><description/></item><item><title>学习方法</title><link>https://hugo-maker-blog.vercel.app/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</link><pubDate>Sat, 08 Nov 2025 12:30:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</guid><description/></item><item><title>教程</title><link>https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E7%A8%8B/</link><pubDate>Sat, 08 Nov 2025 12:00:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E7%A8%8B/</guid><description/></item><item><title>个人成长</title><link>https://hugo-maker-blog.vercel.app/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</link><pubDate>Sat, 08 Nov 2025 10:00:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</guid><description/></item><item><title>教学方法</title><link>https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/</link><pubDate>Thu, 06 Nov 2025 16:20:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/</guid><description/></item><item><title>硬件项目</title><link>https://hugo-maker-blog.vercel.app/categories/%E7%A1%AC%E4%BB%B6%E9%A1%B9%E7%9B%AE/</link><pubDate>Wed, 05 Nov 2025 15:30:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/categories/%E7%A1%AC%E4%BB%B6%E9%A1%B9%E7%9B%AE/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on 创客教育博客</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on 创客教育博客</description>
+    <image>
+      <title>创客教育博客</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 12 Nov 2025 12:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>项目</title>
+      <link>http://localhost:1313/categories/%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E9%A1%B9%E7%9B%AE/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>网站指南</title>
+      <link>http://localhost:1313/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sat, 08 Nov 2025 13:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>教育理念</title>
+      <link>http://localhost:1313/categories/%E6%95%99%E8%82%B2%E7%90%86%E5%BF%B5/</link>
+      <pubDate>Sat, 08 Nov 2025 13:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E6%95%99%E8%82%B2%E7%90%86%E5%BF%B5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>学习方法</title>
+      <link>http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sat, 08 Nov 2025 12:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>教程</title>
+      <link>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Sat, 08 Nov 2025 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>个人成长</title>
+      <link>http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</link>
+      <pubDate>Sat, 08 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>教学方法</title>
+      <link>http://localhost:1313/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Thu, 06 Nov 2025 16:20:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>硬件项目</title>
+      <link>http://localhost:1313/categories/%E7%A1%AC%E4%BB%B6%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 05 Nov 2025 15:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E7%A1%AC%E4%BB%B6%E9%A1%B9%E7%9B%AE/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

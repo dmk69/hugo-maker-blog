@@ -1,617 +1,1043 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>工业自动化 on 创客教育博客</title><link>https://hugo-maker-blog.vercel.app/tags/%E5%B7%A5%E4%B8%9A%E8%87%AA%E5%8A%A8%E5%8C%96/</link><description>Recent content in 工业自动化 on 创客教育博客</description><image><title>创客教育博客</title><url>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Sat, 08 Nov 2025 12:00:00 +0800</lastBuildDate><atom:link href="https://hugo-maker-blog.vercel.app/tags/%E5%B7%A5%E4%B8%9A%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml"/><item><title>Factory I/O + PLC完全教程：工业自动化仿真与实践</title><link>https://hugo-maker-blog.vercel.app/posts/factory-io-plc-tutorial/</link><pubDate>Sat, 08 Nov 2025 12:00:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/posts/factory-io-plc-tutorial/</guid><description>&lt;h1 id="-factory-io--plc完全教程工业自动化仿真与实践"&gt;🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>工业自动化 on 创客教育博客</title>
+    <link>http://localhost:1313/tags/%E5%B7%A5%E4%B8%9A%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+    <description>Recent content in 工业自动化 on 创客教育博客</description>
+    <image>
+      <title>创客教育博客</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 12 Nov 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%B7%A5%E4%B8%9A%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>智能生产线控制系统</title>
+      <link>http://localhost:1313/projects/plc-production-line/</link>
+      <pubDate>Wed, 12 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/projects/plc-production-line/</guid>
+      <description>&lt;h2 id=&#34;-项目概述&#34;&gt;🏭 项目概述&lt;/h2&gt;
+&lt;p&gt;这是一个基于Siemens S7-1500 PLC的智能生产线控制系统，实现了从物料输入到成品输出的全自动化控制流程。该项目展示了在工业4.0背景下，如何通过先进的PLC编程技术实现生产线的智能化改造。&lt;/p&gt;
+&lt;h2 id=&#34;-项目目标&#34;&gt;🎯 项目目标&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;实现生产线全流程自动化控制&lt;/li&gt;
+&lt;li&gt;提高生产效率和产品质量&lt;/li&gt;
+&lt;li&gt;降低人工操作错误率&lt;/li&gt;
+&lt;li&gt;建立完善的数据采集和监控系统&lt;/li&gt;
+&lt;li&gt;实现设备间的智能联动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-系统架构&#34;&gt;🔧 系统架构&lt;/h2&gt;
+&lt;h3 id=&#34;硬件配置&#34;&gt;硬件配置&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;核心控制器:
+├── Siemens S7-1515F-2 PN (CPU)
+├── SM 521 16×24VDC DI (数字量输入)
+├── SM 522 16×24VDC DO (数字量输出)
+├── SM 431 8×AI (模拟量输入)
+├── SM 432 8×AO (模拟量输出)
+└── CM 1542-5 (PROFIBUS-DP)
+
+人机界面:
+├── Siemens TP1200 Comfort (12英寸触摸屏)
+├── WinCC Comfort Runtime V15.1
+└── 以太网通信连接
+
+I/O设备:
+├── 接近开关 (检测工件位置)
+├── 光电传感器 (安全区域检测)
+├── 压力传感器 (液压系统监控)
+├── 温度传感器 (电机温度保护)
+├── 变频器 (电机速度控制)
+└── 伺服驱动器 (精确定位)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;网络拓扑&#34;&gt;网络拓扑&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PROFINET网络架构:
+┌─────────────────┐
+│   SCADA系统     │
+│   (上位机监控)   │
+└─────────┬───────┘
+          │ PROFINET
+┌─────────▼───────┐
+│   S7-1500 PLC   │
+│   (主控制器)     │
+└─────────┬───────┘
+    ┌─────┼─────┐
+    │     │     │
+┌───▼───┐┌─▼───┐┌─▼────┐
+│TP1200 ││变频器││伺服  │
+│HMI    ││     ││驱动器 │
+└───────┘└─────┘└──────┘
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-plc程序设计&#34;&gt;💻 PLC程序设计&lt;/h2&gt;
+&lt;h3 id=&#34;主程序结构-ob1&#34;&gt;主程序结构 (OB1)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-scl&#34; data-lang=&#34;scl&#34;&gt;// 主程序循环
+DATA_BLOCK &amp;#34;ProductionData&amp;#34;
+BEGIN
+    // 生产数据结构
+    CurrentStep : INT := 0;
+    PartCount : DINT := 0;
+    CycleTime : TIME := T#5S;
+    SystemStatus : WORD := 16#0000;
+END_DATA_BLOCK
+
+ORGANIZATION_BLOCK OB1
+BEGIN
+    // 系统状态监控
+    CALL &amp;#34;SystemStatusCheck&amp;#34;;
+
+    // 自动运行模式
+    IF &amp;#34;AutoMode&amp;#34; THEN
+        CALL &amp;#34;AutoProductionSequence&amp;#34;;
+    END_IF;
+
+    // 手动操作模式
+    IF &amp;#34;ManualMode&amp;#34; THEN
+        CALL &amp;#34;ManualControl&amp;#34;;
+    END_IF;
+
+    // 故障诊断
+    CALL &amp;#34;Diagnostics&amp;#34;;
+
+    // HMI通信
+    CALL &amp;#34;HMI_Communication&amp;#34;;
+END_ORGANIZATION_BLOCK
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;自动生产序列-fc101&#34;&gt;自动生产序列 (FC101)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-scl&#34; data-lang=&#34;scl&#34;&gt;FUNCTION &amp;#34;AutoProductionSequence&amp;#34; : VOID
+VAR_INPUT
+    StartSignal : BOOL;
+    EmergencyStop : BOOL;
+END_VAR
+VAR_OUTPUT
+    SequenceComplete : BOOL;
+END_VAR
+VAR
+    StepCounter : INT := 0;
+    TimerValue : TIME;
+END_VAR
+
+BEGIN
+    // 生产步骤控制
+    CASE &amp;#34;ProductionData&amp;#34;.CurrentStep OF
+        0: // 初始状态 - 等待启动
+            IF StartSignal AND NOT EmergencyStop THEN
+                &amp;#34;Conveyor_Motor&amp;#34; := TRUE;
+                TimerValue := T#2S;
+                &amp;#34;ProductionData&amp;#34;.CurrentStep := 1;
+            END_IF;
+
+        1: // 工件输送
+            IF &amp;#34;Workpiece_Detected&amp;#34; AND TimerValue = T#0S THEN
+                &amp;#34;Lifting_Cylinder&amp;#34; := TRUE;
+                TimerValue := T#1S;
+                &amp;#34;ProductionData&amp;#34;.CurrentStep := 2;
+            END_IF;
+
+        2: // 工件提升
+            IF &amp;#34;Lift_Up_Position&amp;#34; AND TimerValue = T#0S THEN
+                &amp;#34;Servo_Positioning&amp;#34; := TRUE;
+                &amp;#34;Servo_Target_Position&amp;#34; := 1500; // 15mm
+                TimerValue := T#3S;
+                &amp;#34;ProductionData&amp;#34;.CurrentStep := 3;
+            END_IF;
+
+        3: // 精确定位
+            IF &amp;#34;Servo_In_Position&amp;#34; AND TimerValue = T#0S THEN
+                &amp;#34;Processing_Station&amp;#34; := TRUE;
+                TimerValue := T#8S; // 加工时间
+                &amp;#34;ProductionData&amp;#34;.CurrentStep := 4;
+            END_IF;
+
+        4: // 加工完成
+            IF &amp;#34;Process_Complete&amp;#34; AND TimerValue = T#0S THEN
+                &amp;#34;Lifting_Cylinder&amp;#34; := FALSE;
+                &amp;#34;Servo_Home&amp;#34; := TRUE;
+                TimerValue := T#2S;
+                &amp;#34;ProductionData&amp;#34;.CurrentStep := 5;
+            END_IF;
+
+        5: // 复位到初始状态
+            IF &amp;#34;Lift_Down_Position&amp;#34; AND &amp;#34;Servo_Home_Position&amp;#34; THEN
+                &amp;#34;ProductionData&amp;#34;.CurrentStep := 0;
+                &amp;#34;ProductionData&amp;#34;.PartCount := &amp;#34;ProductionData&amp;#34;.PartCount + 1;
+                SequenceComplete := TRUE;
+            END_IF;
+    END_CASE;
+
+    // 定时器处理
+    IF TimerValue &amp;gt; T#0S THEN
+        TimerValue := TimerValue - T#1CYCLE;
+    END_IF;
+
+    // 急停处理
+    IF EmergencyStop THEN
+        &amp;#34;Conveyor_Motor&amp;#34; := FALSE;
+        &amp;#34;Lifting_Cylinder&amp;#34; := FALSE;
+        &amp;#34;Servo_Positioning&amp;#34; := FALSE;
+        &amp;#34;Processing_Station&amp;#34; := FALSE;
+        &amp;#34;ProductionData&amp;#34;.CurrentStep := 0;
+    END_IF;
+END_FUNCTION
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;故障诊断功能-fc102&#34;&gt;故障诊断功能 (FC102)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-scl&#34; data-lang=&#34;scl&#34;&gt;FUNCTION &amp;#34;Diagnostics&amp;#34; : VOID
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+    AlarmText : STRING[80];
+    AlarmLevel : INT;
+END_VAR
+VAR
+    ErrorCode : WORD;
+END_VAR
+
+BEGIN
+    // 电机过热检测
+    IF &amp;#34;Motor_Temperature&amp;#34; &amp;gt; 80.0 THEN
+        ErrorCode := 16#0001;
+        AlarmLevel := 2; // 警告
+        AlarmText := &amp;#39;Motor temperature warning: Over 80°C&amp;#39;;
+    ELSIF &amp;#34;Motor_Temperature&amp;#34; &amp;gt; 90.0 THEN
+        ErrorCode := 16#0002;
+        AlarmLevel := 3; // 严重故障
+        AlarmText := &amp;#39;Motor overheat fault: System shutdown required&amp;#39;;
+        &amp;#34;Emergency_Stop&amp;#34; := TRUE;
+    END_IF;
+
+    // 气压检测
+    IF &amp;#34;Air_Pressure&amp;#34; &amp;lt; 5.0 THEN
+        ErrorCode := 16#0010;
+        AlarmLevel := 2;
+        AlarmText := &amp;#39;Low air pressure: Check pneumatic system&amp;#39;;
+    END_IF;
+
+    // 传感器故障检测
+    IF NOT &amp;#34;Sensor_Signal_OK&amp;#34; THEN
+        ErrorCode := 16#0020;
+        AlarmLevel := 2;
+        AlarmText := &amp;#39;Sensor communication fault: Check connections&amp;#39;;
+    END_IF;
+
+    // 急停按钮状态
+    IF &amp;#34;Emergency_Stop_Pressed&amp;#34; THEN
+        ErrorCode := 16#00FF;
+        AlarmLevel := 3;
+        AlarmText := &amp;#39;EMERGENCY STOP ACTIVATED&amp;#39;;
+    END_IF;
+
+    // 写入报警历史
+    IF ErrorCode &amp;lt;&amp;gt; 16#0000 THEN
+        &amp;#34;AlarmHistory&amp;#34;.Write(
+            Timestamp := CURRENT_TIME,
+            Code := ErrorCode,
+            Level := AlarmLevel,
+            Message := AlarmText
+        );
+    END_IF;
+END_FUNCTION
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-hmi界面设计&#34;&gt;🖥️ HMI界面设计&lt;/h2&gt;
+&lt;h3 id=&#34;主监控画面&#34;&gt;主监控画面&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;画面布局 (TP1200 12英寸):
+┌─────────────────────────────────────┐
+│  生产状态监控        │  报警信息  │
+│                     │            │
+│  ● 自动模式          │  🟢 正常   │
+│  ● 运行中            │  🟡 警告   │
+│  ● 产量: 1,247件     │  🔴 故障   │
+│  ● 效率: 98.5%       │            │
+├─────────────────────────────────────┤
+│  设备状态显示区域                 │
+│  ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐ │
+│  │传送带│ │提升机│ │伺服 │ │加工站│ │
+│  │运行中│ │上升  │ │定位  │ │加工中│ │
+│  └─────┘ └─────┘ └─────┘ └─────┘ │
+├─────────────────────────────────────┤
+│  控制按钮区域                      │
+│  [启动] [停止] [复位] [急停]        │
+│  [自动模式] [手动模式] [参数设置]   │
+├─────────────────────────────────────┤
+│  实时数据显示                      │
+│  温度: 45.2°C  压力: 6.8 Bar       │
+│  循环时间: 5.2s  OEE: 94.3%        │
+└─────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;参数设置界面&#34;&gt;参数设置界面&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-scl&#34; data-lang=&#34;scl&#34;&gt;// HMI脚本示例 - 参数验证
+FUNCTION &amp;#34;ValidateParameters&amp;#34; : BOOL
+VAR_INPUT
+    NewSpeed : REAL;
+    NewPosition : DINT;
+    NewTemperature : REAL;
+END_VAR
+VAR
+    ValidParameters : BOOL := TRUE;
+END_VAR
+
+BEGIN
+    // 速度参数验证 (0-100%)
+    IF NewSpeed &amp;lt; 0.0 OR NewSpeed &amp;gt; 100.0 THEN
+        &amp;#34;HMI_Alarm&amp;#34; := 16#0101;
+        ValidParameters := FALSE;
+    END_IF;
+
+    // 位置参数验证 (0-5000mm)
+    IF NewPosition &amp;lt; 0 OR NewPosition &amp;gt; 5000 THEN
+        &amp;#34;HMI_Alarm&amp;#34; := 16#0102;
+        ValidParameters := FALSE;
+    END_IF;
+
+    // 温度参数验证 (0-150°C)
+    IF NewTemperature &amp;lt; 0.0 OR NewTemperature &amp;gt; 150.0 THEN
+        &amp;#34;HMI_Alarm&amp;#34; := 16#0103;
+        ValidParameters := FALSE;
+    END_IF;
+
+    ValidateParameters := ValidParameters;
+END_FUNCTION
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-数据记录与分析&#34;&gt;📊 数据记录与分析&lt;/h2&gt;
+&lt;h3 id=&#34;生产数据记录&#34;&gt;生产数据记录&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-scl&#34; data-lang=&#34;scl&#34;&gt;// 生产数据记录功能
+FUNCTION &amp;#34;LogProductionData&amp;#34; : VOID
+VAR_INPUT
+END_VAR
+VAR
+    DataRecord : STRUCT
+        Timestamp : DATE_AND_TIME;
+        PartCount : DINT;
+        CycleTime : TIME;
+        QualityCount : DINT;
+        RejectCount : DINT;
+    END_STRUCT;
+END_VAR
+
+BEGIN
+    // 每小时记录一次生产数据
+    IF &amp;#34;Timer_Hourly&amp;#34;.Q THEN
+        DataRecord.Timestamp := CURRENT_TIME;
+        DataRecord.PartCount := &amp;#34;ProductionData&amp;#34;.PartCount;
+        DataRecord.CycleTime := &amp;#34;Current_CycleTime&amp;#34;;
+        DataRecord.QualityCount := &amp;#34;QualityParts&amp;#34;;
+        DataRecord.RejectCount := &amp;#34;RejectParts&amp;#34;;
+
+        // 写入数据日志
+        &amp;#34;ProductionLog&amp;#34;.Write(DataRecord);
+
+        // 重置小时计数器
+        &amp;#34;Timer_Hourly&amp;#34;.RESET := TRUE;
+    END_IF;
+END_FUNCTION
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;oee计算&#34;&gt;OEE计算&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-scl&#34; data-lang=&#34;scl&#34;&gt;// 设备综合效率计算
+FUNCTION &amp;#34;CalculateOEE&amp;#34; : REAL
+VAR_INPUT
+    PlannedProductionTime : TIME;
+    ActualProductionTime : TIME;
+    IdealCycleTime : TIME;
+    TotalParts : DINT;
+    GoodParts : DINT;
+END_VAR
+VAR
+    Availability : REAL;
+    Performance : REAL;
+    Quality : REAL;
+END_VAR
+
+BEGIN
+    // 可用率 = 实际运行时间 / 计划生产时间
+    Availability := TIME_TO_REAL(ActualProductionTime) /
+                   TIME_TO_REAL(PlannedProductionTime);
+
+    // 性能率 = (理想循环时间 × 总产量) / 实际运行时间
+    Performance := (TIME_TO_REAL(IdealCycleTime) * DINT_TO_REAL(TotalParts)) /
+                  TIME_TO_REAL(ActualProductionTime);
+
+    // 质量率 = 合格品数量 / 总产量
+    Quality := DINT_TO_REAL(GoodParts) / DINT_TO_REAL(TotalParts);
+
+    // OEE = 可用率 × 性能率 × 质量率
+    CalculateOEE := Availability * Performance * Quality;
+END_FUNCTION
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-安装调试过程&#34;&gt;🔧 安装调试过程&lt;/h2&gt;
+&lt;h3 id=&#34;系统调试步骤&#34;&gt;系统调试步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;硬件检查&lt;/strong&gt; (2天)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Factory I/O &#43; PLC完全教程：工业自动化仿真与实践</title>
+      <link>http://localhost:1313/posts/factory-io-plc-tutorial/</link>
+      <pubDate>Sat, 08 Nov 2025 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/factory-io-plc-tutorial/</guid>
+      <description>&lt;h1 id=&#34;-factory-io--plc完全教程工业自动化仿真与实践&#34;&gt;🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践&lt;/h1&gt;
 &lt;p&gt;Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。&lt;/p&gt;
-&lt;h2 id="-学习目标"&gt;🎯 学习目标&lt;/h2&gt;
+&lt;h2 id=&#34;-学习目标&#34;&gt;🎯 学习目标&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;掌握Factory I/O软件的使用方法&lt;/li&gt;
 &lt;li&gt;学习PLC梯形图编程&lt;/li&gt;
 &lt;li&gt;理解工业控制系统的设计原理&lt;/li&gt;
 &lt;li&gt;完成多个实际工业项目仿真&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="-环境准备"&gt;🛠️ 环境准备&lt;/h2&gt;
-&lt;h3 id="21-factory-io软件安装"&gt;2.1 Factory I/O软件安装&lt;/h3&gt;
-&lt;h4 id="系统要求"&gt;系统要求&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;最低配置:
+&lt;h2 id=&#34;-环境准备&#34;&gt;🛠️ 环境准备&lt;/h2&gt;
+&lt;h3 id=&#34;21-factory-io软件安装&#34;&gt;2.1 Factory I/O软件安装&lt;/h3&gt;
+&lt;h4 id=&#34;系统要求&#34;&gt;系统要求&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;最低配置:
 - 操作系统: Windows 10/11 (64位)
 - 内存: 8GB RAM
 - 显卡: OpenGL 3.3支持
 - 硬盘: 2GB可用空间
+
 推荐配置:
 - 内存: 16GB RAM
 - 显卡: GTX 1060或更高
 - 处理器: Intel i5/AMD Ryzen 5以上
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="安装步骤"&gt;安装步骤&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;安装步骤&#34;&gt;安装步骤&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;访问官网 &lt;a href="https://www.factoryio.com"&gt;factoryio.com&lt;/a&gt; 下载软件&lt;/li&gt;
+&lt;li&gt;访问官网 &lt;a href=&#34;https://www.factoryio.com&#34;&gt;factoryio.com&lt;/a&gt; 下载软件&lt;/li&gt;
 &lt;li&gt;选择试用版或学生版（30天免费）&lt;/li&gt;
 &lt;li&gt;运行安装程序，按提示完成安装&lt;/li&gt;
 &lt;li&gt;启动软件并激活许可证&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="22-plc编程软件选择"&gt;2.2 PLC编程软件选择&lt;/h3&gt;
-&lt;h4 id="支持的plc软件"&gt;支持的PLC软件&lt;/h4&gt;
+&lt;h3 id=&#34;22-plc编程软件选择&#34;&gt;2.2 PLC编程软件选择&lt;/h3&gt;
+&lt;h4 id=&#34;支持的plc软件&#34;&gt;支持的PLC软件&lt;/h4&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;PLC软件&lt;/th&gt;
-&lt;th&gt;连接方式&lt;/th&gt;
-&lt;th&gt;价格&lt;/th&gt;
-&lt;th&gt;推荐度&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;CODESYS&lt;/td&gt;
-&lt;td&gt;OPC UA/Modbus&lt;/td&gt;
-&lt;td&gt;免费&lt;/td&gt;
-&lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TwinCAT&lt;/td&gt;
-&lt;td&gt;ADS&lt;/td&gt;
-&lt;td&gt;免费&lt;/td&gt;
-&lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Studio 5000&lt;/td&gt;
-&lt;td&gt;Logix Emulator&lt;/td&gt;
-&lt;td&gt;收费&lt;/td&gt;
-&lt;td&gt;⭐⭐⭐&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TIA Portal&lt;/td&gt;
-&lt;td&gt;PLCSIM Advanced&lt;/td&gt;
-&lt;td&gt;收费&lt;/td&gt;
-&lt;td&gt;⭐⭐⭐&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;PLC软件&lt;/th&gt;
+          &lt;th&gt;连接方式&lt;/th&gt;
+          &lt;th&gt;价格&lt;/th&gt;
+          &lt;th&gt;推荐度&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;CODESYS&lt;/td&gt;
+          &lt;td&gt;OPC UA/Modbus&lt;/td&gt;
+          &lt;td&gt;免费&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TwinCAT&lt;/td&gt;
+          &lt;td&gt;ADS&lt;/td&gt;
+          &lt;td&gt;免费&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Studio 5000&lt;/td&gt;
+          &lt;td&gt;Logix Emulator&lt;/td&gt;
+          &lt;td&gt;收费&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TIA Portal&lt;/td&gt;
+          &lt;td&gt;PLCSIM Advanced&lt;/td&gt;
+          &lt;td&gt;收费&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id="codesys安装配置"&gt;CODESYS安装配置&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;CODESYS安装步骤:
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;1. 下载CODESYS Development System
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;2. 安装CODESYS Control Win V3 &lt;span style="color:#f92672"&gt;(&lt;/span&gt;软PLC&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;3. 配置OPC UA服务器
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;4. 设置通信参数
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="-factory-io界面介绍"&gt;🎮 Factory I/O界面介绍&lt;/h2&gt;
-&lt;h3 id="31-主界面布局"&gt;3.1 主界面布局&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;Factory I/O界面布局:
+&lt;h4 id=&#34;codesys安装配置&#34;&gt;CODESYS安装配置&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CODESYS安装步骤:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1. 下载CODESYS Development System
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2. 安装CODESYS Control Win V3 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;软PLC&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3. 配置OPC UA服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;4. 设置通信参数
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-factory-io界面介绍&#34;&gt;🎮 Factory I/O界面介绍&lt;/h2&gt;
+&lt;h3 id=&#34;31-主界面布局&#34;&gt;3.1 主界面布局&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Factory I/O界面布局:
 ┌─────────────────────────────────────────────────────────┐
-│ 菜单栏: File, Edit, View, Physics, Help │
+│ 菜单栏: File, Edit, View, Physics, Help               │
 ├─────────────────────────────────────────────────────────┤
-│ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择 │
+│ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择               │
 ├─────────────────────────────────────────────────────────┤
-│ 场景编辑区 │ 3D视图区域 │
-│ │ │
-│ 组件库 │ │
-│ 驱动配置 │ │
-│ │ │
+│ 场景编辑区 │        3D视图区域                         │
+│            │                                           │
+│ 组件库     │                                           │
+│ 驱动配置   │                                           │
+│            │                                           │
 ├─────────────────────────────────────────────────────────┤
-│ 状态栏: FPS, 物理引擎, 连接状态 │
+│ 状态栏: FPS, 物理引擎, 连接状态                        │
 └─────────────────────────────────────────────────────────┘
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="32-组件库介绍"&gt;3.2 组件库介绍&lt;/h3&gt;
-&lt;h4 id="传感器组件"&gt;传感器组件&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;传感器类型:
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;32-组件库介绍&#34;&gt;3.2 组件库介绍&lt;/h3&gt;
+&lt;h4 id=&#34;传感器组件&#34;&gt;传感器组件&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;传感器类型:
 - 接近传感器 (Proximity Sensor): 检测物体接近
 - 光电传感器 (Photoelectric Sensor): 光束检测
 - 视觉传感器 (Vision Sensor): 图像识别
 - 激光传感器 (Laser Sensor): 精确测量
 - 重量传感器 (Weight Sensor): 重量测量
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="执行器组件"&gt;执行器组件&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;执行器类型:
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;执行器组件&#34;&gt;执行器组件&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;执行器类型:
 - 传送带 (Conveyor Belt): 物料输送
 - 机械臂 (Articulated Robot): 抓取操作
 - 升降机 (Lift): 垂直运输
 - 推杆 (Pusher): 推动物料
 - 分拣器 (Sorter): 物料分拣
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-第一个项目传送带控制系统"&gt;📝 第一个项目：传送带控制系统&lt;/h2&gt;
-&lt;h3 id="41-场景搭建"&gt;4.1 场景搭建&lt;/h3&gt;
-&lt;h4 id="创建基础布局"&gt;创建基础布局&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;步骤1: 创建场景
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-第一个项目传送带控制系统&#34;&gt;📝 第一个项目：传送带控制系统&lt;/h2&gt;
+&lt;h3 id=&#34;41-场景搭建&#34;&gt;4.1 场景搭建&lt;/h3&gt;
+&lt;h4 id=&#34;创建基础布局&#34;&gt;创建基础布局&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;步骤1: 创建场景
 1. 新建场景 → Empty Scene
 2. 调整地面大小: 20m × 20m
 3. 添加光照: Directional Light
+
 步骤2: 添加传送带
 1. 从组件库拖拽 Conveyor Belt
 2. 设置尺寸: Length 10m, Width 1m
 3. 设置速度: 0.5 m/s
 4. 放置位置: (0, 0, 0)
+
 步骤3: 添加传感器
 1. 在传送带起点添加 Proximity Sensor
 2. 在传送带终点添加 Photoelectric Sensor
 3. 调整传感器检测范围和位置
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="组件连接配置"&gt;组件连接配置&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!-- Factory I/O驱动配置 --&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;Driver&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;type=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;OPC_UA_Client&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;Endpoint&amp;gt;&lt;/span&gt;opc.tcp://localhost:4840&lt;span style="color:#f92672"&gt;&amp;lt;/Endpoint&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;UpdateRate&amp;gt;&lt;/span&gt;50&lt;span style="color:#f92672"&gt;&amp;lt;/UpdateRate&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/Driver&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!-- 输入输出映射 --&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;Inputs&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;Sensor&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;start_sensor&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;address=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ns=2;i=1&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;Sensor&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;end_sensor&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;address=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ns=2;i=2&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/Inputs&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;Outputs&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;Actuator&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;conveyor_motor&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;address=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ns=2;i=101&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;LED&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;status_led&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;address=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ns=2;i=201&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/Outputs&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="42-plc程序开发"&gt;4.2 PLC程序开发&lt;/h3&gt;
-&lt;h4 id="codesys梯形图程序"&gt;CODESYS梯形图程序&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;PROGRAM MainProgram
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;组件连接配置&#34;&gt;组件连接配置&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- Factory I/O驱动配置 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Driver&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;OPC_UA_Client&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Endpoint&amp;gt;&lt;/span&gt;opc.tcp://localhost:4840&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Endpoint&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;UpdateRate&amp;gt;&lt;/span&gt;50&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/UpdateRate&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Driver&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- 输入输出映射 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Inputs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Sensor&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;start_sensor&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;address=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ns=2;i=1&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Sensor&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;end_sensor&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;address=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ns=2;i=2&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Inputs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Outputs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Actuator&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;conveyor_motor&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;address=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ns=2;i=101&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;LED&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;status_led&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;address=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ns=2;i=201&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Outputs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;42-plc程序开发&#34;&gt;4.2 PLC程序开发&lt;/h3&gt;
+&lt;h4 id=&#34;codesys梯形图程序&#34;&gt;CODESYS梯形图程序&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;PROGRAM MainProgram
 VAR
-// 输入变量
-start_sensor AT %I0.0 : BOOL;
-end_sensor AT %I0.1 : BOOL;
-start_button AT %I0.2 : BOOL;
-stop_button AT %I0.3 : BOOL;
-// 输出变量
-conveyor_motor AT %Q0.0 : BOOL;
-status_led AT %Q0.1 : BOOL;
-// 内部变量
-system_running : BOOL := FALSE;
-box_detected : BOOL := FALSE;
-process_complete : BOOL := FALSE;
+    // 输入变量
+    start_sensor AT %I0.0 : BOOL;
+    end_sensor AT %I0.1 : BOOL;
+    start_button AT %I0.2 : BOOL;
+    stop_button AT %I0.3 : BOOL;
+
+    // 输出变量
+    conveyor_motor AT %Q0.0 : BOOL;
+    status_led AT %Q0.1 : BOOL;
+
+    // 内部变量
+    system_running : BOOL := FALSE;
+    box_detected : BOOL := FALSE;
+    process_complete : BOOL := FALSE;
 END_VAR
+
 // 梯形图逻辑实现
 METHOD LadderLogic : BOOL
 VAR_INPUT
-Input : BOOL;
+    Input : BOOL;
 END_VAR
 VAR_OUTPUT
-Output : BOOL;
+    Output : BOOL;
 END_VAR
+
 // 启动停止逻辑
 IF start_button AND NOT system_running THEN
-system_running := TRUE;
+    system_running := TRUE;
 END_IF
+
 IF stop_button AND system_running THEN
-system_running := FALSE;
+    system_running := FALSE;
 END_IF
+
 // 传送带控制逻辑
 IF system_running THEN
-conveyor_motor := TRUE;
-status_led := TRUE;
-// 检测到箱子
-IF start_sensor AND NOT box_detected THEN
-box_detected := TRUE;
-END_IF
-// 箱子到达终点
-IF end_sensor AND box_detected THEN
-process_complete := TRUE;
-box_detected := FALSE;
-END_IF
+    conveyor_motor := TRUE;
+    status_led := TRUE;
+
+    // 检测到箱子
+    IF start_sensor AND NOT box_detected THEN
+        box_detected := TRUE;
+    END_IF
+
+    // 箱子到达终点
+    IF end_sensor AND box_detected THEN
+        process_complete := TRUE;
+        box_detected := FALSE;
+    END_IF
 ELSE
-conveyor_motor := FALSE;
-status_led := FALSE;
-box_detected := FALSE;
-process_complete := FALSE;
+    conveyor_motor := FALSE;
+    status_led := FALSE;
+    box_detected := FALSE;
+    process_complete := FALSE;
 END_IF
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="状态机实现"&gt;状态机实现&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;TYPE E_STATE :
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;状态机实现&#34;&gt;状态机实现&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;TYPE E_STATE :
 (
-IDLE := 0,
-RUNNING := 1,
-PROCESSING := 2,
-COMPLETE := 3,
-ERROR := 4
+    IDLE := 0,
+    RUNNING := 1,
+    PROCESSING := 2,
+    COMPLETE := 3,
+    ERROR := 4
 );
 END_TYPE
+
 VAR
-current_state : E_STATE := IDLE;
-state_timer : TON;
-error_count : INT := 0;
+    current_state : E_STATE := IDLE;
+    state_timer : TON;
+    error_count : INT := 0;
 END_VAR
+
 // 状态机逻辑
 CASE current_state OF
-IDLE:
-IF start_button THEN
-current_state := RUNNING;
-state_timer(IN:=TRUE, PT:=T#5S);
-END_IF
-RUNNING:
-IF state_timer.Q THEN
-current_state := PROCESSING;
-state_timer(IN:=FALSE);
-END_IF
-IF stop_button THEN
-current_state := IDLE;
-END_IF
-PROCESSING:
-IF process_complete THEN
-current_state := COMPLETE;
-ELSIF error_detected THEN
-current_state := ERROR;
-error_count := error_count + 1;
-END_IF
-COMPLETE:
-// 等待2秒后返回运行状态
-state_timer(IN:=TRUE, PT:=T#2S);
-IF state_timer.Q THEN
-current_state := RUNNING;
-state_timer(IN:=FALSE);
-process_complete := FALSE;
-END_IF
-ERROR:
-IF error_count &amp;gt; 5 THEN
-current_state := IDLE;
-error_count := 0;
-ELSIF reset_button THEN
-current_state := RUNNING;
-error_count := 0;
-END_IF
+    IDLE:
+        IF start_button THEN
+            current_state := RUNNING;
+            state_timer(IN:=TRUE, PT:=T#5S);
+        END_IF
+
+    RUNNING:
+        IF state_timer.Q THEN
+            current_state := PROCESSING;
+            state_timer(IN:=FALSE);
+        END_IF
+
+        IF stop_button THEN
+            current_state := IDLE;
+        END_IF
+
+    PROCESSING:
+        IF process_complete THEN
+            current_state := COMPLETE;
+        ELSIF error_detected THEN
+            current_state := ERROR;
+            error_count := error_count + 1;
+        END_IF
+
+    COMPLETE:
+        // 等待2秒后返回运行状态
+        state_timer(IN:=TRUE, PT:=T#2S);
+        IF state_timer.Q THEN
+            current_state := RUNNING;
+            state_timer(IN:=FALSE);
+            process_complete := FALSE;
+        END_IF
+
+    ERROR:
+        IF error_count &amp;gt; 5 THEN
+            current_state := IDLE;
+            error_count := 0;
+        ELSIF reset_button THEN
+            current_state := RUNNING;
+            error_count := 0;
+        END_IF
 END_CASE
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-高级项目自动分拣系统"&gt;🤖 高级项目：自动分拣系统&lt;/h2&gt;
-&lt;h3 id="51-系统设计"&gt;5.1 系统设计&lt;/h3&gt;
-&lt;h4 id="工艺流程"&gt;工艺流程&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;分拣系统工艺流程:
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-高级项目自动分拣系统&#34;&gt;🤖 高级项目：自动分拣系统&lt;/h2&gt;
+&lt;h3 id=&#34;51-系统设计&#34;&gt;5.1 系统设计&lt;/h3&gt;
+&lt;h4 id=&#34;工艺流程&#34;&gt;工艺流程&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;分拣系统工艺流程:
 1. 箱子进入传送带
 2. 视觉传感器检测箱子颜色
 3. 根据颜色分拣到不同通道
 4. 统计各颜色箱子数量
 5. 异常处理和报警
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="场景搭建步骤"&gt;场景搭建步骤&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;场景搭建:
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;场景搭建步骤&#34;&gt;场景搭建步骤&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;场景搭建:
 1. 主传送带: 12m长，速度可调
 2. 分拣器: 3个推杆，间隔3m
 3. 收集箱: 3个颜色对应收集箱
 4. 传感器阵列: 起始检测 + 3个颜色检测
 5. HMI面板: 显示统计信息和控制按钮
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="52-plc程序设计"&gt;5.2 PLC程序设计&lt;/h3&gt;
-&lt;h4 id="数据结构定义"&gt;数据结构定义&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;// 箱子类型枚举
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;52-plc程序设计&#34;&gt;5.2 PLC程序设计&lt;/h3&gt;
+&lt;h4 id=&#34;数据结构定义&#34;&gt;数据结构定义&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;// 箱子类型枚举
 TYPE E_BOX_TYPE :
 (
-NONE := 0,
-RED := 1,
-BLUE := 2,
-GREEN := 3,
-UNKNOWN := 4
+    NONE := 0,
+    RED := 1,
+    BLUE := 2,
+    GREEN := 3,
+    UNKNOWN := 4
 );
 END_TYPE
+
 // 箱子信息结构
 TYPE ST_BOX_INFO :
 STRUCT
-type : E_BOX_TYPE;
-position : REAL;
-timestamp : TIME;
-processed : BOOL;
+    type : E_BOX_TYPE;
+    position : REAL;
+    timestamp : TIME;
+    processed : BOOL;
 END_STRUCT
 END_TYPE
+
 // 系统状态结构
 TYPE ST_SYSTEM_STATUS :
 STRUCT
-total_boxes : INT := 0;
-red_boxes : INT := 0;
-blue_boxes : INT := 0;
-green_boxes : INT := 0;
-rejected_boxes : INT := 0;
-system_uptime : TIME;
-last_update : TIME;
+    total_boxes : INT := 0;
+    red_boxes : INT := 0;
+    blue_boxes : INT := 0;
+    green_boxes : INT := 0;
+    rejected_boxes : INT := 0;
+    system_uptime : TIME;
+    last_update : TIME;
 END_STRUCT
 END_TYPE
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="主控制程序"&gt;主控制程序&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;PROGRAM SortingSystem
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;主控制程序&#34;&gt;主控制程序&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;PROGRAM SortingSystem
 VAR
-// 输入信号
-entrance_sensor AT %I0.0 : BOOL;
-color_red_sensor AT %I0.1 : BOOL;
-color_blue_sensor AT %I0.2 : BOOL;
-color_green_sensor AT %I0.3 : BOOL;
-position_sensors : ARRAY[1..3] OF BOOL;
-// 输出信号
-main_conveyor AT %Q0.0 : BOOL;
-sorting_pushers : ARRAY[1..3] OF BOOL;
-status_lights : ARRAY[1..3] OF BOOL;
-// 系统变量
-box_queue : ARRAY[1..10] OF ST_BOX_INFO;
-system_status : ST_SYSTEM_STATUS;
-current_boxes_on_belt : INT := 0;
-// 定时器
-conveyor_timer : TON;
-pusher_timers : ARRAY[1..3] OF TON;
-// 状态机
-system_state : E_STATE := IDLE;
+    // 输入信号
+    entrance_sensor AT %I0.0 : BOOL;
+    color_red_sensor AT %I0.1 : BOOL;
+    color_blue_sensor AT %I0.2 : BOOL;
+    color_green_sensor AT %I0.3 : BOOL;
+    position_sensors : ARRAY[1..3] OF BOOL;
+
+    // 输出信号
+    main_conveyor AT %Q0.0 : BOOL;
+    sorting_pushers : ARRAY[1..3] OF BOOL;
+    status_lights : ARRAY[1..3] OF BOOL;
+
+    // 系统变量
+    box_queue : ARRAY[1..10] OF ST_BOX_INFO;
+    system_status : ST_SYSTEM_STATUS;
+    current_boxes_on_belt : INT := 0;
+
+    // 定时器
+    conveyor_timer : TON;
+    pusher_timers : ARRAY[1..3] OF TON;
+
+    // 状态机
+    system_state : E_STATE := IDLE;
 END_VAR
+
 // 主控制逻辑
 METHOD ControlLogic : BOOL
 VAR_INPUT
-Execute : BOOL;
+    Execute : BOOL;
 END_VAR
+
 IF Execute THEN
-// 更新传感器状态
-UpdateSensorStatus();
-// 处理新进入的箱子
-IF entrance_sensor AND current_boxes_on_belt &amp;lt; 10 THEN
-AddNewBox();
+    // 更新传感器状态
+    UpdateSensorStatus();
+
+    // 处理新进入的箱子
+    IF entrance_sensor AND current_boxes_on_belt &amp;lt; 10 THEN
+        AddNewBox();
+    END_IF
+
+    // 更新箱子位置
+    UpdateBoxPositions();
+
+    // 执行分拣逻辑
+    ExecuteSorting();
+
+    // 更新统计信息
+    UpdateStatistics();
+
+    // 异常检测
+    CheckErrors();
 END_IF
-// 更新箱子位置
-UpdateBoxPositions();
-// 执行分拣逻辑
-ExecuteSorting();
-// 更新统计信息
-UpdateStatistics();
-// 异常检测
-CheckErrors();
-END_IF
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="分拣算法实现"&gt;分拣算法实现&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;METHOD ExecuteSorting : BOOL
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;分拣算法实现&#34;&gt;分拣算法实现&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;METHOD ExecuteSorting : BOOL
 VAR
-i : INT;
-box_to_sort : ST_BOX_INFO;
-target_pusher : INT;
+    i : INT;
+    box_to_sort : ST_BOX_INFO;
+    target_pusher : INT;
 END_VAR
+
 // 遍历传送带上的箱子
 FOR i := 1 TO current_boxes_on_belt DO
-box_to_sort := box_queue[i];
-// 检查箱子是否到达分拣位置
-IF IsBoxAtSortingPosition(box_to_sort.position, target_pusher) THEN
-// 根据箱子类型执行分拣
-CASE box_to_sort.type OF
-RED:
-IF target_pusher = 1 THEN
-ExecutePusher(1);
-system_status.red_boxes := system_status.red_boxes + 1;
-END_IF
-BLUE:
-IF target_pusher = 2 THEN
-ExecutePusher(2);
-system_status.blue_boxes := system_status.blue_boxes + 1;
-END_IF
-GREEN:
-IF target_pusher = 3 THEN
-ExecutePusher(3);
-system_status.green_boxes := system_status.green_boxes + 1;
-END_IF
-UNKNOWN:
-// 未知类型，报警
-TriggerAlarm(&amp;#39;Unknown box type detected&amp;#39;);
-system_status.rejected_boxes := system_status.rejected_boxes + 1;
-END_CASE
-// 标记箱子已处理
-box_queue[i].processed := TRUE;
-END_IF;
+    box_to_sort := box_queue[i];
+
+    // 检查箱子是否到达分拣位置
+    IF IsBoxAtSortingPosition(box_to_sort.position, target_pusher) THEN
+        // 根据箱子类型执行分拣
+        CASE box_to_sort.type OF
+            RED:
+                IF target_pusher = 1 THEN
+                    ExecutePusher(1);
+                    system_status.red_boxes := system_status.red_boxes + 1;
+                END_IF
+
+            BLUE:
+                IF target_pusher = 2 THEN
+                    ExecutePusher(2);
+                    system_status.blue_boxes := system_status.blue_boxes + 1;
+                END_IF
+
+            GREEN:
+                IF target_pusher = 3 THEN
+                    ExecutePusher(3);
+                    system_status.green_boxes := system_status.green_boxes + 1;
+                END_IF
+
+            UNKNOWN:
+                // 未知类型，报警
+                TriggerAlarm(&amp;#39;Unknown box type detected&amp;#39;);
+                system_status.rejected_boxes := system_status.rejected_boxes + 1;
+        END_CASE
+
+        // 标记箱子已处理
+        box_queue[i].processed := TRUE;
+    END_IF;
 END_FOR
+
 // 清理已处理的箱子
 CleanProcessedBoxes();
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-游戏化学习项目"&gt;🎮 游戏化学习项目&lt;/h2&gt;
-&lt;h3 id="61-智能仓储系统"&gt;6.1 智能仓储系统&lt;/h3&gt;
-&lt;h4 id="项目背景"&gt;项目背景&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;项目目标:
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-游戏化学习项目&#34;&gt;🎮 游戏化学习项目&lt;/h2&gt;
+&lt;h3 id=&#34;61-智能仓储系统&#34;&gt;6.1 智能仓储系统&lt;/h3&gt;
+&lt;h4 id=&#34;项目背景&#34;&gt;项目背景&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;项目目标:
 - 自动化仓库管理
 - 货物智能分拣
 - 库存实时监控
 - 机器人协作搬运
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="系统架构"&gt;系统架构&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;硬件组件:
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;系统架构&#34;&gt;系统架构&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;硬件组件:
 1. 堆垛机 (Stacker Crane): 货架存取
 2. AGV小车: 货物搬运
 3. 输送线系统: 货物流转
 4. 提升机: 楼层运输
 5. RFID读写器: 货物识别
+
 软件功能:
 1. WMS仓库管理系统
 2. 路径规划算法
 3. 任务调度系统
 4. 数据可视化
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="62-物流分拣中心"&gt;6.2 物流分拣中心&lt;/h3&gt;
-&lt;h4 id="场景设计"&gt;场景设计&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;分拣中心布局:
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;62-物流分拣中心&#34;&gt;6.2 物流分拣中心&lt;/h3&gt;
+&lt;h4 id=&#34;场景设计&#34;&gt;场景设计&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;分拣中心布局:
 ┌─────────────────────────────────────────┐
-│ 入货区 → 主输送线 → 分拣区 → 出货区 │
-│ │
-│ [货架A] [货架B] [货架C] [货架D] │
-│ │
-│ [控制中心] [HMI界面] │
+│  入货区  →  主输送线  →  分拣区  →  出货区  │
+│                                        │
+│  [货架A]  [货架B]  [货架C]  [货架D]     │
+│                                        │
+│        [控制中心] [HMI界面]             │
 └─────────────────────────────────────────┘
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="控制逻辑"&gt;控制逻辑&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;// 物流分拣控制程序
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;控制逻辑&#34;&gt;控制逻辑&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;// 物流分拣控制程序
 PROGRAM LogisticsCenter
 VAR
-// 订单数据
-orders : ARRAY[1..100] OF ST_ORDER;
-current_order : INT := 0;
-// 货架状态
-shelves : ARRAY[1..4] OF ARRAY[1..20] OF ST_SHELF_SLOT;
-// 设备状态
-agv_fleet : ARRAY[1..3] OF ST_AGV_STATUS;
-conveyor_status : ST_CONVEYOR_STATUS;
-// 任务队列
-task_queue : ARRAY[1..50] OF ST_TASK;
-active_tasks : INT := 0;
+    // 订单数据
+    orders : ARRAY[1..100] OF ST_ORDER;
+    current_order : INT := 0;
+
+    // 货架状态
+    shelves : ARRAY[1..4] OF ARRAY[1..20] OF ST_SHELF_SLOT;
+
+    // 设备状态
+    agv_fleet : ARRAY[1..3] OF ST_AGV_STATUS;
+    conveyor_status : ST_CONVEYOR_STATUS;
+
+    // 任务队列
+    task_queue : ARRAY[1..50] OF ST_TASK;
+    active_tasks : INT := 0;
 END_VAR
+
 // 任务调度算法
 METHOD TaskScheduling : BOOL
 VAR
-i : INT;
-best_agv : INT;
-min_cost : REAL := 999999;
-task_cost : REAL;
+    i : INT;
+    best_agv : INT;
+    min_cost : REAL := 999999;
+    task_cost : REAL;
 END_VAR
+
 // 为每个任务分配最优AGV
 FOR i := 1 TO active_tasks DO
-// 计算每个AGV执行任务的代价
-FOR j := 1 TO 3 DO
-IF agv_fleet[j].status = IDLE THEN
-task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]);
-IF task_cost &amp;lt; min_cost THEN
-min_cost := task_cost;
-best_agv := j;
-END_IF
-END_IF;
-END_FOR;
-// 分配任务给最优AGV
-IF best_agv &amp;gt; 0 THEN
-AssignTaskToAGV(task_queue[i], best_agv);
-RemoveTaskFromQueue(i);
-best_agv := 0;
-min_cost := 999999;
-END_IF;
+    // 计算每个AGV执行任务的代价
+    FOR j := 1 TO 3 DO
+        IF agv_fleet[j].status = IDLE THEN
+            task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]);
+
+            IF task_cost &amp;lt; min_cost THEN
+                min_cost := task_cost;
+                best_agv := j;
+            END_IF
+        END_IF;
+    END_FOR;
+
+    // 分配任务给最优AGV
+    IF best_agv &amp;gt; 0 THEN
+        AssignTaskToAGV(task_queue[i], best_agv);
+        RemoveTaskFromQueue(i);
+        best_agv := 0;
+        min_cost := 999999;
+    END_IF;
 END_FOR
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-性能优化技巧"&gt;📊 性能优化技巧&lt;/h2&gt;
-&lt;h3 id="71-代码优化"&gt;7.1 代码优化&lt;/h3&gt;
-&lt;h4 id="算法优化"&gt;算法优化&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;// 低效的实现
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-性能优化技巧&#34;&gt;📊 性能优化技巧&lt;/h2&gt;
+&lt;h3 id=&#34;71-代码优化&#34;&gt;7.1 代码优化&lt;/h3&gt;
+&lt;h4 id=&#34;算法优化&#34;&gt;算法优化&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;// 低效的实现
 FUNCTION InefficientSearch : BOOL
 VAR_INPUT
-target : INT;
-array_data : ARRAY[1..1000] OF INT;
+    target : INT;
+    array_data : ARRAY[1..1000] OF INT;
 END_VAR
 VAR
-i : INT;
+    i : INT;
 END_VAR
+
 FOR i := 1 TO 1000 DO
-IF array_data[i] = target THEN
-RETURN TRUE;
-END_IF;
+    IF array_data[i] = target THEN
+        RETURN TRUE;
+    END_IF;
 END_FOR
+
 RETURN FALSE;
+
 // 优化后的实现 (二分查找)
 FUNCTION OptimizedSearch : BOOL
 VAR_INPUT
-target : INT;
-sorted_array : ARRAY[1..1000] OF INT;
+    target : INT;
+    sorted_array : ARRAY[1..1000] OF INT;
 END_VAR
 VAR
-left, right, mid : INT;
+    left, right, mid : INT;
 END_VAR
+
 left := 1;
 right := 1000;
+
 WHILE left &amp;lt;= right DO
-mid := (left + right) / 2;
-IF sorted_array[mid] = target THEN
-RETURN TRUE;
-ELSIF sorted_array[mid] &amp;lt; target THEN
-left := mid + 1;
-ELSE
-right := mid - 1;
-END_IF;
+    mid := (left + right) / 2;
+
+    IF sorted_array[mid] = target THEN
+        RETURN TRUE;
+    ELSIF sorted_array[mid] &amp;lt; target THEN
+        left := mid + 1;
+    ELSE
+        right := mid - 1;
+    END_IF;
 END_WHILE;
+
 RETURN FALSE;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="72-通信优化"&gt;7.2 通信优化&lt;/h3&gt;
-&lt;h4 id="数据批处理"&gt;数据批处理&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;// 批量数据更新结构
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;72-通信优化&#34;&gt;7.2 通信优化&lt;/h3&gt;
+&lt;h4 id=&#34;数据批处理&#34;&gt;数据批处理&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;// 批量数据更新结构
 TYPE ST_BATCH_UPDATE :
 STRUCT
-timestamp : TIME;
-sensor_values : ARRAY[1..32] OF INT;
-actuator_states : ARRAY[1..16] OF BOOL;
-system_flags : ARRAY[1..8] OF BOOL;
+    timestamp : TIME;
+    sensor_values : ARRAY[1..32] OF INT;
+    actuator_states : ARRAY[1..16] OF BOOL;
+    system_flags : ARRAY[1..8] OF BOOL;
 END_STRUCT
 END_TYPE
+
 // 批量更新方法
 METHOD BatchUpdate : BOOL
 VAR_INPUT
-update_data : ST_BATCH_UPDATE;
+    update_data : ST_BATCH_UPDATE;
 END_VAR
+
 // 一次性更新所有数据
 FOR i := 1 TO 32 DO
-sensor_data[i] := update_data.sensor_values[i];
+    sensor_data[i] := update_data.sensor_values[i];
 END_FOR
+
 FOR i := 1 TO 16 DO
-actuator_data[i] := update_data.actuator_states[i];
+    actuator_data[i] := update_data.actuator_states[i];
 END_FOR
+
 // 应用时间戳
 last_update_time := update_data.timestamp;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-调试和故障排除"&gt;🔧 调试和故障排除&lt;/h2&gt;
-&lt;h3 id="81-常见问题解决"&gt;8.1 常见问题解决&lt;/h3&gt;
-&lt;h4 id="通信问题"&gt;通信问题&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;问题: Factory I/O无法连接到PLC
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-调试和故障排除&#34;&gt;🔧 调试和故障排除&lt;/h2&gt;
+&lt;h3 id=&#34;81-常见问题解决&#34;&gt;8.1 常见问题解决&lt;/h3&gt;
+&lt;h4 id=&#34;通信问题&#34;&gt;通信问题&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;问题: Factory I/O无法连接到PLC
 解决步骤:
 1. 检查OPC UA服务器是否启动
 2. 确认防火墙设置
 3. 验证IP地址和端口号
 4. 检查PLC程序是否运行
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="仿真问题"&gt;仿真问题&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;问题: 物理仿真不准确
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;仿真问题&#34;&gt;仿真问题&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;问题: 物理仿真不准确
 解决方法:
 1. 调整物理引擎参数
 2. 检查物体碰撞设置
 3. 优化传送带速度
 4. 调整传感器检测范围
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="82-调试工具使用"&gt;8.2 调试工具使用&lt;/h3&gt;
-&lt;h4 id="数据监控"&gt;数据监控&lt;/h4&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-pascal" data-lang="pascal"&gt;// 变量监控结构
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;82-调试工具使用&#34;&gt;8.2 调试工具使用&lt;/h3&gt;
+&lt;h4 id=&#34;数据监控&#34;&gt;数据监控&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-pascal&#34; data-lang=&#34;pascal&#34;&gt;// 变量监控结构
 TYPE ST_DEBUG_INFO :
 STRUCT
-cycle_time : TIME;
-cpu_usage : REAL;
-memory_usage : REAL;
-communication_errors : INT;
-last_error_message : STRING;
+    cycle_time : TIME;
+    cpu_usage : REAL;
+    memory_usage : REAL;
+    communication_errors : INT;
+    last_error_message : STRING;
 END_STRUCT
 END_TYPE
+
 // 调试数据收集
 METHOD CollectDebugInfo : ST_DEBUG_INFO
 VAR
-debug_data : ST_DEBUG_INFO;
+    debug_data : ST_DEBUG_INFO;
 END_VAR
+
 debug_data.cycle_time := GetCycleTime();
 debug_data.cpu_usage := GetCPUUsage();
 debug_data.memory_usage := GetMemoryUsage();
 debug_data.communication_errors := GetCommErrorCount();
 debug_data.last_error_message := GetLastErrorMessage();
+
 RETURN debug_data;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-项目实战案例"&gt;🎓 项目实战案例&lt;/h2&gt;
-&lt;h3 id="案例1-智能停车场系统"&gt;案例1: 智能停车场系统&lt;/h3&gt;
-&lt;h4 id="系统功能"&gt;系统功能&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-项目实战案例&#34;&gt;🎓 项目实战案例&lt;/h2&gt;
+&lt;h3 id=&#34;案例1-智能停车场系统&#34;&gt;案例1: 智能停车场系统&lt;/h3&gt;
+&lt;h4 id=&#34;系统功能&#34;&gt;系统功能&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;车辆进出自动识别&lt;/li&gt;
 &lt;li&gt;车位智能分配&lt;/li&gt;
 &lt;li&gt;收费自动化&lt;/li&gt;
 &lt;li&gt;异常报警处理&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id="技术要点"&gt;技术要点&lt;/h4&gt;
+&lt;h4 id=&#34;技术要点&#34;&gt;技术要点&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;RFID车辆识别&lt;/li&gt;
 &lt;li&gt;图像处理车牌识别&lt;/li&gt;
 &lt;li&gt;数据库管理&lt;/li&gt;
 &lt;li&gt;支付系统集成&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="案例2-食品加工生产线"&gt;案例2: 食品加工生产线&lt;/h3&gt;
-&lt;h4 id="工艺流程-1"&gt;工艺流程&lt;/h4&gt;
+&lt;h3 id=&#34;案例2-食品加工生产线&#34;&gt;案例2: 食品加工生产线&lt;/h3&gt;
+&lt;h4 id=&#34;工艺流程-1&#34;&gt;工艺流程&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;原料自动上料&lt;/li&gt;
 &lt;li&gt;加工过程控制&lt;/li&gt;
 &lt;li&gt;质量检测分拣&lt;/li&gt;
 &lt;li&gt;包装自动化&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id="控制要点"&gt;控制要点&lt;/h4&gt;
+&lt;h4 id=&#34;控制要点&#34;&gt;控制要点&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;温度精确控制&lt;/li&gt;
 &lt;li&gt;速度同步控制&lt;/li&gt;
 &lt;li&gt;质量实时监控&lt;/li&gt;
 &lt;li&gt;数据追溯系统&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="-学习路径建议"&gt;📈 学习路径建议&lt;/h2&gt;
-&lt;h3 id="初级阶段-1-2个月"&gt;初级阶段 (1-2个月)&lt;/h3&gt;
+&lt;h2 id=&#34;-学习路径建议&#34;&gt;📈 学习路径建议&lt;/h2&gt;
+&lt;h3 id=&#34;初级阶段-1-2个月&#34;&gt;初级阶段 (1-2个月)&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;软件基础&lt;/strong&gt;: Factory I/O基本操作&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PLC入门&lt;/strong&gt;: 梯形图基础编程&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;简单项目&lt;/strong&gt;: 传送带控制、灯光控制&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;仿真实践&lt;/strong&gt;: 基础传感器和执行器应用&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="中级阶段-3-4个月"&gt;中级阶段 (3-4个月)&lt;/h3&gt;
+&lt;h3 id=&#34;中级阶段-3-4个月&#34;&gt;中级阶段 (3-4个月)&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;高级编程&lt;/strong&gt;: 功能块、状态机编程&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;通信协议&lt;/strong&gt;: OPC UA、Modbus通信&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;复杂项目&lt;/strong&gt;: 分拣系统、装配线&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;HMI开发&lt;/strong&gt;: 人机界面设计&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="高级阶段-5-6个月"&gt;高级阶段 (5-6个月)&lt;/h3&gt;
+&lt;h3 id=&#34;高级阶段-5-6个月&#34;&gt;高级阶段 (5-6个月)&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;系统集成&lt;/strong&gt;: 多设备协调控制&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;算法优化&lt;/strong&gt;: 路径规划、调度算法&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;数据库集成&lt;/strong&gt;: MES系统对接&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;工业项目&lt;/strong&gt;: 完整生产线设计&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="-考证和就业方向"&gt;💡 考证和就业方向&lt;/h2&gt;
-&lt;h3 id="相关认证"&gt;相关认证&lt;/h3&gt;
+&lt;h2 id=&#34;-考证和就业方向&#34;&gt;💡 考证和就业方向&lt;/h2&gt;
+&lt;h3 id=&#34;相关认证&#34;&gt;相关认证&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;西门子认证&lt;/strong&gt;: S7-1200/1500编程认证&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;罗克韦尔认证&lt;/strong&gt;: ControlLogix编程认证&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;施耐德认证&lt;/strong&gt;: Modicon PLC认证&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;三菱认证&lt;/strong&gt;: FX/Q系列编程认证&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="就业岗位"&gt;就业岗位&lt;/h3&gt;
+&lt;h3 id=&#34;就业岗位&#34;&gt;就业岗位&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;PLC编程工程师&lt;/li&gt;
 &lt;li&gt;自动化工程师&lt;/li&gt;
@@ -620,4 +1046,55 @@ RETURN debug_data;
 &lt;li&gt;项目经理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>自动化与控制技术技能</title>
+      <link>http://localhost:1313/skills/embedded-development/</link>
+      <pubDate>Sat, 08 Nov 2025 09:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/skills/embedded-development/</guid>
+      <description>&lt;h2 id=&#34;-专业能力概述&#34;&gt;🎯 专业能力概述&lt;/h2&gt;
+&lt;p&gt;我是一名专业的自动化与工业控制技术员，具备丰富的工业自动化系统设计、PLC编程和嵌入式控制项目经验。专注于为客户提供可靠的控制解决方案和技术服务。&lt;/p&gt;
+&lt;h3 id=&#34;-核心技能&#34;&gt;🔧 核心技能&lt;/h3&gt;
+&lt;h4 id=&#34;plc编程与开发&#34;&gt;PLC编程与开发&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Siemens PLC&lt;/strong&gt;: S7-1200/1500, TIA Portal, WinCC&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Allen-Bradley&lt;/strong&gt;: ControlLogix, CompactLogix, Studio 5000&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三菱电机&lt;/strong&gt;: FX系列, GX Works, GT Works&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;欧姆龙&lt;/strong&gt;: CJ/CP系列, Sysmac Studio&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;编程语言&lt;/strong&gt;: Ladder Logic, Function Block, Structured Text&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工业网络&lt;/strong&gt;: PROFINET, Ethernet/IP, Modbus TCP/RTU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;嵌入式控制系统&#34;&gt;嵌入式控制系统&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;STM32系列&lt;/strong&gt;: HAL库编程、FreeRTOS应用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Arduino平台&lt;/strong&gt;: Uno, Mega, ESP32/8266&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;C语言编程&lt;/strong&gt;: 寄存器操作、外设驱动开发&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时操作系统&lt;/strong&gt;: FreeRTOS, RT-Thread&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通信协议&lt;/strong&gt;: Modbus, CANopen, DeviceNet&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;信号处理&lt;/strong&gt;: PID控制、数字滤波、FFT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;solidworks机械设计&#34;&gt;SolidWorks机械设计&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3D建模&lt;/strong&gt;: 零件设计、装配体设计、工程图绘制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动化设备&lt;/strong&gt;: 工装夹具、传送机构、定位装置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;钣金设计&lt;/strong&gt;: 机箱机柜、控制面板、安装支架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;仿真分析&lt;/strong&gt;: 运动仿真、应力分析、干涉检查&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图纸标准&lt;/strong&gt;: GB/ANSI标准、BOM表生成、技术文档&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;工业传感器应用&#34;&gt;工业传感器应用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;过程控制&lt;/strong&gt;: 压力、温度、流量、液位传感器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;位置检测&lt;/strong&gt;: 接近开关、光电传感器、编码器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;运动控制&lt;/strong&gt;: 伺服电机、步进电机、变频器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全设备&lt;/strong&gt;: 安全光幕、急停按钮、安全继电器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;环境监测&lt;/strong&gt;: 气体检测、振动监测、噪声测量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-项目经验&#34;&gt;🏆 项目经验&lt;/h3&gt;
+&lt;h4 id=&#34;工业自动化项目&#34;&gt;工业自动化项目&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;智能生产线控制系统&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
