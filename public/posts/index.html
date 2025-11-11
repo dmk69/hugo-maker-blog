@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | 创客教育博客</title>
+<title>Posts | Automation &amp; Industrial Control Technician</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - 创客教育博客">
+<meta name="description" content="Posts - Automation &amp; Industrial Control Technician">
 <meta name="author" content="dmk69">
 <link rel="canonical" href="http://localhost:1313/posts/">
 <meta name="google-site-verification" content="XYZabc">
@@ -75,16 +75,16 @@
     }
 
 </script><meta property="og:url" content="http://localhost:1313/posts/">
-  <meta property="og:site_name" content="创客教育博客">
+  <meta property="og:site_name" content="Automation & Industrial Control Technician">
   <meta property="og:title" content="Posts">
-  <meta property="og:description" content="从金融交易员到创客教育者的转型之路">
+  <meta property="og:description" content="专业的自动化与工业控制技术员 | PLC编程 | 嵌入式控制 | SolidWorks设计">
   <meta property="og:locale" content="zh-cn">
   <meta property="og:type" content="website">
       <meta property="og:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
 <meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="从金融交易员到创客教育者的转型之路">
+<meta name="twitter:description" content="专业的自动化与工业控制技术员 | PLC编程 | 嵌入式控制 | SolidWorks设计">
 
 
 <script type="application/ld+json">
@@ -134,8 +134,13 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/posts/" title="文章">
-                    <span class="active">文章</span>
+                <a href="http://localhost:1313/projects/" title="项目展示">
+                    <span>项目展示</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span class="active">Blog</span>
                 </a>
             </li>
             <li>
@@ -286,6 +291,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">卡车模拟Web游戏开发随记
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🚛 项目概述 昨晚做了一个简单的卡车模拟Web游戏，使用纯JavaScript实现，包含基础的物理模拟和键盘控制功能。
+🎮 游戏特性 基础功能 键盘控制（WASD或方向键） 基础物理引擎（加速、制动、转向） 简单的道路和障碍物 燃料消耗系统 货物运输机制 技术实现 // 卡车控制类 class TruckSimulator { constructor() { this.position = { x: 400, y: 300 }; this.velocity = 0; this.angle = 0; this.fuel = 100; this.cargo = null; } update(keys) { // 加速和制动 if (keys[&#39;w&#39;] || keys[&#39;ArrowUp&#39;]) { this.velocity = Math.min(this.velocity &#43; 0.5, 10); this.fuel -= 0.1; } if (keys[&#39;s&#39;] || keys[&#39;ArrowDown&#39;]) { this.velocity = Math.max(this.velocity - 0.8, -5); } // 转向 if (keys[&#39;a&#39;] || keys[&#39;ArrowLeft&#39;]) { this.angle -= 3 * Math.abs(this.velocity) / 10; } if (keys[&#39;d&#39;] || keys[&#39;ArrowRight&#39;]) { this.angle &#43;= 3 * Math.abs(this.velocity) / 10; } // 更新位置 this.position.x &#43;= Math.cos(this.angle) * this.velocity; this.position.y &#43;= Math.sin(this.angle) * this.velocity; // 摩擦力 this.velocity *= 0.95; } } 🎯 游戏截图 简单画面布局: ┌─────────────────────────────┐ │ 燃料: 85% 速度: 45 km/h │ │ 货物: 木材 重量: 5吨 │ ├─────────────────────────────┤ │ │ │ 🚛 │ │ ────────────── │ │ │ 道路 │ │ │ ────────────── │ │ 🌳 🌳 │ │ │ ├─────────────────────────────┤ │ 控制: WASD或方向键 │ │ 任务: 将货物运输到目的地 │ └─────────────────────────────┘ 🔧 开发过程 遇到的挑战 物理模拟: 简化物理引擎，平衡真实性和游戏性 控制响应: 调整转向灵敏度，让操控更自然 碰撞检测: 基础的矩形碰撞检测算法 性能优化: 使用requestAnimationFrame实现流畅动画 解决方案 // 碰撞检测 function checkCollision(truck, obstacle) { const truckBounds = { x: truck.position.x - 20, y: truck.position.y - 10, width: 40, height: 20 }; const obstacleBounds = obstacle.getBounds(); return !(truckBounds.x &gt; obstacleBounds.x &#43; obstacleBounds.width || truckBounds.x &#43; truckBounds.width &lt; obstacleBounds.x || truckBounds.y &gt; obstacleBounds.y &#43; obstacleBounds.height || truckBounds.y &#43; truckBounds.height &lt; obstacleBounds.y); } 📊 游戏数据 基础参数 卡车最大速度: 100 km/h 燃料消耗: 匀速行驶0.1%/秒，加速0.2%/秒 货物重量: 影响加速和制动性能 地图大小: 1000x800像素 得分系统 成功送货: &#43;100分 节省燃料: 额外&#43;20分 快速送达: 时间奖励&#43;10分 撞车惩罚: -30分 🚀 未来改进 计划功能 更真实的物理引擎 多种车型选择 不同地形和天气 保存和加载游戏进度 音效和背景音乐 多人在线模式 技术升级 使用Canvas API渲染更好的图形 引入Web Workers处理复杂计算 添加粒子效果和动画 响应式设计支持移动端 💻 完整代码 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-CN&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;卡车模拟器&lt;/title&gt; &lt;style&gt; body { margin: 0; padding: 20px; font-family: Arial, sans-serif; } #gameCanvas { border: 2px solid #333; display: block; margin: 0 auto; } #controls { text-align: center; margin-top: 20px; } .info { display: inline-block; margin: 0 20px; font-weight: bold; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;🚛 卡车模拟器&lt;/h1&gt; &lt;div id=&#34;controls&#34;&gt; &lt;span class=&#34;info&#34;&gt;燃料: &lt;span id=&#34;fuel&#34;&gt;100&lt;/span&gt;%&lt;/span&gt; &lt;span class=&#34;info&#34;&gt;速度: &lt;span id=&#34;speed&#34;&gt;0&lt;/span&gt; km/h&lt;/span&gt; &lt;span class=&#34;info&#34;&gt;货物: &lt;span id=&#34;cargo&#34;&gt;无&lt;/span&gt;&lt;/span&gt; &lt;/div&gt; &lt;canvas id=&#34;gameCanvas&#34; width=&#34;800&#34; height=&#34;600&#34;&gt;&lt;/canvas&gt; &lt;script&gt; // 游戏主逻辑 const canvas = document.getElementById(&#39;gameCanvas&#39;); const ctx = canvas.getContext(&#39;2d&#39;); const game = new TruckSimulator(); const keys = {}; // 键盘事件监听 document.addEventListener(&#39;keydown&#39;, (e) =&gt; keys[e.key] = true); document.addEventListener(&#39;keyup&#39;, (e) =&gt; keys[e.key] = false); // 游戏循环 function gameLoop() { game.update(keys); game.render(ctx); updateUI(); requestAnimationFrame(gameLoop); } gameLoop(); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; 📝 开发总结 这个小游戏虽然简单，但涵盖了基本的游戏开发概念：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-11-11 20:00:00 +0800 CST'>2025-11-11</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>412 words</span>&nbsp;·&nbsp;<span>dmk69</span></footer>
+  <a class="entry-link" aria-label="post link to 卡车模拟Web游戏开发随记" href="http://localhost:1313/posts/truck-simulator-web-game/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">从金融交易到创客教育：我的转型之路
     </h2>
   </header>
@@ -318,29 +337,16 @@ C&#43;&#43;和Python编程 电路设计和焊接 3D建模和打印 心态调整 
   <footer class="entry-footer"><span title='2025-11-07 14:30:00 +0800 CST'>2025-11-07</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>187 words</span>&nbsp;·&nbsp;<span>dmk69</span></footer>
   <a class="entry-link" aria-label="post link to Arduino入门指南：开启创客之旅的第一步" href="http://localhost:1313/posts/arduino-starter-guide/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">如何教孩子编程：从Scratch到Python的进阶之路
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-👶 为什么孩子要学编程？ 编程不仅仅是学习一门技能，更是培养：
-逻辑思维能力 问题解决能力 创造力表达 团队协作精神 🎂 年龄分段建议 5-7岁：编程思维启蒙 推荐工具: ScratchJr、Lightbot
-专注于序列和循环概念 通过游戏化学习 培养计算思维 8-12岁：图形化编程 推荐工具: Scratch 3.0、Code.org
-创建简单的动画和游戏 理解变量和条件判断 学习基础的算法概念 13&#43;岁：文本编程入门 推荐语言: Python、JavaScript
-从图形化过渡到文本编程 学习函数和面向对象概念 制作实用的小项目 🎮 教学方法论 1. 项目驱动学习 不要孤立地教概念，而是通过有趣的项目：
-# 第一个Python游戏 - 猜数字 import random secret_number = random.randint(1, 100) guess = 0 print(&#34;欢迎来到猜数字游戏！&#34;) while guess != secret_number: guess = int(input(&#34;猜一个1-100的数字: &#34;)) if guess &lt; secret_number: print(&#34;太小了！&#34;) elif guess &gt; secret_number: print(&#34;太大了！&#34;) else: print(&#34;恭喜你猜对了！&#34;) 2. 游戏化教学 设置挑战关卡 给予即时反馈 庆祝每一个进步 3. 同伴学习 鼓励小组合作 组织编程比赛 分享彼此的作品 🛠️ 推荐的教学资源 在线平台 Scratch: 麻省理工学院开发的图形化编程平台 Code.org: 系统化的编程课程 Khan Academy: 包含编程教学的综合学习平台 Repl.it: 在线编程环境，无需安装 中文资源 编程猫：面向儿童的编程教育平台 核桃编程：专业的在线编程教育 童程童美：线下线上结合的编程培训 📋 课程设计示例 8周Scratch入门课程 周次 主题 项目 技能点 1 认识Scratch 动画故事 顺序执行 2 循环与事件 旋转动画 循环结构 3 变量与条件 计分游戏 变量使用 4 广播与接收 对话系统 消息传递 5 绘图功能 艺术创作 坐标概念 6 音效处理 音乐游戏 多媒体 7 综合项目 平台游戏 项目整合 8 作品展示 分享会 表达能力 12周Python进阶课程 周次 主题 项目 技能点 1-3 基础语法 计算器 变量、运算符 4-6 条件循环 猜数字 控制流 7-9 函数模块 密码生成器 函数定义 10-12 数据结构 简易数据库 列表、字典 🎯 教学技巧 保持趣味性 选择孩子们感兴趣的主题（游戏、动画、故事） 鼓励个性化创作 及时给予正向反馈 循序渐进 每次只引入1-2个新概念 提供充足的练习时间 允许按照自己的节奏学习 培养调试思维 # 教孩子如何找错误 def calculate_average(numbers): if not numbers: # 检查空列表 return 0 total = 0 for num in numbers: total &#43;= num return total / len(numbers) # 测试用例 print(calculate_average([1, 2, 3, 4, 5])) # 应该输出3.0 print(calculate_average([])) # 应该输出0 🌟 成功案例分享 小明的转变 开始: 对编程不感兴趣 过程: 通过制作自己喜欢的游戏逐步投入 结果: 现在能独立制作小游戏，逻辑思维明显提升 小红的项目 创意: 制作一个帮助记忆英语单词的应用 实现: 使用Python Tkinter制作图形界面 收获: 不仅学会了编程，还提高了英语成绩 👨‍👩‍👧‍👦 家长如何配合 1. 创造环境 提供合适的设备和学习空间 保证充足的学习时间 营造支持探索的氛围 2. 合理期望 不要急于求成 关注过程而非结果 允许犯错和重试 3. 参与其中 了解孩子的学习内容 和孩子一起解决问题 分享孩子的作品和进步 🔮 未来发展方向 编程学习为孩子打开了多个可能性：
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-11-06 16:20:00 +0800 CST'>2025-11-06</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>250 words</span>&nbsp;·&nbsp;<span>dmk69</span></footer>
-  <a class="entry-link" aria-label="post link to 如何教孩子编程：从Scratch到Python的进阶之路" href="http://localhost:1313/posts/teaching-kids-programming/"></a>
-</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="http://localhost:1313/posts/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">创客教育博客</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Automation &amp; Industrial Control Technician</a></span> · 
 
     <span>
         Powered by

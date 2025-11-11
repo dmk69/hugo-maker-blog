@@ -62,21 +62,21 @@ draft: false
 
 ### 🔥 重点PLC项目
 
-1. **[智能生产线控制系统](projects/plc-production-line)**
+1. **[智能生产线控制系统](/projects/plc-production-line/)**
    - 基于Siemens S7-1500的完整生产线控制
    - 包含梯形图逻辑、HMI界面设计和流程图
 
-2. **[工厂自动化监控系统](projects/factory-automation)**
+2. **[工厂自动化监控系统](/projects/factory-automation/)**
    - Allen-Bradley PLC + SCADA系统集成
    - 实时数据采集和远程监控功能
 
 ### 🔧 嵌入式控制项目
 
-3. **[智能设备控制单元](projects/embedded-control-unit)**
+3. **[智能设备控制单元](/projects/embedded-control-unit/)**
    - STM32 + 传感器的工业控制解决方案
    - C语言编程与Modbus通信实现
 
-4. **[植物监控系统](projects/smart-plant-monitor)**
+4. **[植物监控系统](/projects/smart-plant-monitor/)**
    - Arduino + IoT传感器的完整监控方案
    - 数据采集和远程控制功能演示
 

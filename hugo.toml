@@ -1,19 +1,19 @@
 baseURL = 'https://hugo-maker-blog.vercel.app'
 languageCode = 'zh-cn'
-title = '创客教育博客'
+title = 'Automation & Industrial Control Technician'
 theme = 'hugo-PaperMod'
 
 [params]
 env = "production"
-title = "创客教育博客"
-description = "从金融交易员到创客教育者的转型之路"
+title = "Automation & Industrial Control Technician"
+description = "专业的自动化与工业控制技术员 | PLC编程 | 嵌入式控制 | SolidWorks设计"
 keywords = [
-    "创客教育",
-    "嵌入式开发",
-    "Arduino",
-    "树莓派",
-    "STEM教育",
-    "编程教育"
+    "工业自动化",
+    "PLC编程",
+    "嵌入式控制",
+    "SolidWorks",
+    "STM32",
+    "自动化技术"
 ]
 author = "dmk69"
 images = ["<link or path of image for opengraph, twitter-cards>"]
@@ -71,12 +71,10 @@ url = "tags"
 
 # home-info mode
 [params.homeInfoParams]
-Title = "你好，我是创客教育者 🚀"
+Title = "Automation & Industrial Control Technician 🔧"
 Content = """
-欢迎来到我的博客！这里分享我从金融交易员转型为创客教育者的心路历程，
-以及在嵌入式开发、Arduino、树莓派等创客教育领域的探索和实践。
-
-让我们一起探索科技的乐趣，培养下一代的创新者！
+专业的自动化与工业控制技术员，专注于PLC编程、嵌入式控制系统设计和SolidWorks机械设计。
+分享工业自动化项目经验和实用技术解决方案。
 """
 
 [[params.socialIcons]]
@@ -105,19 +103,25 @@ unsafe = true
 
 [menu]
 [[menu.main]]
-identifier = "posts"
-name = "文章"
-url = "/posts/"
+identifier = "projects"
+name = "项目展示"
+url = "/projects/"
 weight = 10
+
+[[menu.main]]
+identifier = "posts"
+name = "Blog"
+url = "/posts/"
+weight = 20
 
 [[menu.main]]
 identifier = "tags"
 name = "标签"
 url = "/tags/"
-weight = 20
+weight = 30
 
 [[menu.main]]
 identifier = "about"
 name = "关于"
 url = "/about/"
-weight = 30
+weight = 40
