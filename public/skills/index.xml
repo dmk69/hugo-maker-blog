@@ -1,27 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Skills on Automation &amp; Industrial Control Technician</title>
-    <link>http://localhost:1313/skills/</link>
-    <description>Recent content in Skills on Automation &amp; Industrial Control Technician</description>
-    <image>
-      <title>Automation &amp; Industrial Control Technician</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- 0.152.2</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 Nov 2025 09:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/skills/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>自动化与控制技术技能</title>
-      <link>http://localhost:1313/skills/embedded-development/</link>
-      <pubDate>Sat, 08 Nov 2025 09:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/skills/embedded-development/</guid>
-      <description>&lt;h2 id=&#34;-专业能力概述&#34;&gt;🎯 专业能力概述&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Skills on Automation &amp; Industrial Control Technician</title><link>https://hugo-maker-blog.vercel.app/skills/</link><description>Recent content in Skills on Automation &amp; Industrial Control Technician</description><image><title>Automation &amp; Industrial Control Technician</title><url>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Sat, 08 Nov 2025 09:00:00 +0800</lastBuildDate><atom:link href="https://hugo-maker-blog.vercel.app/skills/index.xml" rel="self" type="application/rss+xml"/><item><title>自动化与控制技术技能</title><link>https://hugo-maker-blog.vercel.app/skills/embedded-development/</link><pubDate>Sat, 08 Nov 2025 09:00:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/skills/embedded-development/</guid><description>&lt;h2 id="-专业能力概述"&gt;🎯 专业能力概述&lt;/h2&gt;
 &lt;p&gt;我是一名专业的自动化与工业控制技术员，具备丰富的工业自动化系统设计、PLC编程和嵌入式控制项目经验。专注于为客户提供可靠的控制解决方案和技术服务。&lt;/p&gt;
-&lt;h3 id=&#34;-核心技能&#34;&gt;🔧 核心技能&lt;/h3&gt;
-&lt;h4 id=&#34;plc编程与开发&#34;&gt;PLC编程与开发&lt;/h4&gt;
+&lt;h3 id="-核心技能"&gt;🔧 核心技能&lt;/h3&gt;
+&lt;h4 id="plc编程与开发"&gt;PLC编程与开发&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Siemens PLC&lt;/strong&gt;: S7-1200/1500, TIA Portal, WinCC&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Allen-Bradley&lt;/strong&gt;: ControlLogix, CompactLogix, Studio 5000&lt;/li&gt;
@@ -30,7 +10,7 @@
 &lt;li&gt;&lt;strong&gt;编程语言&lt;/strong&gt;: Ladder Logic, Function Block, Structured Text&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;工业网络&lt;/strong&gt;: PROFINET, Ethernet/IP, Modbus TCP/RTU&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;嵌入式控制系统&#34;&gt;嵌入式控制系统&lt;/h4&gt;
+&lt;h4 id="嵌入式控制系统"&gt;嵌入式控制系统&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;STM32系列&lt;/strong&gt;: HAL库编程、FreeRTOS应用&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Arduino平台&lt;/strong&gt;: Uno, Mega, ESP32/8266&lt;/li&gt;
@@ -39,7 +19,7 @@
 &lt;li&gt;&lt;strong&gt;通信协议&lt;/strong&gt;: Modbus, CANopen, DeviceNet&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;信号处理&lt;/strong&gt;: PID控制、数字滤波、FFT&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;solidworks机械设计&#34;&gt;SolidWorks机械设计&lt;/h4&gt;
+&lt;h4 id="solidworks机械设计"&gt;SolidWorks机械设计&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;3D建模&lt;/strong&gt;: 零件设计、装配体设计、工程图绘制&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;自动化设备&lt;/strong&gt;: 工装夹具、传送机构、定位装置&lt;/li&gt;
@@ -47,7 +27,7 @@
 &lt;li&gt;&lt;strong&gt;仿真分析&lt;/strong&gt;: 运动仿真、应力分析、干涉检查&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;图纸标准&lt;/strong&gt;: GB/ANSI标准、BOM表生成、技术文档&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;工业传感器应用&#34;&gt;工业传感器应用&lt;/h4&gt;
+&lt;h4 id="工业传感器应用"&gt;工业传感器应用&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;过程控制&lt;/strong&gt;: 压力、温度、流量、液位传感器&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;位置检测&lt;/strong&gt;: 接近开关、光电传感器、编码器&lt;/li&gt;
@@ -55,11 +35,8 @@
 &lt;li&gt;&lt;strong&gt;安全设备&lt;/strong&gt;: 安全光幕、急停按钮、安全继电器&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;环境监测&lt;/strong&gt;: 气体检测、振动监测、噪声测量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;-项目经验&#34;&gt;🏆 项目经验&lt;/h3&gt;
-&lt;h4 id=&#34;工业自动化项目&#34;&gt;工业自动化项目&lt;/h4&gt;
+&lt;h3 id="-项目经验"&gt;🏆 项目经验&lt;/h3&gt;
+&lt;h4 id="工业自动化项目"&gt;工业自动化项目&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;智能生产线控制系统&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;智能生产线控制系统&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

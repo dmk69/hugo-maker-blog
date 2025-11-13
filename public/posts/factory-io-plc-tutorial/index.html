@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 | Automation &amp; Industrial Control Technician</title>
-<meta name="keywords" content="PLC, Factory I/O, 工业自动化, 梯形图, 仿真">
-<meta name="description" content="🏭 Factory I/O &#43; PLC完全教程：工业自动化仿真与实践
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Factory I/O + PLC完全教程：工业自动化仿真与实践 | Automation & Industrial Control Technician</title><meta name=keywords content="PLC,Factory I/O,工业自动化,梯形图,仿真"><meta name=description content='🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践
 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。
 🎯 学习目标
 
@@ -130,22 +121,22 @@ Factory I/O界面布局:
 2. 在传送带终点添加 Photoelectric Sensor
 3. 调整传感器检测范围和位置
 组件连接配置
-&lt;!-- Factory I/O驱动配置 --&gt;
-&lt;Driver type=&#34;OPC_UA_Client&#34;&gt;
-    &lt;Endpoint&gt;opc.tcp://localhost:4840&lt;/Endpoint&gt;
-    &lt;UpdateRate&gt;50&lt;/UpdateRate&gt;
-&lt;/Driver&gt;
+<!-- Factory I/O驱动配置 -->
+<Driver type="OPC_UA_Client">
+    <Endpoint>opc.tcp://localhost:4840</Endpoint>
+    <UpdateRate>50</UpdateRate>
+</Driver>
 
-&lt;!-- 输入输出映射 --&gt;
-&lt;Inputs&gt;
-    &lt;Sensor id=&#34;start_sensor&#34; address=&#34;ns=2;i=1&#34; /&gt;
-    &lt;Sensor id=&#34;end_sensor&#34; address=&#34;ns=2;i=2&#34; /&gt;
-&lt;/Inputs&gt;
+<!-- 输入输出映射 -->
+<Inputs>
+    <Sensor id="start_sensor" address="ns=2;i=1" />
+    <Sensor id="end_sensor" address="ns=2;i=2" />
+</Inputs>
 
-&lt;Outputs&gt;
-    &lt;Actuator id=&#34;conveyor_motor&#34; address=&#34;ns=2;i=101&#34; /&gt;
-    &lt;LED id=&#34;status_led&#34; address=&#34;ns=2;i=201&#34; /&gt;
-&lt;/Outputs&gt;
+<Outputs>
+    <Actuator id="conveyor_motor" address="ns=2;i=101" />
+    <LED id="status_led" address="ns=2;i=201" />
+</Outputs>
 4.2 PLC程序开发
 CODESYS梯形图程序
 PROGRAM MainProgram
@@ -245,7 +236,7 @@ CASE current_state OF
             current_state := COMPLETE;
         ELSIF error_detected THEN
             current_state := ERROR;
-            error_count := error_count &#43; 1;
+            error_count := error_count + 1;
         END_IF
 
     COMPLETE:
@@ -258,7 +249,7 @@ CASE current_state OF
         END_IF
 
     ERROR:
-        IF error_count &gt; 5 THEN
+        IF error_count > 5 THEN
             current_state := IDLE;
             error_count := 0;
         ELSIF reset_button THEN
@@ -280,7 +271,7 @@ END_CASE
 1. 主传送带: 12m长，速度可调
 2. 分拣器: 3个推杆，间隔3m
 3. 收集箱: 3个颜色对应收集箱
-4. 传感器阵列: 起始检测 &#43; 3个颜色检测
+4. 传感器阵列: 起始检测 + 3个颜色检测
 5. HMI面板: 显示统计信息和控制按钮
 5.2 PLC程序设计
 数据结构定义
@@ -356,7 +347,7 @@ IF Execute THEN
     UpdateSensorStatus();
 
     // 处理新进入的箱子
-    IF entrance_sensor AND current_boxes_on_belt &lt; 10 THEN
+    IF entrance_sensor AND current_boxes_on_belt < 10 THEN
         AddNewBox();
     END_IF
 
@@ -391,25 +382,25 @@ FOR i := 1 TO current_boxes_on_belt DO
             RED:
                 IF target_pusher = 1 THEN
                     ExecutePusher(1);
-                    system_status.red_boxes := system_status.red_boxes &#43; 1;
+                    system_status.red_boxes := system_status.red_boxes + 1;
                 END_IF
 
             BLUE:
                 IF target_pusher = 2 THEN
                     ExecutePusher(2);
-                    system_status.blue_boxes := system_status.blue_boxes &#43; 1;
+                    system_status.blue_boxes := system_status.blue_boxes + 1;
                 END_IF
 
             GREEN:
                 IF target_pusher = 3 THEN
                     ExecutePusher(3);
-                    system_status.green_boxes := system_status.green_boxes &#43; 1;
+                    system_status.green_boxes := system_status.green_boxes + 1;
                 END_IF
 
             UNKNOWN:
                 // 未知类型，报警
                 TriggerAlarm(&#39;Unknown box type detected&#39;);
-                system_status.rejected_boxes := system_status.rejected_boxes &#43; 1;
+                system_status.rejected_boxes := system_status.rejected_boxes + 1;
         END_CASE
 
         // 标记箱子已处理
@@ -486,7 +477,7 @@ FOR i := 1 TO active_tasks DO
         IF agv_fleet[j].status = IDLE THEN
             task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]);
 
-            IF task_cost &lt; min_cost THEN
+            IF task_cost < min_cost THEN
                 min_cost := task_cost;
                 best_agv := j;
             END_IF
@@ -494,7 +485,7 @@ FOR i := 1 TO active_tasks DO
     END_FOR;
 
     // 分配任务给最优AGV
-    IF best_agv &gt; 0 THEN
+    IF best_agv > 0 THEN
         AssignTaskToAGV(task_queue[i], best_agv);
         RemoveTaskFromQueue(i);
         best_agv := 0;
@@ -535,13 +526,13 @@ END_VAR
 left := 1;
 right := 1000;
 
-WHILE left &lt;= right DO
-    mid := (left &#43; right) / 2;
+WHILE left <= right DO
+    mid := (left + right) / 2;
 
     IF sorted_array[mid] = target THEN
         RETURN TRUE;
-    ELSIF sorted_array[mid] &lt; target THEN
-        left := mid &#43; 1;
+    ELSIF sorted_array[mid] < target THEN
+        left := mid + 1;
     ELSE
         right := mid - 1;
     END_IF;
@@ -689,92 +680,8 @@ PLC编程工程师
 项目经理
 
 
-Factory I/O &#43; PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！">
-<meta name="author" content="dmk69">
-<link rel="canonical" href="http://localhost:1313/posts/factory-io-plc-tutorial/">
-<meta name="google-site-verification" content="XYZabc">
-<meta name="yandex-verification" content="XYZabc">
-<meta name="msvalidate.01" content="XYZabc">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="apple-touch-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="mask-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/factory-io-plc-tutorial/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="http://localhost:1313/posts/factory-io-plc-tutorial/">
-  <meta property="og:site_name" content="Automation & Industrial Control Technician">
-  <meta property="og:title" content="Factory I/O &#43; PLC完全教程：工业自动化仿真与实践">
-  <meta property="og:description" content="🏭 Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。
-🎯 学习目标 掌握Factory I/O软件的使用方法 学习PLC梯形图编程 理解工业控制系统的设计原理 完成多个实际工业项目仿真 🛠️ 环境准备 2.1 Factory I/O软件安装 系统要求 最低配置: - 操作系统: Windows 10/11 (64位) - 内存: 8GB RAM - 显卡: OpenGL 3.3支持 - 硬盘: 2GB可用空间 推荐配置: - 内存: 16GB RAM - 显卡: GTX 1060或更高 - 处理器: Intel i5/AMD Ryzen 5以上 安装步骤 访问官网 factoryio.com 下载软件 选择试用版或学生版（30天免费） 运行安装程序，按提示完成安装 启动软件并激活许可证 2.2 PLC编程软件选择 支持的PLC软件 PLC软件 连接方式 价格 推荐度 CODESYS OPC UA/Modbus 免费 ⭐⭐⭐⭐⭐ TwinCAT ADS 免费 ⭐⭐⭐⭐ Studio 5000 Logix Emulator 收费 ⭐⭐⭐ TIA Portal PLCSIM Advanced 收费 ⭐⭐⭐ CODESYS安装配置 CODESYS安装步骤: 1. 下载CODESYS Development System 2. 安装CODESYS Control Win V3 (软PLC) 3. 配置OPC UA服务器 4. 设置通信参数 🎮 Factory I/O界面介绍 3.1 主界面布局 Factory I/O界面布局: ┌─────────────────────────────────────────────────────────┐ │ 菜单栏: File, Edit, View, Physics, Help │ ├─────────────────────────────────────────────────────────┤ │ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择 │ ├─────────────────────────────────────────────────────────┤ │ 场景编辑区 │ 3D视图区域 │ │ │ │ │ 组件库 │ │ │ 驱动配置 │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏: FPS, 物理引擎, 连接状态 │ └─────────────────────────────────────────────────────────┘ 3.2 组件库介绍 传感器组件 传感器类型: - 接近传感器 (Proximity Sensor): 检测物体接近 - 光电传感器 (Photoelectric Sensor): 光束检测 - 视觉传感器 (Vision Sensor): 图像识别 - 激光传感器 (Laser Sensor): 精确测量 - 重量传感器 (Weight Sensor): 重量测量 执行器组件 执行器类型: - 传送带 (Conveyor Belt): 物料输送 - 机械臂 (Articulated Robot): 抓取操作 - 升降机 (Lift): 垂直运输 - 推杆 (Pusher): 推动物料 - 分拣器 (Sorter): 物料分拣 📝 第一个项目：传送带控制系统 4.1 场景搭建 创建基础布局 步骤1: 创建场景 1. 新建场景 → Empty Scene 2. 调整地面大小: 20m × 20m 3. 添加光照: Directional Light 步骤2: 添加传送带 1. 从组件库拖拽 Conveyor Belt 2. 设置尺寸: Length 10m, Width 1m 3. 设置速度: 0.5 m/s 4. 放置位置: (0, 0, 0) 步骤3: 添加传感器 1. 在传送带起点添加 Proximity Sensor 2. 在传送带终点添加 Photoelectric Sensor 3. 调整传感器检测范围和位置 组件连接配置 &lt;!-- Factory I/O驱动配置 --&gt; &lt;Driver type=&#34;OPC_UA_Client&#34;&gt; &lt;Endpoint&gt;opc.tcp://localhost:4840&lt;/Endpoint&gt; &lt;UpdateRate&gt;50&lt;/UpdateRate&gt; &lt;/Driver&gt; &lt;!-- 输入输出映射 --&gt; &lt;Inputs&gt; &lt;Sensor id=&#34;start_sensor&#34; address=&#34;ns=2;i=1&#34; /&gt; &lt;Sensor id=&#34;end_sensor&#34; address=&#34;ns=2;i=2&#34; /&gt; &lt;/Inputs&gt; &lt;Outputs&gt; &lt;Actuator id=&#34;conveyor_motor&#34; address=&#34;ns=2;i=101&#34; /&gt; &lt;LED id=&#34;status_led&#34; address=&#34;ns=2;i=201&#34; /&gt; &lt;/Outputs&gt; 4.2 PLC程序开发 CODESYS梯形图程序 PROGRAM MainProgram VAR // 输入变量 start_sensor AT %I0.0 : BOOL; end_sensor AT %I0.1 : BOOL; start_button AT %I0.2 : BOOL; stop_button AT %I0.3 : BOOL; // 输出变量 conveyor_motor AT %Q0.0 : BOOL; status_led AT %Q0.1 : BOOL; // 内部变量 system_running : BOOL := FALSE; box_detected : BOOL := FALSE; process_complete : BOOL := FALSE; END_VAR // 梯形图逻辑实现 METHOD LadderLogic : BOOL VAR_INPUT Input : BOOL; END_VAR VAR_OUTPUT Output : BOOL; END_VAR // 启动停止逻辑 IF start_button AND NOT system_running THEN system_running := TRUE; END_IF IF stop_button AND system_running THEN system_running := FALSE; END_IF // 传送带控制逻辑 IF system_running THEN conveyor_motor := TRUE; status_led := TRUE; // 检测到箱子 IF start_sensor AND NOT box_detected THEN box_detected := TRUE; END_IF // 箱子到达终点 IF end_sensor AND box_detected THEN process_complete := TRUE; box_detected := FALSE; END_IF ELSE conveyor_motor := FALSE; status_led := FALSE; box_detected := FALSE; process_complete := FALSE; END_IF 状态机实现 TYPE E_STATE : ( IDLE := 0, RUNNING := 1, PROCESSING := 2, COMPLETE := 3, ERROR := 4 ); END_TYPE VAR current_state : E_STATE := IDLE; state_timer : TON; error_count : INT := 0; END_VAR // 状态机逻辑 CASE current_state OF IDLE: IF start_button THEN current_state := RUNNING; state_timer(IN:=TRUE, PT:=T#5S); END_IF RUNNING: IF state_timer.Q THEN current_state := PROCESSING; state_timer(IN:=FALSE); END_IF IF stop_button THEN current_state := IDLE; END_IF PROCESSING: IF process_complete THEN current_state := COMPLETE; ELSIF error_detected THEN current_state := ERROR; error_count := error_count &#43; 1; END_IF COMPLETE: // 等待2秒后返回运行状态 state_timer(IN:=TRUE, PT:=T#2S); IF state_timer.Q THEN current_state := RUNNING; state_timer(IN:=FALSE); process_complete := FALSE; END_IF ERROR: IF error_count &gt; 5 THEN current_state := IDLE; error_count := 0; ELSIF reset_button THEN current_state := RUNNING; error_count := 0; END_IF END_CASE 🤖 高级项目：自动分拣系统 5.1 系统设计 工艺流程 分拣系统工艺流程: 1. 箱子进入传送带 2. 视觉传感器检测箱子颜色 3. 根据颜色分拣到不同通道 4. 统计各颜色箱子数量 5. 异常处理和报警 场景搭建步骤 场景搭建: 1. 主传送带: 12m长，速度可调 2. 分拣器: 3个推杆，间隔3m 3. 收集箱: 3个颜色对应收集箱 4. 传感器阵列: 起始检测 &#43; 3个颜色检测 5. HMI面板: 显示统计信息和控制按钮 5.2 PLC程序设计 数据结构定义 // 箱子类型枚举 TYPE E_BOX_TYPE : ( NONE := 0, RED := 1, BLUE := 2, GREEN := 3, UNKNOWN := 4 ); END_TYPE // 箱子信息结构 TYPE ST_BOX_INFO : STRUCT type : E_BOX_TYPE; position : REAL; timestamp : TIME; processed : BOOL; END_STRUCT END_TYPE // 系统状态结构 TYPE ST_SYSTEM_STATUS : STRUCT total_boxes : INT := 0; red_boxes : INT := 0; blue_boxes : INT := 0; green_boxes : INT := 0; rejected_boxes : INT := 0; system_uptime : TIME; last_update : TIME; END_STRUCT END_TYPE 主控制程序 PROGRAM SortingSystem VAR // 输入信号 entrance_sensor AT %I0.0 : BOOL; color_red_sensor AT %I0.1 : BOOL; color_blue_sensor AT %I0.2 : BOOL; color_green_sensor AT %I0.3 : BOOL; position_sensors : ARRAY[1..3] OF BOOL; // 输出信号 main_conveyor AT %Q0.0 : BOOL; sorting_pushers : ARRAY[1..3] OF BOOL; status_lights : ARRAY[1..3] OF BOOL; // 系统变量 box_queue : ARRAY[1..10] OF ST_BOX_INFO; system_status : ST_SYSTEM_STATUS; current_boxes_on_belt : INT := 0; // 定时器 conveyor_timer : TON; pusher_timers : ARRAY[1..3] OF TON; // 状态机 system_state : E_STATE := IDLE; END_VAR // 主控制逻辑 METHOD ControlLogic : BOOL VAR_INPUT Execute : BOOL; END_VAR IF Execute THEN // 更新传感器状态 UpdateSensorStatus(); // 处理新进入的箱子 IF entrance_sensor AND current_boxes_on_belt &lt; 10 THEN AddNewBox(); END_IF // 更新箱子位置 UpdateBoxPositions(); // 执行分拣逻辑 ExecuteSorting(); // 更新统计信息 UpdateStatistics(); // 异常检测 CheckErrors(); END_IF 分拣算法实现 METHOD ExecuteSorting : BOOL VAR i : INT; box_to_sort : ST_BOX_INFO; target_pusher : INT; END_VAR // 遍历传送带上的箱子 FOR i := 1 TO current_boxes_on_belt DO box_to_sort := box_queue[i]; // 检查箱子是否到达分拣位置 IF IsBoxAtSortingPosition(box_to_sort.position, target_pusher) THEN // 根据箱子类型执行分拣 CASE box_to_sort.type OF RED: IF target_pusher = 1 THEN ExecutePusher(1); system_status.red_boxes := system_status.red_boxes &#43; 1; END_IF BLUE: IF target_pusher = 2 THEN ExecutePusher(2); system_status.blue_boxes := system_status.blue_boxes &#43; 1; END_IF GREEN: IF target_pusher = 3 THEN ExecutePusher(3); system_status.green_boxes := system_status.green_boxes &#43; 1; END_IF UNKNOWN: // 未知类型，报警 TriggerAlarm(&#39;Unknown box type detected&#39;); system_status.rejected_boxes := system_status.rejected_boxes &#43; 1; END_CASE // 标记箱子已处理 box_queue[i].processed := TRUE; END_IF; END_FOR // 清理已处理的箱子 CleanProcessedBoxes(); 🎮 游戏化学习项目 6.1 智能仓储系统 项目背景 项目目标: - 自动化仓库管理 - 货物智能分拣 - 库存实时监控 - 机器人协作搬运 系统架构 硬件组件: 1. 堆垛机 (Stacker Crane): 货架存取 2. AGV小车: 货物搬运 3. 输送线系统: 货物流转 4. 提升机: 楼层运输 5. RFID读写器: 货物识别 软件功能: 1. WMS仓库管理系统 2. 路径规划算法 3. 任务调度系统 4. 数据可视化 6.2 物流分拣中心 场景设计 分拣中心布局: ┌─────────────────────────────────────────┐ │ 入货区 → 主输送线 → 分拣区 → 出货区 │ │ │ │ [货架A] [货架B] [货架C] [货架D] │ │ │ │ [控制中心] [HMI界面] │ └─────────────────────────────────────────┘ 控制逻辑 // 物流分拣控制程序 PROGRAM LogisticsCenter VAR // 订单数据 orders : ARRAY[1..100] OF ST_ORDER; current_order : INT := 0; // 货架状态 shelves : ARRAY[1..4] OF ARRAY[1..20] OF ST_SHELF_SLOT; // 设备状态 agv_fleet : ARRAY[1..3] OF ST_AGV_STATUS; conveyor_status : ST_CONVEYOR_STATUS; // 任务队列 task_queue : ARRAY[1..50] OF ST_TASK; active_tasks : INT := 0; END_VAR // 任务调度算法 METHOD TaskScheduling : BOOL VAR i : INT; best_agv : INT; min_cost : REAL := 999999; task_cost : REAL; END_VAR // 为每个任务分配最优AGV FOR i := 1 TO active_tasks DO // 计算每个AGV执行任务的代价 FOR j := 1 TO 3 DO IF agv_fleet[j].status = IDLE THEN task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]); IF task_cost &lt; min_cost THEN min_cost := task_cost; best_agv := j; END_IF END_IF; END_FOR; // 分配任务给最优AGV IF best_agv &gt; 0 THEN AssignTaskToAGV(task_queue[i], best_agv); RemoveTaskFromQueue(i); best_agv := 0; min_cost := 999999; END_IF; END_FOR 📊 性能优化技巧 7.1 代码优化 算法优化 // 低效的实现 FUNCTION InefficientSearch : BOOL VAR_INPUT target : INT; array_data : ARRAY[1..1000] OF INT; END_VAR VAR i : INT; END_VAR FOR i := 1 TO 1000 DO IF array_data[i] = target THEN RETURN TRUE; END_IF; END_FOR RETURN FALSE; // 优化后的实现 (二分查找) FUNCTION OptimizedSearch : BOOL VAR_INPUT target : INT; sorted_array : ARRAY[1..1000] OF INT; END_VAR VAR left, right, mid : INT; END_VAR left := 1; right := 1000; WHILE left &lt;= right DO mid := (left &#43; right) / 2; IF sorted_array[mid] = target THEN RETURN TRUE; ELSIF sorted_array[mid] &lt; target THEN left := mid &#43; 1; ELSE right := mid - 1; END_IF; END_WHILE; RETURN FALSE; 7.2 通信优化 数据批处理 // 批量数据更新结构 TYPE ST_BATCH_UPDATE : STRUCT timestamp : TIME; sensor_values : ARRAY[1..32] OF INT; actuator_states : ARRAY[1..16] OF BOOL; system_flags : ARRAY[1..8] OF BOOL; END_STRUCT END_TYPE // 批量更新方法 METHOD BatchUpdate : BOOL VAR_INPUT update_data : ST_BATCH_UPDATE; END_VAR // 一次性更新所有数据 FOR i := 1 TO 32 DO sensor_data[i] := update_data.sensor_values[i]; END_FOR FOR i := 1 TO 16 DO actuator_data[i] := update_data.actuator_states[i]; END_FOR // 应用时间戳 last_update_time := update_data.timestamp; 🔧 调试和故障排除 8.1 常见问题解决 通信问题 问题: Factory I/O无法连接到PLC 解决步骤: 1. 检查OPC UA服务器是否启动 2. 确认防火墙设置 3. 验证IP地址和端口号 4. 检查PLC程序是否运行 仿真问题 问题: 物理仿真不准确 解决方法: 1. 调整物理引擎参数 2. 检查物体碰撞设置 3. 优化传送带速度 4. 调整传感器检测范围 8.2 调试工具使用 数据监控 // 变量监控结构 TYPE ST_DEBUG_INFO : STRUCT cycle_time : TIME; cpu_usage : REAL; memory_usage : REAL; communication_errors : INT; last_error_message : STRING; END_STRUCT END_TYPE // 调试数据收集 METHOD CollectDebugInfo : ST_DEBUG_INFO VAR debug_data : ST_DEBUG_INFO; END_VAR debug_data.cycle_time := GetCycleTime(); debug_data.cpu_usage := GetCPUUsage(); debug_data.memory_usage := GetMemoryUsage(); debug_data.communication_errors := GetCommErrorCount(); debug_data.last_error_message := GetLastErrorMessage(); RETURN debug_data; 🎓 项目实战案例 案例1: 智能停车场系统 系统功能 车辆进出自动识别 车位智能分配 收费自动化 异常报警处理 技术要点 RFID车辆识别 图像处理车牌识别 数据库管理 支付系统集成 案例2: 食品加工生产线 工艺流程 原料自动上料 加工过程控制 质量检测分拣 包装自动化 控制要点 温度精确控制 速度同步控制 质量实时监控 数据追溯系统 📈 学习路径建议 初级阶段 (1-2个月) 软件基础: Factory I/O基本操作 PLC入门: 梯形图基础编程 简单项目: 传送带控制、灯光控制 仿真实践: 基础传感器和执行器应用 中级阶段 (3-4个月) 高级编程: 功能块、状态机编程 通信协议: OPC UA、Modbus通信 复杂项目: 分拣系统、装配线 HMI开发: 人机界面设计 高级阶段 (5-6个月) 系统集成: 多设备协调控制 算法优化: 路径规划、调度算法 数据库集成: MES系统对接 工业项目: 完整生产线设计 💡 考证和就业方向 相关认证 西门子认证: S7-1200/1500编程认证 罗克韦尔认证: ControlLogix编程认证 施耐德认证: Modicon PLC认证 三菱认证: FX/Q系列编程认证 就业岗位 PLC编程工程师 自动化工程师 控制系统工程师 工业软件工程师 项目经理 Factory I/O &#43; PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！">
-  <meta property="og:locale" content="zh-cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-11-08T12:00:00+08:00">
-    <meta property="article:modified_time" content="2025-11-08T12:00:00+08:00">
-    <meta property="article:tag" content="PLC">
-    <meta property="article:tag" content="Factory I/O">
-    <meta property="article:tag" content="工业自动化">
-    <meta property="article:tag" content="梯形图">
-    <meta property="article:tag" content="仿真">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&amp;h=400&amp;fit=crop">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&amp;h=400&amp;fit=crop">
-<meta name="twitter:title" content="Factory I/O &#43; PLC完全教程：工业自动化仿真与实践">
-<meta name="twitter:description" content="🏭 Factory I/O &#43; PLC完全教程：工业自动化仿真与实践
+Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！'><meta name=author content="dmk69"><link rel=canonical href=https://hugo-maker-blog.vercel.app/posts/factory-io-plc-tutorial/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css integrity="sha256-NDzEgLn/yPBMy+XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as=style><link rel=icon href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://hugo-maker-blog.vercel.app/posts/factory-io-plc-tutorial/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://hugo-maker-blog.vercel.app/posts/factory-io-plc-tutorial/"><meta property="og:site_name" content="Automation & Industrial Control Technician"><meta property="og:title" content="Factory I/O + PLC完全教程：工业自动化仿真与实践"><meta property="og:description" content='🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。
+🎯 学习目标 掌握Factory I/O软件的使用方法 学习PLC梯形图编程 理解工业控制系统的设计原理 完成多个实际工业项目仿真 🛠️ 环境准备 2.1 Factory I/O软件安装 系统要求 最低配置: - 操作系统: Windows 10/11 (64位) - 内存: 8GB RAM - 显卡: OpenGL 3.3支持 - 硬盘: 2GB可用空间 推荐配置: - 内存: 16GB RAM - 显卡: GTX 1060或更高 - 处理器: Intel i5/AMD Ryzen 5以上 安装步骤 访问官网 factoryio.com 下载软件 选择试用版或学生版（30天免费） 运行安装程序，按提示完成安装 启动软件并激活许可证 2.2 PLC编程软件选择 支持的PLC软件 PLC软件 连接方式 价格 推荐度 CODESYS OPC UA/Modbus 免费 ⭐⭐⭐⭐⭐ TwinCAT ADS 免费 ⭐⭐⭐⭐ Studio 5000 Logix Emulator 收费 ⭐⭐⭐ TIA Portal PLCSIM Advanced 收费 ⭐⭐⭐ CODESYS安装配置 CODESYS安装步骤: 1. 下载CODESYS Development System 2. 安装CODESYS Control Win V3 (软PLC) 3. 配置OPC UA服务器 4. 设置通信参数 🎮 Factory I/O界面介绍 3.1 主界面布局 Factory I/O界面布局: ┌─────────────────────────────────────────────────────────┐ │ 菜单栏: File, Edit, View, Physics, Help │ ├─────────────────────────────────────────────────────────┤ │ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择 │ ├─────────────────────────────────────────────────────────┤ │ 场景编辑区 │ 3D视图区域 │ │ │ │ │ 组件库 │ │ │ 驱动配置 │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏: FPS, 物理引擎, 连接状态 │ └─────────────────────────────────────────────────────────┘ 3.2 组件库介绍 传感器组件 传感器类型: - 接近传感器 (Proximity Sensor): 检测物体接近 - 光电传感器 (Photoelectric Sensor): 光束检测 - 视觉传感器 (Vision Sensor): 图像识别 - 激光传感器 (Laser Sensor): 精确测量 - 重量传感器 (Weight Sensor): 重量测量 执行器组件 执行器类型: - 传送带 (Conveyor Belt): 物料输送 - 机械臂 (Articulated Robot): 抓取操作 - 升降机 (Lift): 垂直运输 - 推杆 (Pusher): 推动物料 - 分拣器 (Sorter): 物料分拣 📝 第一个项目：传送带控制系统 4.1 场景搭建 创建基础布局 步骤1: 创建场景 1. 新建场景 → Empty Scene 2. 调整地面大小: 20m × 20m 3. 添加光照: Directional Light 步骤2: 添加传送带 1. 从组件库拖拽 Conveyor Belt 2. 设置尺寸: Length 10m, Width 1m 3. 设置速度: 0.5 m/s 4. 放置位置: (0, 0, 0) 步骤3: 添加传感器 1. 在传送带起点添加 Proximity Sensor 2. 在传送带终点添加 Photoelectric Sensor 3. 调整传感器检测范围和位置 组件连接配置 <!-- Factory I/O驱动配置 --> <Driver type="OPC_UA_Client"> <Endpoint>opc.tcp://localhost:4840</Endpoint> <UpdateRate>50</UpdateRate> </Driver> <!-- 输入输出映射 --> <Inputs> <Sensor id="start_sensor" address="ns=2;i=1" /> <Sensor id="end_sensor" address="ns=2;i=2" /> </Inputs> <Outputs> <Actuator id="conveyor_motor" address="ns=2;i=101" /> <LED id="status_led" address="ns=2;i=201" /> </Outputs> 4.2 PLC程序开发 CODESYS梯形图程序 PROGRAM MainProgram VAR // 输入变量 start_sensor AT %I0.0 : BOOL; end_sensor AT %I0.1 : BOOL; start_button AT %I0.2 : BOOL; stop_button AT %I0.3 : BOOL; // 输出变量 conveyor_motor AT %Q0.0 : BOOL; status_led AT %Q0.1 : BOOL; // 内部变量 system_running : BOOL := FALSE; box_detected : BOOL := FALSE; process_complete : BOOL := FALSE; END_VAR // 梯形图逻辑实现 METHOD LadderLogic : BOOL VAR_INPUT Input : BOOL; END_VAR VAR_OUTPUT Output : BOOL; END_VAR // 启动停止逻辑 IF start_button AND NOT system_running THEN system_running := TRUE; END_IF IF stop_button AND system_running THEN system_running := FALSE; END_IF // 传送带控制逻辑 IF system_running THEN conveyor_motor := TRUE; status_led := TRUE; // 检测到箱子 IF start_sensor AND NOT box_detected THEN box_detected := TRUE; END_IF // 箱子到达终点 IF end_sensor AND box_detected THEN process_complete := TRUE; box_detected := FALSE; END_IF ELSE conveyor_motor := FALSE; status_led := FALSE; box_detected := FALSE; process_complete := FALSE; END_IF 状态机实现 TYPE E_STATE : ( IDLE := 0, RUNNING := 1, PROCESSING := 2, COMPLETE := 3, ERROR := 4 ); END_TYPE VAR current_state : E_STATE := IDLE; state_timer : TON; error_count : INT := 0; END_VAR // 状态机逻辑 CASE current_state OF IDLE: IF start_button THEN current_state := RUNNING; state_timer(IN:=TRUE, PT:=T#5S); END_IF RUNNING: IF state_timer.Q THEN current_state := PROCESSING; state_timer(IN:=FALSE); END_IF IF stop_button THEN current_state := IDLE; END_IF PROCESSING: IF process_complete THEN current_state := COMPLETE; ELSIF error_detected THEN current_state := ERROR; error_count := error_count + 1; END_IF COMPLETE: // 等待2秒后返回运行状态 state_timer(IN:=TRUE, PT:=T#2S); IF state_timer.Q THEN current_state := RUNNING; state_timer(IN:=FALSE); process_complete := FALSE; END_IF ERROR: IF error_count > 5 THEN current_state := IDLE; error_count := 0; ELSIF reset_button THEN current_state := RUNNING; error_count := 0; END_IF END_CASE 🤖 高级项目：自动分拣系统 5.1 系统设计 工艺流程 分拣系统工艺流程: 1. 箱子进入传送带 2. 视觉传感器检测箱子颜色 3. 根据颜色分拣到不同通道 4. 统计各颜色箱子数量 5. 异常处理和报警 场景搭建步骤 场景搭建: 1. 主传送带: 12m长，速度可调 2. 分拣器: 3个推杆，间隔3m 3. 收集箱: 3个颜色对应收集箱 4. 传感器阵列: 起始检测 + 3个颜色检测 5. HMI面板: 显示统计信息和控制按钮 5.2 PLC程序设计 数据结构定义 // 箱子类型枚举 TYPE E_BOX_TYPE : ( NONE := 0, RED := 1, BLUE := 2, GREEN := 3, UNKNOWN := 4 ); END_TYPE // 箱子信息结构 TYPE ST_BOX_INFO : STRUCT type : E_BOX_TYPE; position : REAL; timestamp : TIME; processed : BOOL; END_STRUCT END_TYPE // 系统状态结构 TYPE ST_SYSTEM_STATUS : STRUCT total_boxes : INT := 0; red_boxes : INT := 0; blue_boxes : INT := 0; green_boxes : INT := 0; rejected_boxes : INT := 0; system_uptime : TIME; last_update : TIME; END_STRUCT END_TYPE 主控制程序 PROGRAM SortingSystem VAR // 输入信号 entrance_sensor AT %I0.0 : BOOL; color_red_sensor AT %I0.1 : BOOL; color_blue_sensor AT %I0.2 : BOOL; color_green_sensor AT %I0.3 : BOOL; position_sensors : ARRAY[1..3] OF BOOL; // 输出信号 main_conveyor AT %Q0.0 : BOOL; sorting_pushers : ARRAY[1..3] OF BOOL; status_lights : ARRAY[1..3] OF BOOL; // 系统变量 box_queue : ARRAY[1..10] OF ST_BOX_INFO; system_status : ST_SYSTEM_STATUS; current_boxes_on_belt : INT := 0; // 定时器 conveyor_timer : TON; pusher_timers : ARRAY[1..3] OF TON; // 状态机 system_state : E_STATE := IDLE; END_VAR // 主控制逻辑 METHOD ControlLogic : BOOL VAR_INPUT Execute : BOOL; END_VAR IF Execute THEN // 更新传感器状态 UpdateSensorStatus(); // 处理新进入的箱子 IF entrance_sensor AND current_boxes_on_belt < 10 THEN AddNewBox(); END_IF // 更新箱子位置 UpdateBoxPositions(); // 执行分拣逻辑 ExecuteSorting(); // 更新统计信息 UpdateStatistics(); // 异常检测 CheckErrors(); END_IF 分拣算法实现 METHOD ExecuteSorting : BOOL VAR i : INT; box_to_sort : ST_BOX_INFO; target_pusher : INT; END_VAR // 遍历传送带上的箱子 FOR i := 1 TO current_boxes_on_belt DO box_to_sort := box_queue[i]; // 检查箱子是否到达分拣位置 IF IsBoxAtSortingPosition(box_to_sort.position, target_pusher) THEN // 根据箱子类型执行分拣 CASE box_to_sort.type OF RED: IF target_pusher = 1 THEN ExecutePusher(1); system_status.red_boxes := system_status.red_boxes + 1; END_IF BLUE: IF target_pusher = 2 THEN ExecutePusher(2); system_status.blue_boxes := system_status.blue_boxes + 1; END_IF GREEN: IF target_pusher = 3 THEN ExecutePusher(3); system_status.green_boxes := system_status.green_boxes + 1; END_IF UNKNOWN: // 未知类型，报警 TriggerAlarm(&#39;Unknown box type detected&#39;); system_status.rejected_boxes := system_status.rejected_boxes + 1; END_CASE // 标记箱子已处理 box_queue[i].processed := TRUE; END_IF; END_FOR // 清理已处理的箱子 CleanProcessedBoxes(); 🎮 游戏化学习项目 6.1 智能仓储系统 项目背景 项目目标: - 自动化仓库管理 - 货物智能分拣 - 库存实时监控 - 机器人协作搬运 系统架构 硬件组件: 1. 堆垛机 (Stacker Crane): 货架存取 2. AGV小车: 货物搬运 3. 输送线系统: 货物流转 4. 提升机: 楼层运输 5. RFID读写器: 货物识别 软件功能: 1. WMS仓库管理系统 2. 路径规划算法 3. 任务调度系统 4. 数据可视化 6.2 物流分拣中心 场景设计 分拣中心布局: ┌─────────────────────────────────────────┐ │ 入货区 → 主输送线 → 分拣区 → 出货区 │ │ │ │ [货架A] [货架B] [货架C] [货架D] │ │ │ │ [控制中心] [HMI界面] │ └─────────────────────────────────────────┘ 控制逻辑 // 物流分拣控制程序 PROGRAM LogisticsCenter VAR // 订单数据 orders : ARRAY[1..100] OF ST_ORDER; current_order : INT := 0; // 货架状态 shelves : ARRAY[1..4] OF ARRAY[1..20] OF ST_SHELF_SLOT; // 设备状态 agv_fleet : ARRAY[1..3] OF ST_AGV_STATUS; conveyor_status : ST_CONVEYOR_STATUS; // 任务队列 task_queue : ARRAY[1..50] OF ST_TASK; active_tasks : INT := 0; END_VAR // 任务调度算法 METHOD TaskScheduling : BOOL VAR i : INT; best_agv : INT; min_cost : REAL := 999999; task_cost : REAL; END_VAR // 为每个任务分配最优AGV FOR i := 1 TO active_tasks DO // 计算每个AGV执行任务的代价 FOR j := 1 TO 3 DO IF agv_fleet[j].status = IDLE THEN task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]); IF task_cost < min_cost THEN min_cost := task_cost; best_agv := j; END_IF END_IF; END_FOR; // 分配任务给最优AGV IF best_agv > 0 THEN AssignTaskToAGV(task_queue[i], best_agv); RemoveTaskFromQueue(i); best_agv := 0; min_cost := 999999; END_IF; END_FOR 📊 性能优化技巧 7.1 代码优化 算法优化 // 低效的实现 FUNCTION InefficientSearch : BOOL VAR_INPUT target : INT; array_data : ARRAY[1..1000] OF INT; END_VAR VAR i : INT; END_VAR FOR i := 1 TO 1000 DO IF array_data[i] = target THEN RETURN TRUE; END_IF; END_FOR RETURN FALSE; // 优化后的实现 (二分查找) FUNCTION OptimizedSearch : BOOL VAR_INPUT target : INT; sorted_array : ARRAY[1..1000] OF INT; END_VAR VAR left, right, mid : INT; END_VAR left := 1; right := 1000; WHILE left <= right DO mid := (left + right) / 2; IF sorted_array[mid] = target THEN RETURN TRUE; ELSIF sorted_array[mid] < target THEN left := mid + 1; ELSE right := mid - 1; END_IF; END_WHILE; RETURN FALSE; 7.2 通信优化 数据批处理 // 批量数据更新结构 TYPE ST_BATCH_UPDATE : STRUCT timestamp : TIME; sensor_values : ARRAY[1..32] OF INT; actuator_states : ARRAY[1..16] OF BOOL; system_flags : ARRAY[1..8] OF BOOL; END_STRUCT END_TYPE // 批量更新方法 METHOD BatchUpdate : BOOL VAR_INPUT update_data : ST_BATCH_UPDATE; END_VAR // 一次性更新所有数据 FOR i := 1 TO 32 DO sensor_data[i] := update_data.sensor_values[i]; END_FOR FOR i := 1 TO 16 DO actuator_data[i] := update_data.actuator_states[i]; END_FOR // 应用时间戳 last_update_time := update_data.timestamp; 🔧 调试和故障排除 8.1 常见问题解决 通信问题 问题: Factory I/O无法连接到PLC 解决步骤: 1. 检查OPC UA服务器是否启动 2. 确认防火墙设置 3. 验证IP地址和端口号 4. 检查PLC程序是否运行 仿真问题 问题: 物理仿真不准确 解决方法: 1. 调整物理引擎参数 2. 检查物体碰撞设置 3. 优化传送带速度 4. 调整传感器检测范围 8.2 调试工具使用 数据监控 // 变量监控结构 TYPE ST_DEBUG_INFO : STRUCT cycle_time : TIME; cpu_usage : REAL; memory_usage : REAL; communication_errors : INT; last_error_message : STRING; END_STRUCT END_TYPE // 调试数据收集 METHOD CollectDebugInfo : ST_DEBUG_INFO VAR debug_data : ST_DEBUG_INFO; END_VAR debug_data.cycle_time := GetCycleTime(); debug_data.cpu_usage := GetCPUUsage(); debug_data.memory_usage := GetMemoryUsage(); debug_data.communication_errors := GetCommErrorCount(); debug_data.last_error_message := GetLastErrorMessage(); RETURN debug_data; 🎓 项目实战案例 案例1: 智能停车场系统 系统功能 车辆进出自动识别 车位智能分配 收费自动化 异常报警处理 技术要点 RFID车辆识别 图像处理车牌识别 数据库管理 支付系统集成 案例2: 食品加工生产线 工艺流程 原料自动上料 加工过程控制 质量检测分拣 包装自动化 控制要点 温度精确控制 速度同步控制 质量实时监控 数据追溯系统 📈 学习路径建议 初级阶段 (1-2个月) 软件基础: Factory I/O基本操作 PLC入门: 梯形图基础编程 简单项目: 传送带控制、灯光控制 仿真实践: 基础传感器和执行器应用 中级阶段 (3-4个月) 高级编程: 功能块、状态机编程 通信协议: OPC UA、Modbus通信 复杂项目: 分拣系统、装配线 HMI开发: 人机界面设计 高级阶段 (5-6个月) 系统集成: 多设备协调控制 算法优化: 路径规划、调度算法 数据库集成: MES系统对接 工业项目: 完整生产线设计 💡 考证和就业方向 相关认证 西门子认证: S7-1200/1500编程认证 罗克韦尔认证: ControlLogix编程认证 施耐德认证: Modicon PLC认证 三菱认证: FX/Q系列编程认证 就业岗位 PLC编程工程师 自动化工程师 控制系统工程师 工业软件工程师 项目经理 Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！'><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-11-08T12:00:00+08:00"><meta property="article:modified_time" content="2025-11-08T12:00:00+08:00"><meta property="article:tag" content="PLC"><meta property="article:tag" content="Factory I/O"><meta property="article:tag" content="工业自动化"><meta property="article:tag" content="梯形图"><meta property="article:tag" content="仿真"><meta property="og:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&amp;h=400&amp;fit=crop"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&amp;h=400&amp;fit=crop"><meta name=twitter:title content="Factory I/O + PLC完全教程：工业自动化仿真与实践"><meta name=twitter:description content='🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践
 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。
 🎯 学习目标
 
@@ -897,22 +804,22 @@ Factory I/O界面布局:
 2. 在传送带终点添加 Photoelectric Sensor
 3. 调整传感器检测范围和位置
 组件连接配置
-&lt;!-- Factory I/O驱动配置 --&gt;
-&lt;Driver type=&#34;OPC_UA_Client&#34;&gt;
-    &lt;Endpoint&gt;opc.tcp://localhost:4840&lt;/Endpoint&gt;
-    &lt;UpdateRate&gt;50&lt;/UpdateRate&gt;
-&lt;/Driver&gt;
+<!-- Factory I/O驱动配置 -->
+<Driver type="OPC_UA_Client">
+    <Endpoint>opc.tcp://localhost:4840</Endpoint>
+    <UpdateRate>50</UpdateRate>
+</Driver>
 
-&lt;!-- 输入输出映射 --&gt;
-&lt;Inputs&gt;
-    &lt;Sensor id=&#34;start_sensor&#34; address=&#34;ns=2;i=1&#34; /&gt;
-    &lt;Sensor id=&#34;end_sensor&#34; address=&#34;ns=2;i=2&#34; /&gt;
-&lt;/Inputs&gt;
+<!-- 输入输出映射 -->
+<Inputs>
+    <Sensor id="start_sensor" address="ns=2;i=1" />
+    <Sensor id="end_sensor" address="ns=2;i=2" />
+</Inputs>
 
-&lt;Outputs&gt;
-    &lt;Actuator id=&#34;conveyor_motor&#34; address=&#34;ns=2;i=101&#34; /&gt;
-    &lt;LED id=&#34;status_led&#34; address=&#34;ns=2;i=201&#34; /&gt;
-&lt;/Outputs&gt;
+<Outputs>
+    <Actuator id="conveyor_motor" address="ns=2;i=101" />
+    <LED id="status_led" address="ns=2;i=201" />
+</Outputs>
 4.2 PLC程序开发
 CODESYS梯形图程序
 PROGRAM MainProgram
@@ -1012,7 +919,7 @@ CASE current_state OF
             current_state := COMPLETE;
         ELSIF error_detected THEN
             current_state := ERROR;
-            error_count := error_count &#43; 1;
+            error_count := error_count + 1;
         END_IF
 
     COMPLETE:
@@ -1025,7 +932,7 @@ CASE current_state OF
         END_IF
 
     ERROR:
-        IF error_count &gt; 5 THEN
+        IF error_count > 5 THEN
             current_state := IDLE;
             error_count := 0;
         ELSIF reset_button THEN
@@ -1047,7 +954,7 @@ END_CASE
 1. 主传送带: 12m长，速度可调
 2. 分拣器: 3个推杆，间隔3m
 3. 收集箱: 3个颜色对应收集箱
-4. 传感器阵列: 起始检测 &#43; 3个颜色检测
+4. 传感器阵列: 起始检测 + 3个颜色检测
 5. HMI面板: 显示统计信息和控制按钮
 5.2 PLC程序设计
 数据结构定义
@@ -1123,7 +1030,7 @@ IF Execute THEN
     UpdateSensorStatus();
 
     // 处理新进入的箱子
-    IF entrance_sensor AND current_boxes_on_belt &lt; 10 THEN
+    IF entrance_sensor AND current_boxes_on_belt < 10 THEN
         AddNewBox();
     END_IF
 
@@ -1158,25 +1065,25 @@ FOR i := 1 TO current_boxes_on_belt DO
             RED:
                 IF target_pusher = 1 THEN
                     ExecutePusher(1);
-                    system_status.red_boxes := system_status.red_boxes &#43; 1;
+                    system_status.red_boxes := system_status.red_boxes + 1;
                 END_IF
 
             BLUE:
                 IF target_pusher = 2 THEN
                     ExecutePusher(2);
-                    system_status.blue_boxes := system_status.blue_boxes &#43; 1;
+                    system_status.blue_boxes := system_status.blue_boxes + 1;
                 END_IF
 
             GREEN:
                 IF target_pusher = 3 THEN
                     ExecutePusher(3);
-                    system_status.green_boxes := system_status.green_boxes &#43; 1;
+                    system_status.green_boxes := system_status.green_boxes + 1;
                 END_IF
 
             UNKNOWN:
                 // 未知类型，报警
                 TriggerAlarm(&#39;Unknown box type detected&#39;);
-                system_status.rejected_boxes := system_status.rejected_boxes &#43; 1;
+                system_status.rejected_boxes := system_status.rejected_boxes + 1;
         END_CASE
 
         // 标记箱子已处理
@@ -1253,7 +1160,7 @@ FOR i := 1 TO active_tasks DO
         IF agv_fleet[j].status = IDLE THEN
             task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]);
 
-            IF task_cost &lt; min_cost THEN
+            IF task_cost < min_cost THEN
                 min_cost := task_cost;
                 best_agv := j;
             END_IF
@@ -1261,7 +1168,7 @@ FOR i := 1 TO active_tasks DO
     END_FOR;
 
     // 分配任务给最优AGV
-    IF best_agv &gt; 0 THEN
+    IF best_agv > 0 THEN
         AssignTaskToAGV(task_queue[i], best_agv);
         RemoveTaskFromQueue(i);
         best_agv := 0;
@@ -1302,13 +1209,13 @@ END_VAR
 left := 1;
 right := 1000;
 
-WHILE left &lt;= right DO
-    mid := (left &#43; right) / 2;
+WHILE left <= right DO
+    mid := (left + right) / 2;
 
     IF sorted_array[mid] = target THEN
         RETURN TRUE;
-    ELSIF sorted_array[mid] &lt; target THEN
-        left := mid &#43; 1;
+    ELSIF sorted_array[mid] < target THEN
+        left := mid + 1;
     ELSE
         right := mid - 1;
     END_IF;
@@ -1456,146 +1363,9 @@ PLC编程工程师
 项目经理
 
 
-Factory I/O &#43; PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Factory I/O + PLC完全教程：工业自动化仿真与实践",
-      "item": "http://localhost:1313/posts/factory-io-plc-tutorial/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Factory I/O + PLC完全教程：工业自动化仿真与实践",
-  "name": "Factory I\/O \u002b PLC完全教程：工业自动化仿真与实践",
-  "description": "🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。\n🎯 学习目标 掌握Factory I/O软件的使用方法 学习PLC梯形图编程 理解工业控制系统的设计原理 完成多个实际工业项目仿真 🛠️ 环境准备 2.1 Factory I/O软件安装 系统要求 最低配置: - 操作系统: Windows 10/11 (64位) - 内存: 8GB RAM - 显卡: OpenGL 3.3支持 - 硬盘: 2GB可用空间 推荐配置: - 内存: 16GB RAM - 显卡: GTX 1060或更高 - 处理器: Intel i5/AMD Ryzen 5以上 安装步骤 访问官网 factoryio.com 下载软件 选择试用版或学生版（30天免费） 运行安装程序，按提示完成安装 启动软件并激活许可证 2.2 PLC编程软件选择 支持的PLC软件 PLC软件 连接方式 价格 推荐度 CODESYS OPC UA/Modbus 免费 ⭐⭐⭐⭐⭐ TwinCAT ADS 免费 ⭐⭐⭐⭐ Studio 5000 Logix Emulator 收费 ⭐⭐⭐ TIA Portal PLCSIM Advanced 收费 ⭐⭐⭐ CODESYS安装配置 CODESYS安装步骤: 1. 下载CODESYS Development System 2. 安装CODESYS Control Win V3 (软PLC) 3. 配置OPC UA服务器 4. 设置通信参数 🎮 Factory I/O界面介绍 3.1 主界面布局 Factory I/O界面布局: ┌─────────────────────────────────────────────────────────┐ │ 菜单栏: File, Edit, View, Physics, Help │ ├─────────────────────────────────────────────────────────┤ │ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择 │ ├─────────────────────────────────────────────────────────┤ │ 场景编辑区 │ 3D视图区域 │ │ │ │ │ 组件库 │ │ │ 驱动配置 │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏: FPS, 物理引擎, 连接状态 │ └─────────────────────────────────────────────────────────┘ 3.2 组件库介绍 传感器组件 传感器类型: - 接近传感器 (Proximity Sensor): 检测物体接近 - 光电传感器 (Photoelectric Sensor): 光束检测 - 视觉传感器 (Vision Sensor): 图像识别 - 激光传感器 (Laser Sensor): 精确测量 - 重量传感器 (Weight Sensor): 重量测量 执行器组件 执行器类型: - 传送带 (Conveyor Belt): 物料输送 - 机械臂 (Articulated Robot): 抓取操作 - 升降机 (Lift): 垂直运输 - 推杆 (Pusher): 推动物料 - 分拣器 (Sorter): 物料分拣 📝 第一个项目：传送带控制系统 4.1 场景搭建 创建基础布局 步骤1: 创建场景 1. 新建场景 → Empty Scene 2. 调整地面大小: 20m × 20m 3. 添加光照: Directional Light 步骤2: 添加传送带 1. 从组件库拖拽 Conveyor Belt 2. 设置尺寸: Length 10m, Width 1m 3. 设置速度: 0.5 m/s 4. 放置位置: (0, 0, 0) 步骤3: 添加传感器 1. 在传送带起点添加 Proximity Sensor 2. 在传送带终点添加 Photoelectric Sensor 3. 调整传感器检测范围和位置 组件连接配置 \u0026lt;!-- Factory I/O驱动配置 --\u0026gt; \u0026lt;Driver type=\u0026#34;OPC_UA_Client\u0026#34;\u0026gt; \u0026lt;Endpoint\u0026gt;opc.tcp://localhost:4840\u0026lt;/Endpoint\u0026gt; \u0026lt;UpdateRate\u0026gt;50\u0026lt;/UpdateRate\u0026gt; \u0026lt;/Driver\u0026gt; \u0026lt;!-- 输入输出映射 --\u0026gt; \u0026lt;Inputs\u0026gt; \u0026lt;Sensor id=\u0026#34;start_sensor\u0026#34; address=\u0026#34;ns=2;i=1\u0026#34; /\u0026gt; \u0026lt;Sensor id=\u0026#34;end_sensor\u0026#34; address=\u0026#34;ns=2;i=2\u0026#34; /\u0026gt; \u0026lt;/Inputs\u0026gt; \u0026lt;Outputs\u0026gt; \u0026lt;Actuator id=\u0026#34;conveyor_motor\u0026#34; address=\u0026#34;ns=2;i=101\u0026#34; /\u0026gt; \u0026lt;LED id=\u0026#34;status_led\u0026#34; address=\u0026#34;ns=2;i=201\u0026#34; /\u0026gt; \u0026lt;/Outputs\u0026gt; 4.2 PLC程序开发 CODESYS梯形图程序 PROGRAM MainProgram VAR // 输入变量 start_sensor AT %I0.0 : BOOL; end_sensor AT %I0.1 : BOOL; start_button AT %I0.2 : BOOL; stop_button AT %I0.3 : BOOL; // 输出变量 conveyor_motor AT %Q0.0 : BOOL; status_led AT %Q0.1 : BOOL; // 内部变量 system_running : BOOL := FALSE; box_detected : BOOL := FALSE; process_complete : BOOL := FALSE; END_VAR // 梯形图逻辑实现 METHOD LadderLogic : BOOL VAR_INPUT Input : BOOL; END_VAR VAR_OUTPUT Output : BOOL; END_VAR // 启动停止逻辑 IF start_button AND NOT system_running THEN system_running := TRUE; END_IF IF stop_button AND system_running THEN system_running := FALSE; END_IF // 传送带控制逻辑 IF system_running THEN conveyor_motor := TRUE; status_led := TRUE; // 检测到箱子 IF start_sensor AND NOT box_detected THEN box_detected := TRUE; END_IF // 箱子到达终点 IF end_sensor AND box_detected THEN process_complete := TRUE; box_detected := FALSE; END_IF ELSE conveyor_motor := FALSE; status_led := FALSE; box_detected := FALSE; process_complete := FALSE; END_IF 状态机实现 TYPE E_STATE : ( IDLE := 0, RUNNING := 1, PROCESSING := 2, COMPLETE := 3, ERROR := 4 ); END_TYPE VAR current_state : E_STATE := IDLE; state_timer : TON; error_count : INT := 0; END_VAR // 状态机逻辑 CASE current_state OF IDLE: IF start_button THEN current_state := RUNNING; state_timer(IN:=TRUE, PT:=T#5S); END_IF RUNNING: IF state_timer.Q THEN current_state := PROCESSING; state_timer(IN:=FALSE); END_IF IF stop_button THEN current_state := IDLE; END_IF PROCESSING: IF process_complete THEN current_state := COMPLETE; ELSIF error_detected THEN current_state := ERROR; error_count := error_count + 1; END_IF COMPLETE: // 等待2秒后返回运行状态 state_timer(IN:=TRUE, PT:=T#2S); IF state_timer.Q THEN current_state := RUNNING; state_timer(IN:=FALSE); process_complete := FALSE; END_IF ERROR: IF error_count \u0026gt; 5 THEN current_state := IDLE; error_count := 0; ELSIF reset_button THEN current_state := RUNNING; error_count := 0; END_IF END_CASE 🤖 高级项目：自动分拣系统 5.1 系统设计 工艺流程 分拣系统工艺流程: 1. 箱子进入传送带 2. 视觉传感器检测箱子颜色 3. 根据颜色分拣到不同通道 4. 统计各颜色箱子数量 5. 异常处理和报警 场景搭建步骤 场景搭建: 1. 主传送带: 12m长，速度可调 2. 分拣器: 3个推杆，间隔3m 3. 收集箱: 3个颜色对应收集箱 4. 传感器阵列: 起始检测 + 3个颜色检测 5. HMI面板: 显示统计信息和控制按钮 5.2 PLC程序设计 数据结构定义 // 箱子类型枚举 TYPE E_BOX_TYPE : ( NONE := 0, RED := 1, BLUE := 2, GREEN := 3, UNKNOWN := 4 ); END_TYPE // 箱子信息结构 TYPE ST_BOX_INFO : STRUCT type : E_BOX_TYPE; position : REAL; timestamp : TIME; processed : BOOL; END_STRUCT END_TYPE // 系统状态结构 TYPE ST_SYSTEM_STATUS : STRUCT total_boxes : INT := 0; red_boxes : INT := 0; blue_boxes : INT := 0; green_boxes : INT := 0; rejected_boxes : INT := 0; system_uptime : TIME; last_update : TIME; END_STRUCT END_TYPE 主控制程序 PROGRAM SortingSystem VAR // 输入信号 entrance_sensor AT %I0.0 : BOOL; color_red_sensor AT %I0.1 : BOOL; color_blue_sensor AT %I0.2 : BOOL; color_green_sensor AT %I0.3 : BOOL; position_sensors : ARRAY[1..3] OF BOOL; // 输出信号 main_conveyor AT %Q0.0 : BOOL; sorting_pushers : ARRAY[1..3] OF BOOL; status_lights : ARRAY[1..3] OF BOOL; // 系统变量 box_queue : ARRAY[1..10] OF ST_BOX_INFO; system_status : ST_SYSTEM_STATUS; current_boxes_on_belt : INT := 0; // 定时器 conveyor_timer : TON; pusher_timers : ARRAY[1..3] OF TON; // 状态机 system_state : E_STATE := IDLE; END_VAR // 主控制逻辑 METHOD ControlLogic : BOOL VAR_INPUT Execute : BOOL; END_VAR IF Execute THEN // 更新传感器状态 UpdateSensorStatus(); // 处理新进入的箱子 IF entrance_sensor AND current_boxes_on_belt \u0026lt; 10 THEN AddNewBox(); END_IF // 更新箱子位置 UpdateBoxPositions(); // 执行分拣逻辑 ExecuteSorting(); // 更新统计信息 UpdateStatistics(); // 异常检测 CheckErrors(); END_IF 分拣算法实现 METHOD ExecuteSorting : BOOL VAR i : INT; box_to_sort : ST_BOX_INFO; target_pusher : INT; END_VAR // 遍历传送带上的箱子 FOR i := 1 TO current_boxes_on_belt DO box_to_sort := box_queue[i]; // 检查箱子是否到达分拣位置 IF IsBoxAtSortingPosition(box_to_sort.position, target_pusher) THEN // 根据箱子类型执行分拣 CASE box_to_sort.type OF RED: IF target_pusher = 1 THEN ExecutePusher(1); system_status.red_boxes := system_status.red_boxes + 1; END_IF BLUE: IF target_pusher = 2 THEN ExecutePusher(2); system_status.blue_boxes := system_status.blue_boxes + 1; END_IF GREEN: IF target_pusher = 3 THEN ExecutePusher(3); system_status.green_boxes := system_status.green_boxes + 1; END_IF UNKNOWN: // 未知类型，报警 TriggerAlarm(\u0026#39;Unknown box type detected\u0026#39;); system_status.rejected_boxes := system_status.rejected_boxes + 1; END_CASE // 标记箱子已处理 box_queue[i].processed := TRUE; END_IF; END_FOR // 清理已处理的箱子 CleanProcessedBoxes(); 🎮 游戏化学习项目 6.1 智能仓储系统 项目背景 项目目标: - 自动化仓库管理 - 货物智能分拣 - 库存实时监控 - 机器人协作搬运 系统架构 硬件组件: 1. 堆垛机 (Stacker Crane): 货架存取 2. AGV小车: 货物搬运 3. 输送线系统: 货物流转 4. 提升机: 楼层运输 5. RFID读写器: 货物识别 软件功能: 1. WMS仓库管理系统 2. 路径规划算法 3. 任务调度系统 4. 数据可视化 6.2 物流分拣中心 场景设计 分拣中心布局: ┌─────────────────────────────────────────┐ │ 入货区 → 主输送线 → 分拣区 → 出货区 │ │ │ │ [货架A] [货架B] [货架C] [货架D] │ │ │ │ [控制中心] [HMI界面] │ └─────────────────────────────────────────┘ 控制逻辑 // 物流分拣控制程序 PROGRAM LogisticsCenter VAR // 订单数据 orders : ARRAY[1..100] OF ST_ORDER; current_order : INT := 0; // 货架状态 shelves : ARRAY[1..4] OF ARRAY[1..20] OF ST_SHELF_SLOT; // 设备状态 agv_fleet : ARRAY[1..3] OF ST_AGV_STATUS; conveyor_status : ST_CONVEYOR_STATUS; // 任务队列 task_queue : ARRAY[1..50] OF ST_TASK; active_tasks : INT := 0; END_VAR // 任务调度算法 METHOD TaskScheduling : BOOL VAR i : INT; best_agv : INT; min_cost : REAL := 999999; task_cost : REAL; END_VAR // 为每个任务分配最优AGV FOR i := 1 TO active_tasks DO // 计算每个AGV执行任务的代价 FOR j := 1 TO 3 DO IF agv_fleet[j].status = IDLE THEN task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]); IF task_cost \u0026lt; min_cost THEN min_cost := task_cost; best_agv := j; END_IF END_IF; END_FOR; // 分配任务给最优AGV IF best_agv \u0026gt; 0 THEN AssignTaskToAGV(task_queue[i], best_agv); RemoveTaskFromQueue(i); best_agv := 0; min_cost := 999999; END_IF; END_FOR 📊 性能优化技巧 7.1 代码优化 算法优化 // 低效的实现 FUNCTION InefficientSearch : BOOL VAR_INPUT target : INT; array_data : ARRAY[1..1000] OF INT; END_VAR VAR i : INT; END_VAR FOR i := 1 TO 1000 DO IF array_data[i] = target THEN RETURN TRUE; END_IF; END_FOR RETURN FALSE; // 优化后的实现 (二分查找) FUNCTION OptimizedSearch : BOOL VAR_INPUT target : INT; sorted_array : ARRAY[1..1000] OF INT; END_VAR VAR left, right, mid : INT; END_VAR left := 1; right := 1000; WHILE left \u0026lt;= right DO mid := (left + right) / 2; IF sorted_array[mid] = target THEN RETURN TRUE; ELSIF sorted_array[mid] \u0026lt; target THEN left := mid + 1; ELSE right := mid - 1; END_IF; END_WHILE; RETURN FALSE; 7.2 通信优化 数据批处理 // 批量数据更新结构 TYPE ST_BATCH_UPDATE : STRUCT timestamp : TIME; sensor_values : ARRAY[1..32] OF INT; actuator_states : ARRAY[1..16] OF BOOL; system_flags : ARRAY[1..8] OF BOOL; END_STRUCT END_TYPE // 批量更新方法 METHOD BatchUpdate : BOOL VAR_INPUT update_data : ST_BATCH_UPDATE; END_VAR // 一次性更新所有数据 FOR i := 1 TO 32 DO sensor_data[i] := update_data.sensor_values[i]; END_FOR FOR i := 1 TO 16 DO actuator_data[i] := update_data.actuator_states[i]; END_FOR // 应用时间戳 last_update_time := update_data.timestamp; 🔧 调试和故障排除 8.1 常见问题解决 通信问题 问题: Factory I/O无法连接到PLC 解决步骤: 1. 检查OPC UA服务器是否启动 2. 确认防火墙设置 3. 验证IP地址和端口号 4. 检查PLC程序是否运行 仿真问题 问题: 物理仿真不准确 解决方法: 1. 调整物理引擎参数 2. 检查物体碰撞设置 3. 优化传送带速度 4. 调整传感器检测范围 8.2 调试工具使用 数据监控 // 变量监控结构 TYPE ST_DEBUG_INFO : STRUCT cycle_time : TIME; cpu_usage : REAL; memory_usage : REAL; communication_errors : INT; last_error_message : STRING; END_STRUCT END_TYPE // 调试数据收集 METHOD CollectDebugInfo : ST_DEBUG_INFO VAR debug_data : ST_DEBUG_INFO; END_VAR debug_data.cycle_time := GetCycleTime(); debug_data.cpu_usage := GetCPUUsage(); debug_data.memory_usage := GetMemoryUsage(); debug_data.communication_errors := GetCommErrorCount(); debug_data.last_error_message := GetLastErrorMessage(); RETURN debug_data; 🎓 项目实战案例 案例1: 智能停车场系统 系统功能 车辆进出自动识别 车位智能分配 收费自动化 异常报警处理 技术要点 RFID车辆识别 图像处理车牌识别 数据库管理 支付系统集成 案例2: 食品加工生产线 工艺流程 原料自动上料 加工过程控制 质量检测分拣 包装自动化 控制要点 温度精确控制 速度同步控制 质量实时监控 数据追溯系统 📈 学习路径建议 初级阶段 (1-2个月) 软件基础: Factory I/O基本操作 PLC入门: 梯形图基础编程 简单项目: 传送带控制、灯光控制 仿真实践: 基础传感器和执行器应用 中级阶段 (3-4个月) 高级编程: 功能块、状态机编程 通信协议: OPC UA、Modbus通信 复杂项目: 分拣系统、装配线 HMI开发: 人机界面设计 高级阶段 (5-6个月) 系统集成: 多设备协调控制 算法优化: 路径规划、调度算法 数据库集成: MES系统对接 工业项目: 完整生产线设计 💡 考证和就业方向 相关认证 西门子认证: S7-1200/1500编程认证 罗克韦尔认证: ControlLogix编程认证 施耐德认证: Modicon PLC认证 三菱认证: FX/Q系列编程认证 就业岗位 PLC编程工程师 自动化工程师 控制系统工程师 工业软件工程师 项目经理 Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！\n",
-  "keywords": [
-    "PLC", "Factory I/O", "工业自动化", "梯形图", "仿真"
-  ],
-  "articleBody": "🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。\n🎯 学习目标 掌握Factory I/O软件的使用方法 学习PLC梯形图编程 理解工业控制系统的设计原理 完成多个实际工业项目仿真 🛠️ 环境准备 2.1 Factory I/O软件安装 系统要求 最低配置: - 操作系统: Windows 10/11 (64位) - 内存: 8GB RAM - 显卡: OpenGL 3.3支持 - 硬盘: 2GB可用空间 推荐配置: - 内存: 16GB RAM - 显卡: GTX 1060或更高 - 处理器: Intel i5/AMD Ryzen 5以上 安装步骤 访问官网 factoryio.com 下载软件 选择试用版或学生版（30天免费） 运行安装程序，按提示完成安装 启动软件并激活许可证 2.2 PLC编程软件选择 支持的PLC软件 PLC软件 连接方式 价格 推荐度 CODESYS OPC UA/Modbus 免费 ⭐⭐⭐⭐⭐ TwinCAT ADS 免费 ⭐⭐⭐⭐ Studio 5000 Logix Emulator 收费 ⭐⭐⭐ TIA Portal PLCSIM Advanced 收费 ⭐⭐⭐ CODESYS安装配置 CODESYS安装步骤: 1. 下载CODESYS Development System 2. 安装CODESYS Control Win V3 (软PLC) 3. 配置OPC UA服务器 4. 设置通信参数 🎮 Factory I/O界面介绍 3.1 主界面布局 Factory I/O界面布局: ┌─────────────────────────────────────────────────────────┐ │ 菜单栏: File, Edit, View, Physics, Help │ ├─────────────────────────────────────────────────────────┤ │ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择 │ ├─────────────────────────────────────────────────────────┤ │ 场景编辑区 │ 3D视图区域 │ │ │ │ │ 组件库 │ │ │ 驱动配置 │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏: FPS, 物理引擎, 连接状态 │ └─────────────────────────────────────────────────────────┘ 3.2 组件库介绍 传感器组件 传感器类型: - 接近传感器 (Proximity Sensor): 检测物体接近 - 光电传感器 (Photoelectric Sensor): 光束检测 - 视觉传感器 (Vision Sensor): 图像识别 - 激光传感器 (Laser Sensor): 精确测量 - 重量传感器 (Weight Sensor): 重量测量 执行器组件 执行器类型: - 传送带 (Conveyor Belt): 物料输送 - 机械臂 (Articulated Robot): 抓取操作 - 升降机 (Lift): 垂直运输 - 推杆 (Pusher): 推动物料 - 分拣器 (Sorter): 物料分拣 📝 第一个项目：传送带控制系统 4.1 场景搭建 创建基础布局 步骤1: 创建场景 1. 新建场景 → Empty Scene 2. 调整地面大小: 20m × 20m 3. 添加光照: Directional Light 步骤2: 添加传送带 1. 从组件库拖拽 Conveyor Belt 2. 设置尺寸: Length 10m, Width 1m 3. 设置速度: 0.5 m/s 4. 放置位置: (0, 0, 0) 步骤3: 添加传感器 1. 在传送带起点添加 Proximity Sensor 2. 在传送带终点添加 Photoelectric Sensor 3. 调整传感器检测范围和位置 组件连接配置 ",
-  "wordCount" : "1464",
-  "inLanguage": "en",
-  "image":"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800\u0026h=400\u0026fit=crop","datePublished": "2025-11-08T12:00:00+08:00",
-  "dateModified": "2025-11-08T12:00:00+08:00",
-  "author":{
-    "@type": "Person",
-    "name": "dmk69"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/posts/factory-io-plc-tutorial/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Automation \u0026 Industrial Control Technician",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/%3Clink%20/%20abs%20url%3E"
-    }
-  }
-}
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Home (Alt + H)">
-                <img src="http://localhost:1313/apple-touch-icon.png" alt="" aria-label="logo"
-                    height="35">Home</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="http://localhost:1313/projects/" title="项目展示">
-                    <span>项目展示</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/posts/" title="Blog">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/tags/" title="标签">
-                    <span>标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/about/" title="关于">
-                    <span>关于</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Factory I/O &#43; PLC完全教程：工业自动化仿真与实践
-    </h1>
-    <div class="post-meta"><span title='2025-11-08 12:00:00 +0800 CST'>2025-11-08</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1464 words</span>&nbsp;·&nbsp;<span>dmk69</span>
-
-</div>
-  </header> 
-<figure class="entry-cover">
-        <img loading="eager" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&amp;h=400&amp;fit=crop" alt="Factory Automation">
-        <figcaption>Industrial Automation with Factory I/O</figcaption>
-</figure>
-  <div class="post-content"><h1 id="-factory-io--plc完全教程工业自动化仿真与实践">🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践<a hidden class="anchor" aria-hidden="true" href="#-factory-io--plc完全教程工业自动化仿真与实践">#</a></h1>
-<p>Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。</p>
-<h2 id="-学习目标">🎯 学习目标<a hidden class="anchor" aria-hidden="true" href="#-学习目标">#</a></h2>
-<ul>
-<li>掌握Factory I/O软件的使用方法</li>
-<li>学习PLC梯形图编程</li>
-<li>理解工业控制系统的设计原理</li>
-<li>完成多个实际工业项目仿真</li>
-</ul>
-<h2 id="-环境准备">🛠️ 环境准备<a hidden class="anchor" aria-hidden="true" href="#-环境准备">#</a></h2>
-<h3 id="21-factory-io软件安装">2.1 Factory I/O软件安装<a hidden class="anchor" aria-hidden="true" href="#21-factory-io软件安装">#</a></h3>
-<h4 id="系统要求">系统要求<a hidden class="anchor" aria-hidden="true" href="#系统要求">#</a></h4>
-<pre tabindex="0"><code>最低配置:
+Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://hugo-maker-blog.vercel.app/posts/"},{"@type":"ListItem","position":2,"name":"Factory I/O + PLC完全教程：工业自动化仿真与实践","item":"https://hugo-maker-blog.vercel.app/posts/factory-io-plc-tutorial/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Factory I/O + PLC完全教程：工业自动化仿真与实践","name":"Factory I\/O \u002b PLC完全教程：工业自动化仿真与实践","description":"🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。\n🎯 学习目标 掌握Factory I/O软件的使用方法 学习PLC梯形图编程 理解工业控制系统的设计原理 完成多个实际工业项目仿真 🛠️ 环境准备 2.1 Factory I/O软件安装 系统要求 最低配置: - 操作系统: Windows 10/11 (64位) - 内存: 8GB RAM - 显卡: OpenGL 3.3支持 - 硬盘: 2GB可用空间 推荐配置: - 内存: 16GB RAM - 显卡: GTX 1060或更高 - 处理器: Intel i5/AMD Ryzen 5以上 安装步骤 访问官网 factoryio.com 下载软件 选择试用版或学生版（30天免费） 运行安装程序，按提示完成安装 启动软件并激活许可证 2.2 PLC编程软件选择 支持的PLC软件 PLC软件 连接方式 价格 推荐度 CODESYS OPC UA/Modbus 免费 ⭐⭐⭐⭐⭐ TwinCAT ADS 免费 ⭐⭐⭐⭐ Studio 5000 Logix Emulator 收费 ⭐⭐⭐ TIA Portal PLCSIM Advanced 收费 ⭐⭐⭐ CODESYS安装配置 CODESYS安装步骤: 1. 下载CODESYS Development System 2. 安装CODESYS Control Win V3 (软PLC) 3. 配置OPC UA服务器 4. 设置通信参数 🎮 Factory I/O界面介绍 3.1 主界面布局 Factory I/O界面布局: ┌─────────────────────────────────────────────────────────┐ │ 菜单栏: File, Edit, View, Physics, Help │ ├─────────────────────────────────────────────────────────┤ │ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择 │ ├─────────────────────────────────────────────────────────┤ │ 场景编辑区 │ 3D视图区域 │ │ │ │ │ 组件库 │ │ │ 驱动配置 │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏: FPS, 物理引擎, 连接状态 │ └─────────────────────────────────────────────────────────┘ 3.2 组件库介绍 传感器组件 传感器类型: - 接近传感器 (Proximity Sensor): 检测物体接近 - 光电传感器 (Photoelectric Sensor): 光束检测 - 视觉传感器 (Vision Sensor): 图像识别 - 激光传感器 (Laser Sensor): 精确测量 - 重量传感器 (Weight Sensor): 重量测量 执行器组件 执行器类型: - 传送带 (Conveyor Belt): 物料输送 - 机械臂 (Articulated Robot): 抓取操作 - 升降机 (Lift): 垂直运输 - 推杆 (Pusher): 推动物料 - 分拣器 (Sorter): 物料分拣 📝 第一个项目：传送带控制系统 4.1 场景搭建 创建基础布局 步骤1: 创建场景 1. 新建场景 → Empty Scene 2. 调整地面大小: 20m × 20m 3. 添加光照: Directional Light 步骤2: 添加传送带 1. 从组件库拖拽 Conveyor Belt 2. 设置尺寸: Length 10m, Width 1m 3. 设置速度: 0.5 m/s 4. 放置位置: (0, 0, 0) 步骤3: 添加传感器 1. 在传送带起点添加 Proximity Sensor 2. 在传送带终点添加 Photoelectric Sensor 3. 调整传感器检测范围和位置 组件连接配置 \u0026lt;!-- Factory I/O驱动配置 --\u0026gt; \u0026lt;Driver type=\u0026#34;OPC_UA_Client\u0026#34;\u0026gt; \u0026lt;Endpoint\u0026gt;opc.tcp://localhost:4840\u0026lt;/Endpoint\u0026gt; \u0026lt;UpdateRate\u0026gt;50\u0026lt;/UpdateRate\u0026gt; \u0026lt;/Driver\u0026gt; \u0026lt;!-- 输入输出映射 --\u0026gt; \u0026lt;Inputs\u0026gt; \u0026lt;Sensor id=\u0026#34;start_sensor\u0026#34; address=\u0026#34;ns=2;i=1\u0026#34; /\u0026gt; \u0026lt;Sensor id=\u0026#34;end_sensor\u0026#34; address=\u0026#34;ns=2;i=2\u0026#34; /\u0026gt; \u0026lt;/Inputs\u0026gt; \u0026lt;Outputs\u0026gt; \u0026lt;Actuator id=\u0026#34;conveyor_motor\u0026#34; address=\u0026#34;ns=2;i=101\u0026#34; /\u0026gt; \u0026lt;LED id=\u0026#34;status_led\u0026#34; address=\u0026#34;ns=2;i=201\u0026#34; /\u0026gt; \u0026lt;/Outputs\u0026gt; 4.2 PLC程序开发 CODESYS梯形图程序 PROGRAM MainProgram VAR // 输入变量 start_sensor AT %I0.0 : BOOL; end_sensor AT %I0.1 : BOOL; start_button AT %I0.2 : BOOL; stop_button AT %I0.3 : BOOL; // 输出变量 conveyor_motor AT %Q0.0 : BOOL; status_led AT %Q0.1 : BOOL; // 内部变量 system_running : BOOL := FALSE; box_detected : BOOL := FALSE; process_complete : BOOL := FALSE; END_VAR // 梯形图逻辑实现 METHOD LadderLogic : BOOL VAR_INPUT Input : BOOL; END_VAR VAR_OUTPUT Output : BOOL; END_VAR // 启动停止逻辑 IF start_button AND NOT system_running THEN system_running := TRUE; END_IF IF stop_button AND system_running THEN system_running := FALSE; END_IF // 传送带控制逻辑 IF system_running THEN conveyor_motor := TRUE; status_led := TRUE; // 检测到箱子 IF start_sensor AND NOT box_detected THEN box_detected := TRUE; END_IF // 箱子到达终点 IF end_sensor AND box_detected THEN process_complete := TRUE; box_detected := FALSE; END_IF ELSE conveyor_motor := FALSE; status_led := FALSE; box_detected := FALSE; process_complete := FALSE; END_IF 状态机实现 TYPE E_STATE : ( IDLE := 0, RUNNING := 1, PROCESSING := 2, COMPLETE := 3, ERROR := 4 ); END_TYPE VAR current_state : E_STATE := IDLE; state_timer : TON; error_count : INT := 0; END_VAR // 状态机逻辑 CASE current_state OF IDLE: IF start_button THEN current_state := RUNNING; state_timer(IN:=TRUE, PT:=T#5S); END_IF RUNNING: IF state_timer.Q THEN current_state := PROCESSING; state_timer(IN:=FALSE); END_IF IF stop_button THEN current_state := IDLE; END_IF PROCESSING: IF process_complete THEN current_state := COMPLETE; ELSIF error_detected THEN current_state := ERROR; error_count := error_count + 1; END_IF COMPLETE: // 等待2秒后返回运行状态 state_timer(IN:=TRUE, PT:=T#2S); IF state_timer.Q THEN current_state := RUNNING; state_timer(IN:=FALSE); process_complete := FALSE; END_IF ERROR: IF error_count \u0026gt; 5 THEN current_state := IDLE; error_count := 0; ELSIF reset_button THEN current_state := RUNNING; error_count := 0; END_IF END_CASE 🤖 高级项目：自动分拣系统 5.1 系统设计 工艺流程 分拣系统工艺流程: 1. 箱子进入传送带 2. 视觉传感器检测箱子颜色 3. 根据颜色分拣到不同通道 4. 统计各颜色箱子数量 5. 异常处理和报警 场景搭建步骤 场景搭建: 1. 主传送带: 12m长，速度可调 2. 分拣器: 3个推杆，间隔3m 3. 收集箱: 3个颜色对应收集箱 4. 传感器阵列: 起始检测 + 3个颜色检测 5. HMI面板: 显示统计信息和控制按钮 5.2 PLC程序设计 数据结构定义 // 箱子类型枚举 TYPE E_BOX_TYPE : ( NONE := 0, RED := 1, BLUE := 2, GREEN := 3, UNKNOWN := 4 ); END_TYPE // 箱子信息结构 TYPE ST_BOX_INFO : STRUCT type : E_BOX_TYPE; position : REAL; timestamp : TIME; processed : BOOL; END_STRUCT END_TYPE // 系统状态结构 TYPE ST_SYSTEM_STATUS : STRUCT total_boxes : INT := 0; red_boxes : INT := 0; blue_boxes : INT := 0; green_boxes : INT := 0; rejected_boxes : INT := 0; system_uptime : TIME; last_update : TIME; END_STRUCT END_TYPE 主控制程序 PROGRAM SortingSystem VAR // 输入信号 entrance_sensor AT %I0.0 : BOOL; color_red_sensor AT %I0.1 : BOOL; color_blue_sensor AT %I0.2 : BOOL; color_green_sensor AT %I0.3 : BOOL; position_sensors : ARRAY[1..3] OF BOOL; // 输出信号 main_conveyor AT %Q0.0 : BOOL; sorting_pushers : ARRAY[1..3] OF BOOL; status_lights : ARRAY[1..3] OF BOOL; // 系统变量 box_queue : ARRAY[1..10] OF ST_BOX_INFO; system_status : ST_SYSTEM_STATUS; current_boxes_on_belt : INT := 0; // 定时器 conveyor_timer : TON; pusher_timers : ARRAY[1..3] OF TON; // 状态机 system_state : E_STATE := IDLE; END_VAR // 主控制逻辑 METHOD ControlLogic : BOOL VAR_INPUT Execute : BOOL; END_VAR IF Execute THEN // 更新传感器状态 UpdateSensorStatus(); // 处理新进入的箱子 IF entrance_sensor AND current_boxes_on_belt \u0026lt; 10 THEN AddNewBox(); END_IF // 更新箱子位置 UpdateBoxPositions(); // 执行分拣逻辑 ExecuteSorting(); // 更新统计信息 UpdateStatistics(); // 异常检测 CheckErrors(); END_IF 分拣算法实现 METHOD ExecuteSorting : BOOL VAR i : INT; box_to_sort : ST_BOX_INFO; target_pusher : INT; END_VAR // 遍历传送带上的箱子 FOR i := 1 TO current_boxes_on_belt DO box_to_sort := box_queue[i]; // 检查箱子是否到达分拣位置 IF IsBoxAtSortingPosition(box_to_sort.position, target_pusher) THEN // 根据箱子类型执行分拣 CASE box_to_sort.type OF RED: IF target_pusher = 1 THEN ExecutePusher(1); system_status.red_boxes := system_status.red_boxes + 1; END_IF BLUE: IF target_pusher = 2 THEN ExecutePusher(2); system_status.blue_boxes := system_status.blue_boxes + 1; END_IF GREEN: IF target_pusher = 3 THEN ExecutePusher(3); system_status.green_boxes := system_status.green_boxes + 1; END_IF UNKNOWN: // 未知类型，报警 TriggerAlarm(\u0026#39;Unknown box type detected\u0026#39;); system_status.rejected_boxes := system_status.rejected_boxes + 1; END_CASE // 标记箱子已处理 box_queue[i].processed := TRUE; END_IF; END_FOR // 清理已处理的箱子 CleanProcessedBoxes(); 🎮 游戏化学习项目 6.1 智能仓储系统 项目背景 项目目标: - 自动化仓库管理 - 货物智能分拣 - 库存实时监控 - 机器人协作搬运 系统架构 硬件组件: 1. 堆垛机 (Stacker Crane): 货架存取 2. AGV小车: 货物搬运 3. 输送线系统: 货物流转 4. 提升机: 楼层运输 5. RFID读写器: 货物识别 软件功能: 1. WMS仓库管理系统 2. 路径规划算法 3. 任务调度系统 4. 数据可视化 6.2 物流分拣中心 场景设计 分拣中心布局: ┌─────────────────────────────────────────┐ │ 入货区 → 主输送线 → 分拣区 → 出货区 │ │ │ │ [货架A] [货架B] [货架C] [货架D] │ │ │ │ [控制中心] [HMI界面] │ └─────────────────────────────────────────┘ 控制逻辑 // 物流分拣控制程序 PROGRAM LogisticsCenter VAR // 订单数据 orders : ARRAY[1..100] OF ST_ORDER; current_order : INT := 0; // 货架状态 shelves : ARRAY[1..4] OF ARRAY[1..20] OF ST_SHELF_SLOT; // 设备状态 agv_fleet : ARRAY[1..3] OF ST_AGV_STATUS; conveyor_status : ST_CONVEYOR_STATUS; // 任务队列 task_queue : ARRAY[1..50] OF ST_TASK; active_tasks : INT := 0; END_VAR // 任务调度算法 METHOD TaskScheduling : BOOL VAR i : INT; best_agv : INT; min_cost : REAL := 999999; task_cost : REAL; END_VAR // 为每个任务分配最优AGV FOR i := 1 TO active_tasks DO // 计算每个AGV执行任务的代价 FOR j := 1 TO 3 DO IF agv_fleet[j].status = IDLE THEN task_cost := CalculateTaskCost(task_queue[i], agv_fleet[j]); IF task_cost \u0026lt; min_cost THEN min_cost := task_cost; best_agv := j; END_IF END_IF; END_FOR; // 分配任务给最优AGV IF best_agv \u0026gt; 0 THEN AssignTaskToAGV(task_queue[i], best_agv); RemoveTaskFromQueue(i); best_agv := 0; min_cost := 999999; END_IF; END_FOR 📊 性能优化技巧 7.1 代码优化 算法优化 // 低效的实现 FUNCTION InefficientSearch : BOOL VAR_INPUT target : INT; array_data : ARRAY[1..1000] OF INT; END_VAR VAR i : INT; END_VAR FOR i := 1 TO 1000 DO IF array_data[i] = target THEN RETURN TRUE; END_IF; END_FOR RETURN FALSE; // 优化后的实现 (二分查找) FUNCTION OptimizedSearch : BOOL VAR_INPUT target : INT; sorted_array : ARRAY[1..1000] OF INT; END_VAR VAR left, right, mid : INT; END_VAR left := 1; right := 1000; WHILE left \u0026lt;= right DO mid := (left + right) / 2; IF sorted_array[mid] = target THEN RETURN TRUE; ELSIF sorted_array[mid] \u0026lt; target THEN left := mid + 1; ELSE right := mid - 1; END_IF; END_WHILE; RETURN FALSE; 7.2 通信优化 数据批处理 // 批量数据更新结构 TYPE ST_BATCH_UPDATE : STRUCT timestamp : TIME; sensor_values : ARRAY[1..32] OF INT; actuator_states : ARRAY[1..16] OF BOOL; system_flags : ARRAY[1..8] OF BOOL; END_STRUCT END_TYPE // 批量更新方法 METHOD BatchUpdate : BOOL VAR_INPUT update_data : ST_BATCH_UPDATE; END_VAR // 一次性更新所有数据 FOR i := 1 TO 32 DO sensor_data[i] := update_data.sensor_values[i]; END_FOR FOR i := 1 TO 16 DO actuator_data[i] := update_data.actuator_states[i]; END_FOR // 应用时间戳 last_update_time := update_data.timestamp; 🔧 调试和故障排除 8.1 常见问题解决 通信问题 问题: Factory I/O无法连接到PLC 解决步骤: 1. 检查OPC UA服务器是否启动 2. 确认防火墙设置 3. 验证IP地址和端口号 4. 检查PLC程序是否运行 仿真问题 问题: 物理仿真不准确 解决方法: 1. 调整物理引擎参数 2. 检查物体碰撞设置 3. 优化传送带速度 4. 调整传感器检测范围 8.2 调试工具使用 数据监控 // 变量监控结构 TYPE ST_DEBUG_INFO : STRUCT cycle_time : TIME; cpu_usage : REAL; memory_usage : REAL; communication_errors : INT; last_error_message : STRING; END_STRUCT END_TYPE // 调试数据收集 METHOD CollectDebugInfo : ST_DEBUG_INFO VAR debug_data : ST_DEBUG_INFO; END_VAR debug_data.cycle_time := GetCycleTime(); debug_data.cpu_usage := GetCPUUsage(); debug_data.memory_usage := GetMemoryUsage(); debug_data.communication_errors := GetCommErrorCount(); debug_data.last_error_message := GetLastErrorMessage(); RETURN debug_data; 🎓 项目实战案例 案例1: 智能停车场系统 系统功能 车辆进出自动识别 车位智能分配 收费自动化 异常报警处理 技术要点 RFID车辆识别 图像处理车牌识别 数据库管理 支付系统集成 案例2: 食品加工生产线 工艺流程 原料自动上料 加工过程控制 质量检测分拣 包装自动化 控制要点 温度精确控制 速度同步控制 质量实时监控 数据追溯系统 📈 学习路径建议 初级阶段 (1-2个月) 软件基础: Factory I/O基本操作 PLC入门: 梯形图基础编程 简单项目: 传送带控制、灯光控制 仿真实践: 基础传感器和执行器应用 中级阶段 (3-4个月) 高级编程: 功能块、状态机编程 通信协议: OPC UA、Modbus通信 复杂项目: 分拣系统、装配线 HMI开发: 人机界面设计 高级阶段 (5-6个月) 系统集成: 多设备协调控制 算法优化: 路径规划、调度算法 数据库集成: MES系统对接 工业项目: 完整生产线设计 💡 考证和就业方向 相关认证 西门子认证: S7-1200/1500编程认证 罗克韦尔认证: ControlLogix编程认证 施耐德认证: Modicon PLC认证 三菱认证: FX/Q系列编程认证 就业岗位 PLC编程工程师 自动化工程师 控制系统工程师 工业软件工程师 项目经理 Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！\n","keywords":["PLC","Factory I/O","工业自动化","梯形图","仿真"],"articleBody":"🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践 Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。\n🎯 学习目标 掌握Factory I/O软件的使用方法 学习PLC梯形图编程 理解工业控制系统的设计原理 完成多个实际工业项目仿真 🛠️ 环境准备 2.1 Factory I/O软件安装 系统要求 最低配置: - 操作系统: Windows 10/11 (64位) - 内存: 8GB RAM - 显卡: OpenGL 3.3支持 - 硬盘: 2GB可用空间 推荐配置: - 内存: 16GB RAM - 显卡: GTX 1060或更高 - 处理器: Intel i5/AMD Ryzen 5以上 安装步骤 访问官网 factoryio.com 下载软件 选择试用版或学生版（30天免费） 运行安装程序，按提示完成安装 启动软件并激活许可证 2.2 PLC编程软件选择 支持的PLC软件 PLC软件 连接方式 价格 推荐度 CODESYS OPC UA/Modbus 免费 ⭐⭐⭐⭐⭐ TwinCAT ADS 免费 ⭐⭐⭐⭐ Studio 5000 Logix Emulator 收费 ⭐⭐⭐ TIA Portal PLCSIM Advanced 收费 ⭐⭐⭐ CODESYS安装配置 CODESYS安装步骤: 1. 下载CODESYS Development System 2. 安装CODESYS Control Win V3 (软PLC) 3. 配置OPC UA服务器 4. 设置通信参数 🎮 Factory I/O界面介绍 3.1 主界面布局 Factory I/O界面布局: ┌─────────────────────────────────────────────────────────┐ │ 菜单栏: File, Edit, View, Physics, Help │ ├─────────────────────────────────────────────────────────┤ │ 工具栏: 运行, 暂停, 重置, 连接, 驱动选择 │ ├─────────────────────────────────────────────────────────┤ │ 场景编辑区 │ 3D视图区域 │ │ │ │ │ 组件库 │ │ │ 驱动配置 │ │ │ │ │ ├─────────────────────────────────────────────────────────┤ │ 状态栏: FPS, 物理引擎, 连接状态 │ └─────────────────────────────────────────────────────────┘ 3.2 组件库介绍 传感器组件 传感器类型: - 接近传感器 (Proximity Sensor): 检测物体接近 - 光电传感器 (Photoelectric Sensor): 光束检测 - 视觉传感器 (Vision Sensor): 图像识别 - 激光传感器 (Laser Sensor): 精确测量 - 重量传感器 (Weight Sensor): 重量测量 执行器组件 执行器类型: - 传送带 (Conveyor Belt): 物料输送 - 机械臂 (Articulated Robot): 抓取操作 - 升降机 (Lift): 垂直运输 - 推杆 (Pusher): 推动物料 - 分拣器 (Sorter): 物料分拣 📝 第一个项目：传送带控制系统 4.1 场景搭建 创建基础布局 步骤1: 创建场景 1. 新建场景 → Empty Scene 2. 调整地面大小: 20m × 20m 3. 添加光照: Directional Light 步骤2: 添加传送带 1. 从组件库拖拽 Conveyor Belt 2. 设置尺寸: Length 10m, Width 1m 3. 设置速度: 0.5 m/s 4. 放置位置: (0, 0, 0) 步骤3: 添加传感器 1. 在传送带起点添加 Proximity Sensor 2. 在传送带终点添加 Photoelectric Sensor 3. 调整传感器检测范围和位置 组件连接配置 ","wordCount":"1464","inLanguage":"en","image":"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800\u0026h=400\u0026fit=crop","datePublished":"2025-11-08T12:00:00+08:00","dateModified":"2025-11-08T12:00:00+08:00","author":{"@type":"Person","name":"dmk69"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://hugo-maker-blog.vercel.app/posts/factory-io-plc-tutorial/"},"publisher":{"@type":"Organization","name":"Automation \u0026 Industrial Control Technician","logo":{"@type":"ImageObject","url":"https://hugo-maker-blog.vercel.app/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://hugo-maker-blog.vercel.app/ accesskey=h title="Home (Alt + H)"><img src=https://hugo-maker-blog.vercel.app/apple-touch-icon.png alt aria-label=logo height=35>Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://hugo-maker-blog.vercel.app/projects/ title=项目展示><span>项目展示</span></a></li><li><a href=https://hugo-maker-blog.vercel.app/posts/ title=Blog><span>Blog</span></a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/ title=标签><span>标签</span></a></li><li><a href=https://hugo-maker-blog.vercel.app/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://hugo-maker-blog.vercel.app/>Home</a>&nbsp;»&nbsp;<a href=https://hugo-maker-blog.vercel.app/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Factory I/O + PLC完全教程：工业自动化仿真与实践</h1><div class=post-meta><span title='2025-11-08 12:00:00 +0800 CST'>2025-11-08</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1464 words</span>&nbsp;·&nbsp;<span>dmk69</span></div></header><figure class=entry-cover><img loading=eager src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&amp;h=400&amp;fit=crop" alt="Factory Automation"><figcaption>Industrial Automation with Factory I/O</figcaption></figure><div class=post-content><h1 id=-factory-io--plc完全教程工业自动化仿真与实践>🏭 Factory I/O + PLC完全教程：工业自动化仿真与实践<a hidden class=anchor aria-hidden=true href=#-factory-io--plc完全教程工业自动化仿真与实践>#</a></h1><p>Factory I/O是一款强大的工业自动化3D仿真软件，结合PLC编程可以实现完整的工业控制系统学习和实践。本教程将带你从零开始掌握Factory I/O的使用和PLC编程。</p><h2 id=-学习目标>🎯 学习目标<a hidden class=anchor aria-hidden=true href=#-学习目标>#</a></h2><ul><li>掌握Factory I/O软件的使用方法</li><li>学习PLC梯形图编程</li><li>理解工业控制系统的设计原理</li><li>完成多个实际工业项目仿真</li></ul><h2 id=-环境准备>🛠️ 环境准备<a hidden class=anchor aria-hidden=true href=#-环境准备>#</a></h2><h3 id=21-factory-io软件安装>2.1 Factory I/O软件安装<a hidden class=anchor aria-hidden=true href=#21-factory-io软件安装>#</a></h3><h4 id=系统要求>系统要求<a hidden class=anchor aria-hidden=true href=#系统要求>#</a></h4><pre tabindex=0><code>最低配置:
 - 操作系统: Windows 10/11 (64位)
 - 内存: 8GB RAM
 - 显卡: OpenGL 3.3支持
@@ -1605,60 +1375,12 @@ Factory I/O &#43; PLC学习需要大量的实践，建议结合实际工业项�
 - 内存: 16GB RAM
 - 显卡: GTX 1060或更高
 - 处理器: Intel i5/AMD Ryzen 5以上
-</code></pre><h4 id="安装步骤">安装步骤<a hidden class="anchor" aria-hidden="true" href="#安装步骤">#</a></h4>
-<ol>
-<li>访问官网 <a href="https://www.factoryio.com">factoryio.com</a> 下载软件</li>
-<li>选择试用版或学生版（30天免费）</li>
-<li>运行安装程序，按提示完成安装</li>
-<li>启动软件并激活许可证</li>
-</ol>
-<h3 id="22-plc编程软件选择">2.2 PLC编程软件选择<a hidden class="anchor" aria-hidden="true" href="#22-plc编程软件选择">#</a></h3>
-<h4 id="支持的plc软件">支持的PLC软件<a hidden class="anchor" aria-hidden="true" href="#支持的plc软件">#</a></h4>
-<table>
-  <thead>
-      <tr>
-          <th>PLC软件</th>
-          <th>连接方式</th>
-          <th>价格</th>
-          <th>推荐度</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>CODESYS</td>
-          <td>OPC UA/Modbus</td>
-          <td>免费</td>
-          <td>⭐⭐⭐⭐⭐</td>
-      </tr>
-      <tr>
-          <td>TwinCAT</td>
-          <td>ADS</td>
-          <td>免费</td>
-          <td>⭐⭐⭐⭐</td>
-      </tr>
-      <tr>
-          <td>Studio 5000</td>
-          <td>Logix Emulator</td>
-          <td>收费</td>
-          <td>⭐⭐⭐</td>
-      </tr>
-      <tr>
-          <td>TIA Portal</td>
-          <td>PLCSIM Advanced</td>
-          <td>收费</td>
-          <td>⭐⭐⭐</td>
-      </tr>
-  </tbody>
-</table>
-<h4 id="codesys安装配置">CODESYS安装配置<a hidden class="anchor" aria-hidden="true" href="#codesys安装配置">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CODESYS安装步骤:
-</span></span><span style="display:flex;"><span>1. 下载CODESYS Development System
-</span></span><span style="display:flex;"><span>2. 安装CODESYS Control Win V3 <span style="color:#f92672">(</span>软PLC<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>3. 配置OPC UA服务器
-</span></span><span style="display:flex;"><span>4. 设置通信参数
-</span></span></code></pre></div><h2 id="-factory-io界面介绍">🎮 Factory I/O界面介绍<a hidden class="anchor" aria-hidden="true" href="#-factory-io界面介绍">#</a></h2>
-<h3 id="31-主界面布局">3.1 主界面布局<a hidden class="anchor" aria-hidden="true" href="#31-主界面布局">#</a></h3>
-<pre tabindex="0"><code>Factory I/O界面布局:
+</code></pre><h4 id=安装步骤>安装步骤<a hidden class=anchor aria-hidden=true href=#安装步骤>#</a></h4><ol><li>访问官网 <a href=https://www.factoryio.com>factoryio.com</a> 下载软件</li><li>选择试用版或学生版（30天免费）</li><li>运行安装程序，按提示完成安装</li><li>启动软件并激活许可证</li></ol><h3 id=22-plc编程软件选择>2.2 PLC编程软件选择<a hidden class=anchor aria-hidden=true href=#22-plc编程软件选择>#</a></h3><h4 id=支持的plc软件>支持的PLC软件<a hidden class=anchor aria-hidden=true href=#支持的plc软件>#</a></h4><table><thead><tr><th>PLC软件</th><th>连接方式</th><th>价格</th><th>推荐度</th></tr></thead><tbody><tr><td>CODESYS</td><td>OPC UA/Modbus</td><td>免费</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>TwinCAT</td><td>ADS</td><td>免费</td><td>⭐⭐⭐⭐</td></tr><tr><td>Studio 5000</td><td>Logix Emulator</td><td>收费</td><td>⭐⭐⭐</td></tr><tr><td>TIA Portal</td><td>PLCSIM Advanced</td><td>收费</td><td>⭐⭐⭐</td></tr></tbody></table><h4 id=codesys安装配置>CODESYS安装配置<a hidden class=anchor aria-hidden=true href=#codesys安装配置>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>CODESYS安装步骤:
+</span></span><span style=display:flex><span>1. 下载CODESYS Development System
+</span></span><span style=display:flex><span>2. 安装CODESYS Control Win V3 <span style=color:#f92672>(</span>软PLC<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>3. 配置OPC UA服务器
+</span></span><span style=display:flex><span>4. 设置通信参数
+</span></span></code></pre></div><h2 id=-factory-io界面介绍>🎮 Factory I/O界面介绍<a hidden class=anchor aria-hidden=true href=#-factory-io界面介绍>#</a></h2><h3 id=31-主界面布局>3.1 主界面布局<a hidden class=anchor aria-hidden=true href=#31-主界面布局>#</a></h3><pre tabindex=0><code>Factory I/O界面布局:
 ┌─────────────────────────────────────────────────────────┐
 │ 菜单栏: File, Edit, View, Physics, Help               │
 ├─────────────────────────────────────────────────────────┤
@@ -1672,25 +1394,19 @@ Factory I/O &#43; PLC学习需要大量的实践，建议结合实际工业项�
 ├─────────────────────────────────────────────────────────┤
 │ 状态栏: FPS, 物理引擎, 连接状态                        │
 └─────────────────────────────────────────────────────────┘
-</code></pre><h3 id="32-组件库介绍">3.2 组件库介绍<a hidden class="anchor" aria-hidden="true" href="#32-组件库介绍">#</a></h3>
-<h4 id="传感器组件">传感器组件<a hidden class="anchor" aria-hidden="true" href="#传感器组件">#</a></h4>
-<pre tabindex="0"><code>传感器类型:
+</code></pre><h3 id=32-组件库介绍>3.2 组件库介绍<a hidden class=anchor aria-hidden=true href=#32-组件库介绍>#</a></h3><h4 id=传感器组件>传感器组件<a hidden class=anchor aria-hidden=true href=#传感器组件>#</a></h4><pre tabindex=0><code>传感器类型:
 - 接近传感器 (Proximity Sensor): 检测物体接近
 - 光电传感器 (Photoelectric Sensor): 光束检测
 - 视觉传感器 (Vision Sensor): 图像识别
 - 激光传感器 (Laser Sensor): 精确测量
 - 重量传感器 (Weight Sensor): 重量测量
-</code></pre><h4 id="执行器组件">执行器组件<a hidden class="anchor" aria-hidden="true" href="#执行器组件">#</a></h4>
-<pre tabindex="0"><code>执行器类型:
+</code></pre><h4 id=执行器组件>执行器组件<a hidden class=anchor aria-hidden=true href=#执行器组件>#</a></h4><pre tabindex=0><code>执行器类型:
 - 传送带 (Conveyor Belt): 物料输送
 - 机械臂 (Articulated Robot): 抓取操作
 - 升降机 (Lift): 垂直运输
 - 推杆 (Pusher): 推动物料
 - 分拣器 (Sorter): 物料分拣
-</code></pre><h2 id="-第一个项目传送带控制系统">📝 第一个项目：传送带控制系统<a hidden class="anchor" aria-hidden="true" href="#-第一个项目传送带控制系统">#</a></h2>
-<h3 id="41-场景搭建">4.1 场景搭建<a hidden class="anchor" aria-hidden="true" href="#41-场景搭建">#</a></h3>
-<h4 id="创建基础布局">创建基础布局<a hidden class="anchor" aria-hidden="true" href="#创建基础布局">#</a></h4>
-<pre tabindex="0"><code>步骤1: 创建场景
+</code></pre><h2 id=-第一个项目传送带控制系统>📝 第一个项目：传送带控制系统<a hidden class=anchor aria-hidden=true href=#-第一个项目传送带控制系统>#</a></h2><h3 id=41-场景搭建>4.1 场景搭建<a hidden class=anchor aria-hidden=true href=#41-场景搭建>#</a></h3><h4 id=创建基础布局>创建基础布局<a hidden class=anchor aria-hidden=true href=#创建基础布局>#</a></h4><pre tabindex=0><code>步骤1: 创建场景
 1. 新建场景 → Empty Scene
 2. 调整地面大小: 20m × 20m
 3. 添加光照: Directional Light
@@ -1705,26 +1421,23 @@ Factory I/O &#43; PLC学习需要大量的实践，建议结合实际工业项�
 1. 在传送带起点添加 Proximity Sensor
 2. 在传送带终点添加 Photoelectric Sensor
 3. 调整传感器检测范围和位置
-</code></pre><h4 id="组件连接配置">组件连接配置<a hidden class="anchor" aria-hidden="true" href="#组件连接配置">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Factory I/O驱动配置 --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Driver</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;OPC_UA_Client&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Endpoint&gt;</span>opc.tcp://localhost:4840<span style="color:#f92672">&lt;/Endpoint&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;UpdateRate&gt;</span>50<span style="color:#f92672">&lt;/UpdateRate&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Driver&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 输入输出映射 --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Inputs&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Sensor</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;start_sensor&#34;</span> <span style="color:#a6e22e">address=</span><span style="color:#e6db74">&#34;ns=2;i=1&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Sensor</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;end_sensor&#34;</span> <span style="color:#a6e22e">address=</span><span style="color:#e6db74">&#34;ns=2;i=2&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Inputs&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Outputs&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Actuator</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;conveyor_motor&#34;</span> <span style="color:#a6e22e">address=</span><span style="color:#e6db74">&#34;ns=2;i=101&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;LED</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;status_led&#34;</span> <span style="color:#a6e22e">address=</span><span style="color:#e6db74">&#34;ns=2;i=201&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Outputs&gt;</span>
-</span></span></code></pre></div><h3 id="42-plc程序开发">4.2 PLC程序开发<a hidden class="anchor" aria-hidden="true" href="#42-plc程序开发">#</a></h3>
-<h4 id="codesys梯形图程序">CODESYS梯形图程序<a hidden class="anchor" aria-hidden="true" href="#codesys梯形图程序">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">PROGRAM MainProgram
+</code></pre><h4 id=组件连接配置>组件连接配置<a hidden class=anchor aria-hidden=true href=#组件连接配置>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;!-- Factory I/O驱动配置 --&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;Driver</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;OPC_UA_Client&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;Endpoint&gt;</span>opc.tcp://localhost:4840<span style=color:#f92672>&lt;/Endpoint&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;UpdateRate&gt;</span>50<span style=color:#f92672>&lt;/UpdateRate&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/Driver&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- 输入输出映射 --&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;Inputs&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;Sensor</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;start_sensor&#34;</span> <span style=color:#a6e22e>address=</span><span style=color:#e6db74>&#34;ns=2;i=1&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;Sensor</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;end_sensor&#34;</span> <span style=color:#a6e22e>address=</span><span style=color:#e6db74>&#34;ns=2;i=2&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/Inputs&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;Outputs&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;Actuator</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;conveyor_motor&#34;</span> <span style=color:#a6e22e>address=</span><span style=color:#e6db74>&#34;ns=2;i=101&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;LED</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;status_led&#34;</span> <span style=color:#a6e22e>address=</span><span style=color:#e6db74>&#34;ns=2;i=201&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/Outputs&gt;</span>
+</span></span></code></pre></div><h3 id=42-plc程序开发>4.2 PLC程序开发<a hidden class=anchor aria-hidden=true href=#42-plc程序开发>#</a></h3><h4 id=codesys梯形图程序>CODESYS梯形图程序<a hidden class=anchor aria-hidden=true href=#codesys梯形图程序>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>PROGRAM MainProgram
 VAR
     // 输入变量
     start_sensor AT %I0.0 : BOOL;
@@ -1781,8 +1494,7 @@ ELSE
     box_detected := FALSE;
     process_complete := FALSE;
 END_IF
-</code></pre><h4 id="状态机实现">状态机实现<a hidden class="anchor" aria-hidden="true" href="#状态机实现">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">TYPE E_STATE :
+</code></pre><h4 id=状态机实现>状态机实现<a hidden class=anchor aria-hidden=true href=#状态机实现>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>TYPE E_STATE :
 (
     IDLE := 0,
     RUNNING := 1,
@@ -1842,25 +1554,19 @@ CASE current_state OF
             error_count := 0;
         END_IF
 END_CASE
-</code></pre><h2 id="-高级项目自动分拣系统">🤖 高级项目：自动分拣系统<a hidden class="anchor" aria-hidden="true" href="#-高级项目自动分拣系统">#</a></h2>
-<h3 id="51-系统设计">5.1 系统设计<a hidden class="anchor" aria-hidden="true" href="#51-系统设计">#</a></h3>
-<h4 id="工艺流程">工艺流程<a hidden class="anchor" aria-hidden="true" href="#工艺流程">#</a></h4>
-<pre tabindex="0"><code>分拣系统工艺流程:
+</code></pre><h2 id=-高级项目自动分拣系统>🤖 高级项目：自动分拣系统<a hidden class=anchor aria-hidden=true href=#-高级项目自动分拣系统>#</a></h2><h3 id=51-系统设计>5.1 系统设计<a hidden class=anchor aria-hidden=true href=#51-系统设计>#</a></h3><h4 id=工艺流程>工艺流程<a hidden class=anchor aria-hidden=true href=#工艺流程>#</a></h4><pre tabindex=0><code>分拣系统工艺流程:
 1. 箱子进入传送带
 2. 视觉传感器检测箱子颜色
 3. 根据颜色分拣到不同通道
 4. 统计各颜色箱子数量
 5. 异常处理和报警
-</code></pre><h4 id="场景搭建步骤">场景搭建步骤<a hidden class="anchor" aria-hidden="true" href="#场景搭建步骤">#</a></h4>
-<pre tabindex="0"><code>场景搭建:
+</code></pre><h4 id=场景搭建步骤>场景搭建步骤<a hidden class=anchor aria-hidden=true href=#场景搭建步骤>#</a></h4><pre tabindex=0><code>场景搭建:
 1. 主传送带: 12m长，速度可调
 2. 分拣器: 3个推杆，间隔3m
 3. 收集箱: 3个颜色对应收集箱
 4. 传感器阵列: 起始检测 + 3个颜色检测
 5. HMI面板: 显示统计信息和控制按钮
-</code></pre><h3 id="52-plc程序设计">5.2 PLC程序设计<a hidden class="anchor" aria-hidden="true" href="#52-plc程序设计">#</a></h3>
-<h4 id="数据结构定义">数据结构定义<a hidden class="anchor" aria-hidden="true" href="#数据结构定义">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">// 箱子类型枚举
+</code></pre><h3 id=52-plc程序设计>5.2 PLC程序设计<a hidden class=anchor aria-hidden=true href=#52-plc程序设计>#</a></h3><h4 id=数据结构定义>数据结构定义<a hidden class=anchor aria-hidden=true href=#数据结构定义>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>// 箱子类型枚举
 TYPE E_BOX_TYPE :
 (
     NONE := 0,
@@ -1893,8 +1599,7 @@ STRUCT
     last_update : TIME;
 END_STRUCT
 END_TYPE
-</code></pre><h4 id="主控制程序">主控制程序<a hidden class="anchor" aria-hidden="true" href="#主控制程序">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">PROGRAM SortingSystem
+</code></pre><h4 id=主控制程序>主控制程序<a hidden class=anchor aria-hidden=true href=#主控制程序>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>PROGRAM SortingSystem
 VAR
     // 输入信号
     entrance_sensor AT %I0.0 : BOOL;
@@ -1948,8 +1653,7 @@ IF Execute THEN
     // 异常检测
     CheckErrors();
 END_IF
-</code></pre><h4 id="分拣算法实现">分拣算法实现<a hidden class="anchor" aria-hidden="true" href="#分拣算法实现">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">METHOD ExecuteSorting : BOOL
+</code></pre><h4 id=分拣算法实现>分拣算法实现<a hidden class=anchor aria-hidden=true href=#分拣算法实现>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>METHOD ExecuteSorting : BOOL
 VAR
     i : INT;
     box_to_sort : ST_BOX_INFO;
@@ -1995,16 +1699,12 @@ END_FOR
 
 // 清理已处理的箱子
 CleanProcessedBoxes();
-</code></pre><h2 id="-游戏化学习项目">🎮 游戏化学习项目<a hidden class="anchor" aria-hidden="true" href="#-游戏化学习项目">#</a></h2>
-<h3 id="61-智能仓储系统">6.1 智能仓储系统<a hidden class="anchor" aria-hidden="true" href="#61-智能仓储系统">#</a></h3>
-<h4 id="项目背景">项目背景<a hidden class="anchor" aria-hidden="true" href="#项目背景">#</a></h4>
-<pre tabindex="0"><code>项目目标:
+</code></pre><h2 id=-游戏化学习项目>🎮 游戏化学习项目<a hidden class=anchor aria-hidden=true href=#-游戏化学习项目>#</a></h2><h3 id=61-智能仓储系统>6.1 智能仓储系统<a hidden class=anchor aria-hidden=true href=#61-智能仓储系统>#</a></h3><h4 id=项目背景>项目背景<a hidden class=anchor aria-hidden=true href=#项目背景>#</a></h4><pre tabindex=0><code>项目目标:
 - 自动化仓库管理
 - 货物智能分拣
 - 库存实时监控
 - 机器人协作搬运
-</code></pre><h4 id="系统架构">系统架构<a hidden class="anchor" aria-hidden="true" href="#系统架构">#</a></h4>
-<pre tabindex="0"><code>硬件组件:
+</code></pre><h4 id=系统架构>系统架构<a hidden class=anchor aria-hidden=true href=#系统架构>#</a></h4><pre tabindex=0><code>硬件组件:
 1. 堆垛机 (Stacker Crane): 货架存取
 2. AGV小车: 货物搬运
 3. 输送线系统: 货物流转
@@ -2016,9 +1716,7 @@ CleanProcessedBoxes();
 2. 路径规划算法
 3. 任务调度系统
 4. 数据可视化
-</code></pre><h3 id="62-物流分拣中心">6.2 物流分拣中心<a hidden class="anchor" aria-hidden="true" href="#62-物流分拣中心">#</a></h3>
-<h4 id="场景设计">场景设计<a hidden class="anchor" aria-hidden="true" href="#场景设计">#</a></h4>
-<pre tabindex="0"><code>分拣中心布局:
+</code></pre><h3 id=62-物流分拣中心>6.2 物流分拣中心<a hidden class=anchor aria-hidden=true href=#62-物流分拣中心>#</a></h3><h4 id=场景设计>场景设计<a hidden class=anchor aria-hidden=true href=#场景设计>#</a></h4><pre tabindex=0><code>分拣中心布局:
 ┌─────────────────────────────────────────┐
 │  入货区  →  主输送线  →  分拣区  →  出货区  │
 │                                        │
@@ -2026,8 +1724,7 @@ CleanProcessedBoxes();
 │                                        │
 │        [控制中心] [HMI界面]             │
 └─────────────────────────────────────────┘
-</code></pre><h4 id="控制逻辑">控制逻辑<a hidden class="anchor" aria-hidden="true" href="#控制逻辑">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">// 物流分拣控制程序
+</code></pre><h4 id=控制逻辑>控制逻辑<a hidden class=anchor aria-hidden=true href=#控制逻辑>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>// 物流分拣控制程序
 PROGRAM LogisticsCenter
 VAR
     // 订单数据
@@ -2077,10 +1774,7 @@ FOR i := 1 TO active_tasks DO
         min_cost := 999999;
     END_IF;
 END_FOR
-</code></pre><h2 id="-性能优化技巧">📊 性能优化技巧<a hidden class="anchor" aria-hidden="true" href="#-性能优化技巧">#</a></h2>
-<h3 id="71-代码优化">7.1 代码优化<a hidden class="anchor" aria-hidden="true" href="#71-代码优化">#</a></h3>
-<h4 id="算法优化">算法优化<a hidden class="anchor" aria-hidden="true" href="#算法优化">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">// 低效的实现
+</code></pre><h2 id=-性能优化技巧>📊 性能优化技巧<a hidden class=anchor aria-hidden=true href=#-性能优化技巧>#</a></h2><h3 id=71-代码优化>7.1 代码优化<a hidden class=anchor aria-hidden=true href=#71-代码优化>#</a></h3><h4 id=算法优化>算法优化<a hidden class=anchor aria-hidden=true href=#算法优化>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>// 低效的实现
 FUNCTION InefficientSearch : BOOL
 VAR_INPUT
     target : INT;
@@ -2124,9 +1818,7 @@ WHILE left &lt;= right DO
 END_WHILE;
 
 RETURN FALSE;
-</code></pre><h3 id="72-通信优化">7.2 通信优化<a hidden class="anchor" aria-hidden="true" href="#72-通信优化">#</a></h3>
-<h4 id="数据批处理">数据批处理<a hidden class="anchor" aria-hidden="true" href="#数据批处理">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">// 批量数据更新结构
+</code></pre><h3 id=72-通信优化>7.2 通信优化<a hidden class=anchor aria-hidden=true href=#72-通信优化>#</a></h3><h4 id=数据批处理>数据批处理<a hidden class=anchor aria-hidden=true href=#数据批处理>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>// 批量数据更新结构
 TYPE ST_BATCH_UPDATE :
 STRUCT
     timestamp : TIME;
@@ -2153,25 +1845,19 @@ END_FOR
 
 // 应用时间戳
 last_update_time := update_data.timestamp;
-</code></pre><h2 id="-调试和故障排除">🔧 调试和故障排除<a hidden class="anchor" aria-hidden="true" href="#-调试和故障排除">#</a></h2>
-<h3 id="81-常见问题解决">8.1 常见问题解决<a hidden class="anchor" aria-hidden="true" href="#81-常见问题解决">#</a></h3>
-<h4 id="通信问题">通信问题<a hidden class="anchor" aria-hidden="true" href="#通信问题">#</a></h4>
-<pre tabindex="0"><code>问题: Factory I/O无法连接到PLC
+</code></pre><h2 id=-调试和故障排除>🔧 调试和故障排除<a hidden class=anchor aria-hidden=true href=#-调试和故障排除>#</a></h2><h3 id=81-常见问题解决>8.1 常见问题解决<a hidden class=anchor aria-hidden=true href=#81-常见问题解决>#</a></h3><h4 id=通信问题>通信问题<a hidden class=anchor aria-hidden=true href=#通信问题>#</a></h4><pre tabindex=0><code>问题: Factory I/O无法连接到PLC
 解决步骤:
 1. 检查OPC UA服务器是否启动
 2. 确认防火墙设置
 3. 验证IP地址和端口号
 4. 检查PLC程序是否运行
-</code></pre><h4 id="仿真问题">仿真问题<a hidden class="anchor" aria-hidden="true" href="#仿真问题">#</a></h4>
-<pre tabindex="0"><code>问题: 物理仿真不准确
+</code></pre><h4 id=仿真问题>仿真问题<a hidden class=anchor aria-hidden=true href=#仿真问题>#</a></h4><pre tabindex=0><code>问题: 物理仿真不准确
 解决方法:
 1. 调整物理引擎参数
 2. 检查物体碰撞设置
 3. 优化传送带速度
 4. 调整传感器检测范围
-</code></pre><h3 id="82-调试工具使用">8.2 调试工具使用<a hidden class="anchor" aria-hidden="true" href="#82-调试工具使用">#</a></h3>
-<h4 id="数据监控">数据监控<a hidden class="anchor" aria-hidden="true" href="#数据监控">#</a></h4>
-<pre tabindex="0"><code class="language-pascal" data-lang="pascal">// 变量监控结构
+</code></pre><h3 id=82-调试工具使用>8.2 调试工具使用<a hidden class=anchor aria-hidden=true href=#82-调试工具使用>#</a></h3><h4 id=数据监控>数据监控<a hidden class=anchor aria-hidden=true href=#数据监控>#</a></h4><pre tabindex=0><code class=language-pascal data-lang=pascal>// 变量监控结构
 TYPE ST_DEBUG_INFO :
 STRUCT
     cycle_time : TIME;
@@ -2195,250 +1881,9 @@ debug_data.communication_errors := GetCommErrorCount();
 debug_data.last_error_message := GetLastErrorMessage();
 
 RETURN debug_data;
-</code></pre><h2 id="-项目实战案例">🎓 项目实战案例<a hidden class="anchor" aria-hidden="true" href="#-项目实战案例">#</a></h2>
-<h3 id="案例1-智能停车场系统">案例1: 智能停车场系统<a hidden class="anchor" aria-hidden="true" href="#案例1-智能停车场系统">#</a></h3>
-<h4 id="系统功能">系统功能<a hidden class="anchor" aria-hidden="true" href="#系统功能">#</a></h4>
-<ul>
-<li>车辆进出自动识别</li>
-<li>车位智能分配</li>
-<li>收费自动化</li>
-<li>异常报警处理</li>
-</ul>
-<h4 id="技术要点">技术要点<a hidden class="anchor" aria-hidden="true" href="#技术要点">#</a></h4>
-<ul>
-<li>RFID车辆识别</li>
-<li>图像处理车牌识别</li>
-<li>数据库管理</li>
-<li>支付系统集成</li>
-</ul>
-<h3 id="案例2-食品加工生产线">案例2: 食品加工生产线<a hidden class="anchor" aria-hidden="true" href="#案例2-食品加工生产线">#</a></h3>
-<h4 id="工艺流程-1">工艺流程<a hidden class="anchor" aria-hidden="true" href="#工艺流程-1">#</a></h4>
-<ul>
-<li>原料自动上料</li>
-<li>加工过程控制</li>
-<li>质量检测分拣</li>
-<li>包装自动化</li>
-</ul>
-<h4 id="控制要点">控制要点<a hidden class="anchor" aria-hidden="true" href="#控制要点">#</a></h4>
-<ul>
-<li>温度精确控制</li>
-<li>速度同步控制</li>
-<li>质量实时监控</li>
-<li>数据追溯系统</li>
-</ul>
-<h2 id="-学习路径建议">📈 学习路径建议<a hidden class="anchor" aria-hidden="true" href="#-学习路径建议">#</a></h2>
-<h3 id="初级阶段-1-2个月">初级阶段 (1-2个月)<a hidden class="anchor" aria-hidden="true" href="#初级阶段-1-2个月">#</a></h3>
-<ol>
-<li><strong>软件基础</strong>: Factory I/O基本操作</li>
-<li><strong>PLC入门</strong>: 梯形图基础编程</li>
-<li><strong>简单项目</strong>: 传送带控制、灯光控制</li>
-<li><strong>仿真实践</strong>: 基础传感器和执行器应用</li>
-</ol>
-<h3 id="中级阶段-3-4个月">中级阶段 (3-4个月)<a hidden class="anchor" aria-hidden="true" href="#中级阶段-3-4个月">#</a></h3>
-<ol>
-<li><strong>高级编程</strong>: 功能块、状态机编程</li>
-<li><strong>通信协议</strong>: OPC UA、Modbus通信</li>
-<li><strong>复杂项目</strong>: 分拣系统、装配线</li>
-<li><strong>HMI开发</strong>: 人机界面设计</li>
-</ol>
-<h3 id="高级阶段-5-6个月">高级阶段 (5-6个月)<a hidden class="anchor" aria-hidden="true" href="#高级阶段-5-6个月">#</a></h3>
-<ol>
-<li><strong>系统集成</strong>: 多设备协调控制</li>
-<li><strong>算法优化</strong>: 路径规划、调度算法</li>
-<li><strong>数据库集成</strong>: MES系统对接</li>
-<li><strong>工业项目</strong>: 完整生产线设计</li>
-</ol>
-<h2 id="-考证和就业方向">💡 考证和就业方向<a hidden class="anchor" aria-hidden="true" href="#-考证和就业方向">#</a></h2>
-<h3 id="相关认证">相关认证<a hidden class="anchor" aria-hidden="true" href="#相关认证">#</a></h3>
-<ul>
-<li><strong>西门子认证</strong>: S7-1200/1500编程认证</li>
-<li><strong>罗克韦尔认证</strong>: ControlLogix编程认证</li>
-<li><strong>施耐德认证</strong>: Modicon PLC认证</li>
-<li><strong>三菱认证</strong>: FX/Q系列编程认证</li>
-</ul>
-<h3 id="就业岗位">就业岗位<a hidden class="anchor" aria-hidden="true" href="#就业岗位">#</a></h3>
-<ul>
-<li>PLC编程工程师</li>
-<li>自动化工程师</li>
-<li>控制系统工程师</li>
-<li>工业软件工程师</li>
-<li>项目经理</li>
-</ul>
-<hr>
-<p><strong>Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！</strong></p>
-<p><em>如有项目开发需求，欢迎在评论区交流讨论。</em></p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/plc/">PLC</a></li>
-      <li><a href="http://localhost:1313/tags/factory-i/o/">Factory I/O</a></li>
-      <li><a href="http://localhost:1313/tags/%E5%B7%A5%E4%B8%9A%E8%87%AA%E5%8A%A8%E5%8C%96/">工业自动化</a></li>
-      <li><a href="http://localhost:1313/tags/%E6%A2%AF%E5%BD%A2%E5%9B%BE/">梯形图</a></li>
-      <li><a href="http://localhost:1313/tags/%E4%BB%BF%E7%9C%9F/">仿真</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/tech-learning-roadmap-2025/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>2025年技术学习完整路线图：从零到专家的15个月计划</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/python-ai-learning-path/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Python AI完全学习路径：从零基础到机器学习工程师</span>
-  </a>
-</nav>
-
-
-<ul class="share-buttons">
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 on x"
-            href="https://x.com/intent/tweet/?text=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f&amp;hashtags=PLC%2cFactoryI%2fO%2c%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%2c%e6%a2%af%e5%bd%a2%e5%9b%be%2c%e4%bb%bf%e7%9c%9f">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f&amp;title=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;summary=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 on reddit"
-            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f&title=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 on facebook"
-            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 on whatsapp"
-            href="https://api.whatsapp.com/send?text=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5%20-%20http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 on telegram"
-            href="https://telegram.me/share/url?text=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f">
-            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Factory I/O &#43; PLC完全教程：工业自动化仿真与实践 on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&u=http%3a%2f%2flocalhost%3a1313%2fposts%2ffactory-io-plc-tutorial%2f">
-            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
-                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
-                <path
-                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
-            </svg>
-        </a>
-    </li>
-</ul>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Automation &amp; Industrial Control Technician</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>
+</code></pre><h2 id=-项目实战案例>🎓 项目实战案例<a hidden class=anchor aria-hidden=true href=#-项目实战案例>#</a></h2><h3 id=案例1-智能停车场系统>案例1: 智能停车场系统<a hidden class=anchor aria-hidden=true href=#案例1-智能停车场系统>#</a></h3><h4 id=系统功能>系统功能<a hidden class=anchor aria-hidden=true href=#系统功能>#</a></h4><ul><li>车辆进出自动识别</li><li>车位智能分配</li><li>收费自动化</li><li>异常报警处理</li></ul><h4 id=技术要点>技术要点<a hidden class=anchor aria-hidden=true href=#技术要点>#</a></h4><ul><li>RFID车辆识别</li><li>图像处理车牌识别</li><li>数据库管理</li><li>支付系统集成</li></ul><h3 id=案例2-食品加工生产线>案例2: 食品加工生产线<a hidden class=anchor aria-hidden=true href=#案例2-食品加工生产线>#</a></h3><h4 id=工艺流程-1>工艺流程<a hidden class=anchor aria-hidden=true href=#工艺流程-1>#</a></h4><ul><li>原料自动上料</li><li>加工过程控制</li><li>质量检测分拣</li><li>包装自动化</li></ul><h4 id=控制要点>控制要点<a hidden class=anchor aria-hidden=true href=#控制要点>#</a></h4><ul><li>温度精确控制</li><li>速度同步控制</li><li>质量实时监控</li><li>数据追溯系统</li></ul><h2 id=-学习路径建议>📈 学习路径建议<a hidden class=anchor aria-hidden=true href=#-学习路径建议>#</a></h2><h3 id=初级阶段-1-2个月>初级阶段 (1-2个月)<a hidden class=anchor aria-hidden=true href=#初级阶段-1-2个月>#</a></h3><ol><li><strong>软件基础</strong>: Factory I/O基本操作</li><li><strong>PLC入门</strong>: 梯形图基础编程</li><li><strong>简单项目</strong>: 传送带控制、灯光控制</li><li><strong>仿真实践</strong>: 基础传感器和执行器应用</li></ol><h3 id=中级阶段-3-4个月>中级阶段 (3-4个月)<a hidden class=anchor aria-hidden=true href=#中级阶段-3-4个月>#</a></h3><ol><li><strong>高级编程</strong>: 功能块、状态机编程</li><li><strong>通信协议</strong>: OPC UA、Modbus通信</li><li><strong>复杂项目</strong>: 分拣系统、装配线</li><li><strong>HMI开发</strong>: 人机界面设计</li></ol><h3 id=高级阶段-5-6个月>高级阶段 (5-6个月)<a hidden class=anchor aria-hidden=true href=#高级阶段-5-6个月>#</a></h3><ol><li><strong>系统集成</strong>: 多设备协调控制</li><li><strong>算法优化</strong>: 路径规划、调度算法</li><li><strong>数据库集成</strong>: MES系统对接</li><li><strong>工业项目</strong>: 完整生产线设计</li></ol><h2 id=-考证和就业方向>💡 考证和就业方向<a hidden class=anchor aria-hidden=true href=#-考证和就业方向>#</a></h2><h3 id=相关认证>相关认证<a hidden class=anchor aria-hidden=true href=#相关认证>#</a></h3><ul><li><strong>西门子认证</strong>: S7-1200/1500编程认证</li><li><strong>罗克韦尔认证</strong>: ControlLogix编程认证</li><li><strong>施耐德认证</strong>: Modicon PLC认证</li><li><strong>三菱认证</strong>: FX/Q系列编程认证</li></ul><h3 id=就业岗位>就业岗位<a hidden class=anchor aria-hidden=true href=#就业岗位>#</a></h3><ul><li>PLC编程工程师</li><li>自动化工程师</li><li>控制系统工程师</li><li>工业软件工程师</li><li>项目经理</li></ul><hr><p><strong>Factory I/O + PLC学习需要大量的实践，建议结合实际工业项目进行学习。祝你成为优秀的工业自动化工程师！</strong></p><p><em>如有项目开发需求，欢迎在评论区交流讨论。</em></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://hugo-maker-blog.vercel.app/tags/plc/>PLC</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/factory-i/o/>Factory I/O</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/%E5%B7%A5%E4%B8%9A%E8%87%AA%E5%8A%A8%E5%8C%96/>工业自动化</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/%E6%A2%AF%E5%BD%A2%E5%9B%BE/>梯形图</a></li><li><a href=https://hugo-maker-blog.vercel.app/tags/%E4%BB%BF%E7%9C%9F/>仿真</a></li></ul><nav class=paginav><a class=prev href=https://hugo-maker-blog.vercel.app/posts/tech-learning-roadmap-2025/><span class=title>« Prev</span><br><span>2025年技术学习完整路线图：从零到专家的15个月计划</span>
+</a><a class=next href=https://hugo-maker-blog.vercel.app/posts/python-ai-learning-path/><span class=title>Next »</span><br><span>Python AI完全学习路径：从零基础到机器学习工程师</span></a></nav><ul class=share-buttons><li><a target=_blank rel="noopener noreferrer" aria-label="share Factory I/O + PLC完全教程：工业自动化仿真与实践 on x" href="https://x.com/intent/tweet/?text=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f&amp;hashtags=PLC%2cFactoryI%2fO%2c%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%2c%e6%a2%af%e5%bd%a2%e5%9b%be%2c%e4%bb%bf%e7%9c%9f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Factory I/O + PLC完全教程：工业自动化仿真与实践 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f&amp;title=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;summary=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;source=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Factory I/O + PLC完全教程：工业自动化仿真与实践 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f&title=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Factory I/O + PLC完全教程：工业自动化仿真与实践 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Factory I/O + PLC完全教程：工业自动化仿真与实践 on whatsapp" href="https://api.whatsapp.com/send?text=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5%20-%20https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Factory I/O + PLC完全教程：工业自动化仿真与实践 on telegram" href="https://telegram.me/share/url?text=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&amp;url=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f"><svg viewBox="2 2 28 28" height="30" width="30" fill="currentColor"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share Factory I/O + PLC完全教程：工业自动化仿真与实践 on ycombinator" href="https://news.ycombinator.com/submitlink?t=Factory%20I%2fO%20%2b%20PLC%e5%ae%8c%e5%85%a8%e6%95%99%e7%a8%8b%ef%bc%9a%e5%b7%a5%e4%b8%9a%e8%87%aa%e5%8a%a8%e5%8c%96%e4%bb%bf%e7%9c%9f%e4%b8%8e%e5%ae%9e%e8%b7%b5&u=https%3a%2f%2fhugo-maker-blog.vercel.app%2fposts%2ffactory-io-plc-tutorial%2f"><svg width="30" height="30" viewBox="0 0 512 512" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"/></svg></a></li></ul></footer></article></main><footer class=footer><span>&copy; 2025 <a href=https://hugo-maker-blog.vercel.app/>Automation & Industrial Control Technician</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>

@@ -1,28 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>嵌入式开发 on Automation &amp; Industrial Control Technician</title>
-    <link>http://localhost:1313/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/</link>
-    <description>Recent content in 嵌入式开发 on Automation &amp; Industrial Control Technician</description>
-    <image>
-      <title>Automation &amp; Industrial Control Technician</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- 0.152.2</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Nov 2025 14:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Arduino入门指南：开启创客之旅的第一步</title>
-      <link>http://localhost:1313/posts/arduino-starter-guide/</link>
-      <pubDate>Fri, 07 Nov 2025 14:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/arduino-starter-guide/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Arduino开发板&#34; loading=&#34;lazy&#34; src=&#34;https://images.unsplash.com/photo-1534670007445-f2a0180148c4?w=800&amp;h=400&amp;fit=crop&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;-什么是arduino&#34;&gt;🎯 什么是Arduino？&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>嵌入式开发 on Automation &amp; Industrial Control Technician</title><link>https://hugo-maker-blog.vercel.app/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/</link><description>Recent content in 嵌入式开发 on Automation &amp; Industrial Control Technician</description><image><title>Automation &amp; Industrial Control Technician</title><url>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Fri, 07 Nov 2025 14:30:00 +0800</lastBuildDate><atom:link href="https://hugo-maker-blog.vercel.app/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml"/><item><title>Arduino入门指南：开启创客之旅的第一步</title><link>https://hugo-maker-blog.vercel.app/posts/arduino-starter-guide/</link><pubDate>Fri, 07 Nov 2025 14:30:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/posts/arduino-starter-guide/</guid><description>&lt;p&gt;&lt;img alt="Arduino开发板" loading="lazy" src="https://images.unsplash.com/photo-1534670007445-f2a0180148c4?w=800&amp;h=400&amp;fit=crop"&gt;&lt;/p&gt;
+&lt;h2 id="-什么是arduino"&gt;🎯 什么是Arduino？&lt;/h2&gt;
 &lt;p&gt;Arduino是一个开源电子平台，非常适合初学者学习编程和电子知识。它由一个简单的硬件板和一个易于使用的软件组成。&lt;/p&gt;
-&lt;h2 id=&#34;-需要准备什么&#34;&gt;🛒 需要准备什么？&lt;/h2&gt;
-&lt;h3 id=&#34;基础套件清单&#34;&gt;基础套件清单&lt;/h3&gt;
+&lt;h2 id="-需要准备什么"&gt;🛒 需要准备什么？&lt;/h2&gt;
+&lt;h3 id="基础套件清单"&gt;基础套件清单&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Arduino Uno R3&lt;/strong&gt; - 主控板&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;USB数据线&lt;/strong&gt; - 连接电脑&lt;/li&gt;
@@ -32,92 +12,89 @@
 &lt;li&gt;&lt;strong&gt;电阻&lt;/strong&gt; - 保护组件&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;按钮&lt;/strong&gt; - 输入组件&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;预算参考&#34;&gt;预算参考&lt;/h3&gt;
+&lt;h3 id="预算参考"&gt;预算参考&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;入门套件：￥150-300&lt;/li&gt;
 &lt;li&gt;中级套件：￥300-600&lt;/li&gt;
 &lt;li&gt;高级套件：￥600-1000&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-软件设置&#34;&gt;💻 软件设置&lt;/h2&gt;
-&lt;h3 id=&#34;1-下载arduino-ide&#34;&gt;1. 下载Arduino IDE&lt;/h3&gt;
-&lt;p&gt;访问 &lt;a href=&#34;https://www.arduino.cc&#34;&gt;arduino.cc&lt;/a&gt; 下载最新版本&lt;/p&gt;
-&lt;h3 id=&#34;2-安装驱动&#34;&gt;2. 安装驱动&lt;/h3&gt;
+&lt;h2 id="-软件设置"&gt;💻 软件设置&lt;/h2&gt;
+&lt;h3 id="1-下载arduino-ide"&gt;1. 下载Arduino IDE&lt;/h3&gt;
+&lt;p&gt;访问 &lt;a href="https://www.arduino.cc"&gt;arduino.cc&lt;/a&gt; 下载最新版本&lt;/p&gt;
+&lt;h3 id="2-安装驱动"&gt;2. 安装驱动&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Windows: 自动安装或手动安装CH340驱动&lt;/li&gt;
 &lt;li&gt;Mac: 自动识别&lt;/li&gt;
 &lt;li&gt;Linux: 通常无需额外驱动&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;3-配置ide&#34;&gt;3. 配置IDE&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 第一次测试代码
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;setup&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pinMode(&lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;, OUTPUT); &lt;span style=&#34;color:#75715e&#34;&gt;// 设置13号引脚为输出
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;loop&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  digitalWrite(&lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;, HIGH); &lt;span style=&#34;color:#75715e&#34;&gt;// 点亮LED
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  delay(&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;);           &lt;span style=&#34;color:#75715e&#34;&gt;// 等待1秒
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  digitalWrite(&lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;, LOW);  &lt;span style=&#34;color:#75715e&#34;&gt;// 熄灭LED
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  delay(&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;);           &lt;span style=&#34;color:#75715e&#34;&gt;// 等待1秒
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-第一个项目呼吸灯&#34;&gt;🔌 第一个项目：呼吸灯&lt;/h2&gt;
-&lt;h3 id=&#34;硬件连接&#34;&gt;硬件连接&lt;/h3&gt;
+&lt;h3 id="3-配置ide"&gt;3. 配置IDE&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// 第一次测试代码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;setup&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; pinMode(&lt;span style="color:#ae81ff"&gt;13&lt;/span&gt;, OUTPUT); &lt;span style="color:#75715e"&gt;// 设置13号引脚为输出
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;loop&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; digitalWrite(&lt;span style="color:#ae81ff"&gt;13&lt;/span&gt;, HIGH); &lt;span style="color:#75715e"&gt;// 点亮LED
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; delay(&lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;); &lt;span style="color:#75715e"&gt;// 等待1秒
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; digitalWrite(&lt;span style="color:#ae81ff"&gt;13&lt;/span&gt;, LOW); &lt;span style="color:#75715e"&gt;// 熄灭LED
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; delay(&lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;); &lt;span style="color:#75715e"&gt;// 等待1秒
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="-第一个项目呼吸灯"&gt;🔌 第一个项目：呼吸灯&lt;/h2&gt;
+&lt;h3 id="硬件连接"&gt;硬件连接&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;LED正极 → 220Ω电阻 → Arduino 9号引脚&lt;/li&gt;
 &lt;li&gt;LED负极 → Arduino GND&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;代码实现&#34;&gt;代码实现&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ledPin &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;;  &lt;span style=&#34;color:#75715e&#34;&gt;// LED连接的引脚
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; brightness &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;  &lt;span style=&#34;color:#75715e&#34;&gt;// 亮度值
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; fadeAmount &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;;  &lt;span style=&#34;color:#75715e&#34;&gt;// 亮度变化量
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;setup&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pinMode(ledPin, OUTPUT);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;loop&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  analogWrite(ledPin, brightness);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  brightness &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; brightness &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; fadeAmount;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (brightness &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; brightness &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;255&lt;/span&gt;) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fadeAmount &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;fadeAmount;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  delay(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-学习路径建议&#34;&gt;🎓 学习路径建议&lt;/h2&gt;
-&lt;h3 id=&#34;第1-2周基础概念&#34;&gt;第1-2周：基础概念&lt;/h3&gt;
+&lt;h3 id="代码实现"&gt;代码实现&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; ledPin &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;9&lt;/span&gt;; &lt;span style="color:#75715e"&gt;// LED连接的引脚
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; brightness &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#75715e"&gt;// 亮度值
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; fadeAmount &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;; &lt;span style="color:#75715e"&gt;// 亮度变化量
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;setup&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; pinMode(ledPin, OUTPUT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;loop&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; analogWrite(ledPin, brightness);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; brightness &lt;span style="color:#f92672"&gt;=&lt;/span&gt; brightness &lt;span style="color:#f92672"&gt;+&lt;/span&gt; fadeAmount;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (brightness &lt;span style="color:#f92672"&gt;&amp;lt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; brightness &lt;span style="color:#f92672"&gt;&amp;gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;255&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fadeAmount &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&lt;/span&gt;fadeAmount;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; delay(&lt;span style="color:#ae81ff"&gt;30&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="-学习路径建议"&gt;🎓 学习路径建议&lt;/h2&gt;
+&lt;h3 id="第1-2周基础概念"&gt;第1-2周：基础概念&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;了解数字和模拟信号&lt;/li&gt;
 &lt;li&gt;学会使用delay()函数&lt;/li&gt;
 &lt;li&gt;掌握基本的输入输出&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;第3-4周传感器入门&#34;&gt;第3-4周：传感器入门&lt;/h3&gt;
+&lt;h3 id="第3-4周传感器入门"&gt;第3-4周：传感器入门&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;学习使用光敏电阻&lt;/li&gt;
 &lt;li&gt;理解超声波测距&lt;/li&gt;
 &lt;li&gt;掌握温湿度传感器&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;第2个月项目实战&#34;&gt;第2个月：项目实战&lt;/h3&gt;
+&lt;h3 id="第2个月项目实战"&gt;第2个月：项目实战&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;制作智能夜灯&lt;/li&gt;
 &lt;li&gt;构建简易报警器&lt;/li&gt;
 &lt;li&gt;设计温度监控系统&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-推荐资源&#34;&gt;📚 推荐资源&lt;/h2&gt;
-&lt;h3 id=&#34;官方资源&#34;&gt;官方资源&lt;/h3&gt;
+&lt;h2 id="-推荐资源"&gt;📚 推荐资源&lt;/h2&gt;
+&lt;h3 id="官方资源"&gt;官方资源&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/en/Tutorial&#34;&gt;Arduino官方教程&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/reference/en/&#34;&gt;Arduino语言参考&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.arduino.cc/en/Tutorial"&gt;Arduino官方教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.arduino.cc/reference/en/"&gt;Arduino语言参考&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;中文资源&#34;&gt;中文资源&lt;/h3&gt;
+&lt;h3 id="中文资源"&gt;中文资源&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Arduino中文社区&lt;/li&gt;
 &lt;li&gt;B站Arduino教学视频&lt;/li&gt;
 &lt;li&gt;各大创客空间线下活动&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-常见问题&#34;&gt;💡 常见问题&lt;/h2&gt;
+&lt;h2 id="-常见问题"&gt;💡 常见问题&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Q: 我的Arduino无法被识别？&lt;/strong&gt;
-A: 检查USB线、驱动安装和端口选择。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+A: 检查USB线、驱动安装和端口选择。&lt;/p&gt;</description></item></channel></rss>

@@ -1,65 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>网站指南 on Automation &amp; Industrial Control Technician</title>
-    <link>http://localhost:1313/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/</link>
-    <description>Recent content in 网站指南 on Automation &amp; Industrial Control Technician</description>
-    <image>
-      <title>Automation &amp; Industrial Control Technician</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- 0.152.2</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 Nov 2025 13:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>网站搜索指南：如何高效找到所需内容</title>
-      <link>http://localhost:1313/posts/search-guide/</link>
-      <pubDate>Sat, 08 Nov 2025 13:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/search-guide/</guid>
-      <description>&lt;h1 id=&#34;-网站搜索指南如何高效找到所需内容&#34;&gt;🔍 网站搜索指南：如何高效找到所需内容&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>网站指南 on Automation &amp; Industrial Control Technician</title><link>https://hugo-maker-blog.vercel.app/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/</link><description>Recent content in 网站指南 on Automation &amp; Industrial Control Technician</description><image><title>Automation &amp; Industrial Control Technician</title><url>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Sat, 08 Nov 2025 13:30:00 +0800</lastBuildDate><atom:link href="https://hugo-maker-blog.vercel.app/categories/%E7%BD%91%E7%AB%99%E6%8C%87%E5%8D%97/index.xml" rel="self" type="application/rss+xml"/><item><title>网站搜索指南：如何高效找到所需内容</title><link>https://hugo-maker-blog.vercel.app/posts/search-guide/</link><pubDate>Sat, 08 Nov 2025 13:30:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/posts/search-guide/</guid><description>&lt;h1 id="-网站搜索指南如何高效找到所需内容"&gt;🔍 网站搜索指南：如何高效找到所需内容&lt;/h1&gt;
 &lt;p&gt;本博客基于Hugo和PaperMod主题构建，提供了多种内容发现和搜索方式。本指南将帮助你快速找到感兴趣的技术教程和项目案例。&lt;/p&gt;
-&lt;h2 id=&#34;-内容分类总览&#34;&gt;🎯 内容分类总览&lt;/h2&gt;
-&lt;h3 id=&#34;主要内容类型&#34;&gt;主要内容类型&lt;/h3&gt;
-&lt;h4 id=&#34;-技术教程类&#34;&gt;📝 技术教程类&lt;/h4&gt;
+&lt;h2 id="-内容分类总览"&gt;🎯 内容分类总览&lt;/h2&gt;
+&lt;h3 id="主要内容类型"&gt;主要内容类型&lt;/h3&gt;
+&lt;h4 id="-技术教程类"&gt;📝 技术教程类&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;STM32学习指南&lt;/strong&gt;: 从入门到精通的完整教程&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SolidWorks建模&lt;/strong&gt;: 机械设计3D建模教程&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Python AI路径&lt;/strong&gt;: 人工智能学习完整路线&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Factory I/O PLC&lt;/strong&gt;: 工业自动化仿真教程&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;-项目实战类&#34;&gt;🛠️ 项目实战类&lt;/h4&gt;
+&lt;h4 id="-项目实战类"&gt;🛠️ 项目实战类&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;智能植物监控系统&lt;/strong&gt;: IoT项目完整实现&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;创客教育项目&lt;/strong&gt;: 教育实践案例分享&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;硬件设计项目&lt;/strong&gt;: 嵌入式系统设计&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;-理念方法类&#34;&gt;💡 理念方法类&lt;/h4&gt;
+&lt;h4 id="-理念方法类"&gt;💡 理念方法类&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;创客教育理念&lt;/strong&gt;: 教育理论和方法&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;学习路径规划&lt;/strong&gt;: 技术成长路线图&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;职业发展指导&lt;/strong&gt;: 转型和成长建议&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;内容组织结构&#34;&gt;内容组织结构&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;网站内容架构:
+&lt;h3 id="内容组织结构"&gt;内容组织结构&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;网站内容架构:
 ├── 📚 教程系列 (Series)
-│   ├── 嵌入式开发进阶
-│   ├── 工程设计基础
-│   ├── AI学习路径
-│   └── 工业自动化
+│ ├── 嵌入式开发进阶
+│ ├── 工程设计基础
+│ ├── AI学习路径
+│ └── 工业自动化
 ├── 🏷️ 标签分类 (Tags)
-│   ├── 技术栈标签 (Python, C++, Arduino等)
-│   ├── 应用领域标签 (IoT, AI, 机械设计等)
-│   └── 难度等级标签 (入门, 进阶, 专家)
+│ ├── 技术栈标签 (Python, C++, Arduino等)
+│ ├── 应用领域标签 (IoT, AI, 机械设计等)
+│ └── 难度等级标签 (入门, 进阶, 专家)
 └── 📂 内容分类 (Categories)
-    ├── 教程
-    ├── 项目
-    ├── 理论
-    └── 指南
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;-搜索功能使用&#34;&gt;🔍 搜索功能使用&lt;/h2&gt;
-&lt;h3 id=&#34;1-网站内搜索&#34;&gt;1. 网站内搜索&lt;/h3&gt;
-&lt;p&gt;PaperMod主题提供了强大的搜索功能：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+├── 教程
+├── 项目
+├── 理论
+└── 指南
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-搜索功能使用"&gt;🔍 搜索功能使用&lt;/h2&gt;
+&lt;h3 id="1-网站内搜索"&gt;1. 网站内搜索&lt;/h3&gt;
+&lt;p&gt;PaperMod主题提供了强大的搜索功能：&lt;/p&gt;</description></item></channel></rss>

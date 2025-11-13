@@ -1,25 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>教学方法 on Automation &amp; Industrial Control Technician</title>
-    <link>http://localhost:1313/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/</link>
-    <description>Recent content in 教学方法 on Automation &amp; Industrial Control Technician</description>
-    <image>
-      <title>Automation &amp; Industrial Control Technician</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- 0.152.2</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 06 Nov 2025 16:20:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>如何教孩子编程：从Scratch到Python的进阶之路</title>
-      <link>http://localhost:1313/posts/teaching-kids-programming/</link>
-      <pubDate>Thu, 06 Nov 2025 16:20:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/teaching-kids-programming/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;孩子们在学习编程&#34; loading=&#34;lazy&#34; src=&#34;https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&amp;h=400&amp;fit=crop&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;-为什么孩子要学编程&#34;&gt;👶 为什么孩子要学编程？&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>教学方法 on Automation &amp; Industrial Control Technician</title><link>https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/</link><description>Recent content in 教学方法 on Automation &amp; Industrial Control Technician</description><image><title>Automation &amp; Industrial Control Technician</title><url>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url><link>https://hugo-maker-blog.vercel.app/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link></image><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Thu, 06 Nov 2025 16:20:00 +0800</lastBuildDate><atom:link href="https://hugo-maker-blog.vercel.app/categories/%E6%95%99%E5%AD%A6%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>如何教孩子编程：从Scratch到Python的进阶之路</title><link>https://hugo-maker-blog.vercel.app/posts/teaching-kids-programming/</link><pubDate>Thu, 06 Nov 2025 16:20:00 +0800</pubDate><guid>https://hugo-maker-blog.vercel.app/posts/teaching-kids-programming/</guid><description>&lt;p&gt;&lt;img alt="孩子们在学习编程" loading="lazy" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&amp;h=400&amp;fit=crop"&gt;&lt;/p&gt;
+&lt;h2 id="-为什么孩子要学编程"&gt;👶 为什么孩子要学编程？&lt;/h2&gt;
 &lt;p&gt;编程不仅仅是学习一门技能，更是培养：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;逻辑思维能力&lt;/strong&gt;&lt;/li&gt;
@@ -27,234 +7,231 @@
 &lt;li&gt;&lt;strong&gt;创造力表达&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;团队协作精神&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-年龄分段建议&#34;&gt;🎂 年龄分段建议&lt;/h2&gt;
-&lt;h3 id=&#34;5-7岁编程思维启蒙&#34;&gt;5-7岁：编程思维启蒙&lt;/h3&gt;
+&lt;h2 id="-年龄分段建议"&gt;🎂 年龄分段建议&lt;/h2&gt;
+&lt;h3 id="5-7岁编程思维启蒙"&gt;5-7岁：编程思维启蒙&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;推荐工具&lt;/strong&gt;: ScratchJr、Lightbot&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;专注于序列和循环概念&lt;/li&gt;
 &lt;li&gt;通过游戏化学习&lt;/li&gt;
 &lt;li&gt;培养计算思维&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;8-12岁图形化编程&#34;&gt;8-12岁：图形化编程&lt;/h3&gt;
+&lt;h3 id="8-12岁图形化编程"&gt;8-12岁：图形化编程&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;推荐工具&lt;/strong&gt;: Scratch 3.0、Code.org&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;创建简单的动画和游戏&lt;/li&gt;
 &lt;li&gt;理解变量和条件判断&lt;/li&gt;
 &lt;li&gt;学习基础的算法概念&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;13岁文本编程入门&#34;&gt;13+岁：文本编程入门&lt;/h3&gt;
+&lt;h3 id="13岁文本编程入门"&gt;13+岁：文本编程入门&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;推荐语言&lt;/strong&gt;: Python、JavaScript&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;从图形化过渡到文本编程&lt;/li&gt;
 &lt;li&gt;学习函数和面向对象概念&lt;/li&gt;
 &lt;li&gt;制作实用的小项目&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-教学方法论&#34;&gt;🎮 教学方法论&lt;/h2&gt;
-&lt;h3 id=&#34;1-项目驱动学习&#34;&gt;1. 项目驱动学习&lt;/h3&gt;
+&lt;h2 id="-教学方法论"&gt;🎮 教学方法论&lt;/h2&gt;
+&lt;h3 id="1-项目驱动学习"&gt;1. 项目驱动学习&lt;/h3&gt;
 &lt;p&gt;不要孤立地教概念，而是通过有趣的项目：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 第一个Python游戏 - 猜数字&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;secret_number &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randint(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;guess &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;欢迎来到猜数字游戏！&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; guess &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; secret_number:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    guess &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(input(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;猜一个1-100的数字: &amp;#34;&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; guess &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; secret_number:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;太小了！&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; guess &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; secret_number:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;太大了！&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;恭喜你猜对了！&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-游戏化教学&#34;&gt;2. 游戏化教学&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 第一个Python游戏 - 猜数字&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; random
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;secret_number &lt;span style="color:#f92672"&gt;=&lt;/span&gt; random&lt;span style="color:#f92672"&gt;.&lt;/span&gt;randint(&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;guess &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;&amp;#34;欢迎来到猜数字游戏！&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; guess &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; secret_number:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; guess &lt;span style="color:#f92672"&gt;=&lt;/span&gt; int(input(&lt;span style="color:#e6db74"&gt;&amp;#34;猜一个1-100的数字: &amp;#34;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; guess &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; secret_number:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#34;太小了！&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;elif&lt;/span&gt; guess &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; secret_number:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#34;太大了！&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#34;恭喜你猜对了！&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-游戏化教学"&gt;2. 游戏化教学&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;设置挑战关卡&lt;/li&gt;
 &lt;li&gt;给予即时反馈&lt;/li&gt;
 &lt;li&gt;庆祝每一个进步&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;3-同伴学习&#34;&gt;3. 同伴学习&lt;/h3&gt;
+&lt;h3 id="3-同伴学习"&gt;3. 同伴学习&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;鼓励小组合作&lt;/li&gt;
 &lt;li&gt;组织编程比赛&lt;/li&gt;
 &lt;li&gt;分享彼此的作品&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-推荐的教学资源&#34;&gt;🛠️ 推荐的教学资源&lt;/h2&gt;
-&lt;h3 id=&#34;在线平台&#34;&gt;在线平台&lt;/h3&gt;
+&lt;h2 id="-推荐的教学资源"&gt;🛠️ 推荐的教学资源&lt;/h2&gt;
+&lt;h3 id="在线平台"&gt;在线平台&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Scratch&lt;/strong&gt;: 麻省理工学院开发的图形化编程平台&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Code.org&lt;/strong&gt;: 系统化的编程课程&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Khan Academy&lt;/strong&gt;: 包含编程教学的综合学习平台&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Repl.it&lt;/strong&gt;: 在线编程环境，无需安装&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;中文资源&#34;&gt;中文资源&lt;/h3&gt;
+&lt;h3 id="中文资源"&gt;中文资源&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;编程猫：面向儿童的编程教育平台&lt;/li&gt;
 &lt;li&gt;核桃编程：专业的在线编程教育&lt;/li&gt;
 &lt;li&gt;童程童美：线下线上结合的编程培训&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-课程设计示例&#34;&gt;📋 课程设计示例&lt;/h2&gt;
-&lt;h3 id=&#34;8周scratch入门课程&#34;&gt;8周Scratch入门课程&lt;/h3&gt;
+&lt;h2 id="-课程设计示例"&gt;📋 课程设计示例&lt;/h2&gt;
+&lt;h3 id="8周scratch入门课程"&gt;8周Scratch入门课程&lt;/h3&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;周次&lt;/th&gt;
-          &lt;th&gt;主题&lt;/th&gt;
-          &lt;th&gt;项目&lt;/th&gt;
-          &lt;th&gt;技能点&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;认识Scratch&lt;/td&gt;
-          &lt;td&gt;动画故事&lt;/td&gt;
-          &lt;td&gt;顺序执行&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;2&lt;/td&gt;
-          &lt;td&gt;循环与事件&lt;/td&gt;
-          &lt;td&gt;旋转动画&lt;/td&gt;
-          &lt;td&gt;循环结构&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;3&lt;/td&gt;
-          &lt;td&gt;变量与条件&lt;/td&gt;
-          &lt;td&gt;计分游戏&lt;/td&gt;
-          &lt;td&gt;变量使用&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;4&lt;/td&gt;
-          &lt;td&gt;广播与接收&lt;/td&gt;
-          &lt;td&gt;对话系统&lt;/td&gt;
-          &lt;td&gt;消息传递&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;5&lt;/td&gt;
-          &lt;td&gt;绘图功能&lt;/td&gt;
-          &lt;td&gt;艺术创作&lt;/td&gt;
-          &lt;td&gt;坐标概念&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;6&lt;/td&gt;
-          &lt;td&gt;音效处理&lt;/td&gt;
-          &lt;td&gt;音乐游戏&lt;/td&gt;
-          &lt;td&gt;多媒体&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;7&lt;/td&gt;
-          &lt;td&gt;综合项目&lt;/td&gt;
-          &lt;td&gt;平台游戏&lt;/td&gt;
-          &lt;td&gt;项目整合&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;8&lt;/td&gt;
-          &lt;td&gt;作品展示&lt;/td&gt;
-          &lt;td&gt;分享会&lt;/td&gt;
-          &lt;td&gt;表达能力&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;周次&lt;/th&gt;
+&lt;th&gt;主题&lt;/th&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;技能点&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;认识Scratch&lt;/td&gt;
+&lt;td&gt;动画故事&lt;/td&gt;
+&lt;td&gt;顺序执行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;循环与事件&lt;/td&gt;
+&lt;td&gt;旋转动画&lt;/td&gt;
+&lt;td&gt;循环结构&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;变量与条件&lt;/td&gt;
+&lt;td&gt;计分游戏&lt;/td&gt;
+&lt;td&gt;变量使用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;广播与接收&lt;/td&gt;
+&lt;td&gt;对话系统&lt;/td&gt;
+&lt;td&gt;消息传递&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;绘图功能&lt;/td&gt;
+&lt;td&gt;艺术创作&lt;/td&gt;
+&lt;td&gt;坐标概念&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;音效处理&lt;/td&gt;
+&lt;td&gt;音乐游戏&lt;/td&gt;
+&lt;td&gt;多媒体&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;综合项目&lt;/td&gt;
+&lt;td&gt;平台游戏&lt;/td&gt;
+&lt;td&gt;项目整合&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;作品展示&lt;/td&gt;
+&lt;td&gt;分享会&lt;/td&gt;
+&lt;td&gt;表达能力&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;12周python进阶课程&#34;&gt;12周Python进阶课程&lt;/h3&gt;
+&lt;h3 id="12周python进阶课程"&gt;12周Python进阶课程&lt;/h3&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;周次&lt;/th&gt;
-          &lt;th&gt;主题&lt;/th&gt;
-          &lt;th&gt;项目&lt;/th&gt;
-          &lt;th&gt;技能点&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;1-3&lt;/td&gt;
-          &lt;td&gt;基础语法&lt;/td&gt;
-          &lt;td&gt;计算器&lt;/td&gt;
-          &lt;td&gt;变量、运算符&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;4-6&lt;/td&gt;
-          &lt;td&gt;条件循环&lt;/td&gt;
-          &lt;td&gt;猜数字&lt;/td&gt;
-          &lt;td&gt;控制流&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;7-9&lt;/td&gt;
-          &lt;td&gt;函数模块&lt;/td&gt;
-          &lt;td&gt;密码生成器&lt;/td&gt;
-          &lt;td&gt;函数定义&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;10-12&lt;/td&gt;
-          &lt;td&gt;数据结构&lt;/td&gt;
-          &lt;td&gt;简易数据库&lt;/td&gt;
-          &lt;td&gt;列表、字典&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;周次&lt;/th&gt;
+&lt;th&gt;主题&lt;/th&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;技能点&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1-3&lt;/td&gt;
+&lt;td&gt;基础语法&lt;/td&gt;
+&lt;td&gt;计算器&lt;/td&gt;
+&lt;td&gt;变量、运算符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4-6&lt;/td&gt;
+&lt;td&gt;条件循环&lt;/td&gt;
+&lt;td&gt;猜数字&lt;/td&gt;
+&lt;td&gt;控制流&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7-9&lt;/td&gt;
+&lt;td&gt;函数模块&lt;/td&gt;
+&lt;td&gt;密码生成器&lt;/td&gt;
+&lt;td&gt;函数定义&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10-12&lt;/td&gt;
+&lt;td&gt;数据结构&lt;/td&gt;
+&lt;td&gt;简易数据库&lt;/td&gt;
+&lt;td&gt;列表、字典&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;-教学技巧&#34;&gt;🎯 教学技巧&lt;/h2&gt;
-&lt;h3 id=&#34;保持趣味性&#34;&gt;保持趣味性&lt;/h3&gt;
+&lt;h2 id="-教学技巧"&gt;🎯 教学技巧&lt;/h2&gt;
+&lt;h3 id="保持趣味性"&gt;保持趣味性&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;选择孩子们感兴趣的主题（游戏、动画、故事）&lt;/li&gt;
 &lt;li&gt;鼓励个性化创作&lt;/li&gt;
 &lt;li&gt;及时给予正向反馈&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;循序渐进&#34;&gt;循序渐进&lt;/h3&gt;
+&lt;h3 id="循序渐进"&gt;循序渐进&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;每次只引入1-2个新概念&lt;/li&gt;
 &lt;li&gt;提供充足的练习时间&lt;/li&gt;
 &lt;li&gt;允许按照自己的节奏学习&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;培养调试思维&#34;&gt;培养调试思维&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 教孩子如何找错误&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;calculate_average&lt;/span&gt;(numbers):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; numbers:  &lt;span style=&#34;color:#75715e&#34;&gt;# 检查空列表&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    total &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; num &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; numbers:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        total &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; num
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; total &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; len(numbers)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 测试用例&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(calculate_average([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;]))  &lt;span style=&#34;color:#75715e&#34;&gt;# 应该输出3.0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(calculate_average([]))                &lt;span style=&#34;color:#75715e&#34;&gt;# 应该输出0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-成功案例分享&#34;&gt;🌟 成功案例分享&lt;/h2&gt;
-&lt;h3 id=&#34;小明的转变&#34;&gt;小明的转变&lt;/h3&gt;
+&lt;h3 id="培养调试思维"&gt;培养调试思维&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 教孩子如何找错误&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;calculate_average&lt;/span&gt;(numbers):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;not&lt;/span&gt; numbers: &lt;span style="color:#75715e"&gt;# 检查空列表&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; total &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; num &lt;span style="color:#f92672"&gt;in&lt;/span&gt; numbers:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; total &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; num
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; total &lt;span style="color:#f92672"&gt;/&lt;/span&gt; len(numbers)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 测试用例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(calculate_average([&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;4&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;])) &lt;span style="color:#75715e"&gt;# 应该输出3.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(calculate_average([])) &lt;span style="color:#75715e"&gt;# 应该输出0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="-成功案例分享"&gt;🌟 成功案例分享&lt;/h2&gt;
+&lt;h3 id="小明的转变"&gt;小明的转变&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;开始&lt;/strong&gt;: 对编程不感兴趣&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;过程&lt;/strong&gt;: 通过制作自己喜欢的游戏逐步投入&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;结果&lt;/strong&gt;: 现在能独立制作小游戏，逻辑思维明显提升&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;小红的项目&#34;&gt;小红的项目&lt;/h3&gt;
+&lt;h3 id="小红的项目"&gt;小红的项目&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;创意&lt;/strong&gt;: 制作一个帮助记忆英语单词的应用&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;实现&lt;/strong&gt;: 使用Python Tkinter制作图形界面&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;收获&lt;/strong&gt;: 不仅学会了编程，还提高了英语成绩&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-家长如何配合&#34;&gt;👨‍👩‍👧‍👦 家长如何配合&lt;/h2&gt;
-&lt;h3 id=&#34;1-创造环境&#34;&gt;1. 创造环境&lt;/h3&gt;
+&lt;h2 id="-家长如何配合"&gt;👨‍👩‍👧‍👦 家长如何配合&lt;/h2&gt;
+&lt;h3 id="1-创造环境"&gt;1. 创造环境&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;提供合适的设备和学习空间&lt;/li&gt;
 &lt;li&gt;保证充足的学习时间&lt;/li&gt;
 &lt;li&gt;营造支持探索的氛围&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;2-合理期望&#34;&gt;2. 合理期望&lt;/h3&gt;
+&lt;h3 id="2-合理期望"&gt;2. 合理期望&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;不要急于求成&lt;/li&gt;
 &lt;li&gt;关注过程而非结果&lt;/li&gt;
 &lt;li&gt;允许犯错和重试&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;3-参与其中&#34;&gt;3. 参与其中&lt;/h3&gt;
+&lt;h3 id="3-参与其中"&gt;3. 参与其中&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;了解孩子的学习内容&lt;/li&gt;
 &lt;li&gt;和孩子一起解决问题&lt;/li&gt;
 &lt;li&gt;分享孩子的作品和进步&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-未来发展方向&#34;&gt;🔮 未来发展方向&lt;/h2&gt;
-&lt;p&gt;编程学习为孩子打开了多个可能性：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="-未来发展方向"&gt;🔮 未来发展方向&lt;/h2&gt;
+&lt;p&gt;编程学习为孩子打开了多个可能性：&lt;/p&gt;</description></item></channel></rss>
